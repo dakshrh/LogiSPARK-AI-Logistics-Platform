@@ -1,0 +1,248 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+/* ── HS Classifier UI ─────────────────────────────────────── */
+.hs-hero {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  border-radius: 12px;
+  padding: 28px 32px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(30,58,138,0.25);
+  margin-bottom: 4px;
+}
+.hs-hero-icon { font-size: 3.4rem; flex-shrink: 0; }
+.hs-hero-title { font-size: 1.6rem; font-weight: 900; letter-spacing: -0.4px; }
+.hs-hero-sub   { font-size: .88rem; color: rgba(255,255,255,0.85); margin-top: 6px; line-height: 1.5; }
+
+/* Input Card */
+.input-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--sh);
+}
+.input-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 12px; color: var(--navy); }
+.query-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: .92rem;
+  font-family: 'Inter', sans-serif;
+  resize: vertical;
+  min-height: 78px;
+  color: var(--dark);
+  background: var(--bg);
+  transition: border-color .2s;
+  outline: none;
+}
+.query-input:focus { border-color: var(--accent); background: #fff; }
+.classify-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: .2s;
+}
+.classify-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(59,130,246,0.35); }
+.classify-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+.spinner {
+  width: 22px; height: 22px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Result Card */
+.result-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: var(--sh);
+}
+.result-card h3 { font-size: .95rem; font-weight: 800; margin-bottom: 8px; color: var(--navy); }
+.hs-code { font-size: 2.4rem; font-weight: 900; color: #0f766e; letter-spacing: 1px; }
+.conf-bar {
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.conf-fill { height: 100%; background: linear-gradient(90deg, #0f766e, #14b8a6); width: 0%; transition: width .8s; }
+.path-list { margin-top: 10px; font-size: .78rem; color: var(--muted); }
+.path-list span { background: var(--sky); color: var(--blue); padding: 3px 8px; border-radius: 6px; margin-right: 4px; display: inline-block; }
+
+/* Top‑5 Table */
+.table-card { overflow-x:auto; }
+.hs-table { width:100%; border-collapse:collapse; font-size:.78rem; }
+.hs-table th { background:#1e3a8a; color:#fff; padding:10px 12px; text-align:left; font-size:.68rem; text-transform:uppercase; letter-spacing:.5px; }
+.hs-table td { padding:9px 12px; border-bottom:1px solid var(--border); }
+.hs-table tr:hover td { background:var(--sky); }
+.rank-badge { width:22px; height:22px; border-radius:50%; background:#1e3a8a; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:.68rem; font-weight:800; margin-right:6px; }
+.rank-badge.gold { background:#f59e0b; }
+
+/* Example chips */
+.chip-row { margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; }
+.chip { padding:4px 10px; border-radius:16px; background:var(--sky); color:var(--blue); font-size:.75rem; cursor:pointer; transition:.15s; }
+.chip:hover { background:var(--accent); color:#fff; }
+</style>
+{% endblock %}
+
+{% block sidebar_extra %}
+<div class="s-label" style="margin-top:16px">Engine Mode</div>
+<div class="kpi-card">
+  <div class="kpi-label">Current Mode</div>
+  <div class="kpi-val" id="sb-mode">Loading…</div>
+</div>
+<div class="s-label" style="margin-top:16px">Session Stats</div>
+<div class="kpi-card">
+  <div class="kpi-label">Queries Run</div>
+  <div class="kpi-val" id="sb-count">0</div>
+</div>
+<div class="kpi-card">
+  <div class="kpi-label">Avg Confidence</div>
+  <div class="kpi-val" id="sb-conf">—</div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="hs-hero">
+  <div class="hs-hero-icon">📦</div>
+  <div>
+    <div class="hs-hero-title">HS Code Classifier</div>
+    <div class="hs-hero-sub">Describe your product and instantly receive Harmonized System (HS) code recommendations with confidence scores.</div>
+  </div>
+</div>
+
+<div class="grid-2">
+  <!-- Input Card -->
+  <div class="input-card">
+    <h3>🔎 Product Description</h3>
+    <textarea class="query-input" id="query-input" placeholder="e.g., Cotton men's T‑shirt, round‑neck, 180 gsm, 100% organic…"></textarea>
+    <button class="classify-btn" id="classify-btn" onclick="runClassify()">
+      <span id="btn-text">🔎 Classify HS Code</span>
+      <div class="spinner" id="btn-spinner"></div>
+    </button>
+    <div class="chip-row">
+      <div class="chip" onclick="setQuery(this)">Cotton Men's T‑Shirt</div>
+      <div class="chip" onclick="setQuery(this)">Lithium‑Ion Battery Pack</div>
+      <div class="chip" onclick="setQuery(this)">Industrial CNC Machine</div>
+      <div class="chip" onclick="setQuery(this)">Fresh Mango Fruit</div>
+      <div class="chip" onclick="setQuery(this)">Pharmaceutical Tablets</div>
+      <div class="chip" onclick="setQuery(this)">Leather Handbag</div>
+      <div class="chip" onclick="setQuery(this)">Solar Panel Module</div>
+      <div class="chip" onclick="setQuery(this)">Crude Palm Oil</div>
+    </div>
+  </div>
+
+  <!-- Result Card -->
+  <div class="result-card" id="result-section" style="display:none">
+    <h3>✅ Top Classification</h3>
+    <div class="hs-code" id="res-hscode">—</div>
+    <div style="margin-top:6px;color:var(--muted)" id="res-desc">—</div>
+    <div class="conf-bar"><div class="conf-fill" id="res-conf"></div></div>
+    <div class="path-list" id="res-path"></div>
+  </div>
+</div>
+
+<!-- Top‑5 Table -->
+<div class="card table-card" id="table-section" style="display:none">
+  <div class="card-title">📊 Top 5 HS Code Matches</div>
+  <table class="hs-table">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>HS Code</th>
+        <th>Description</th>
+        <th>Level</th>
+        <th>Confidence</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+const INR = n => 'Rs.\u00a0' + Math.round(n).toLocaleString('en-IN');
+let queryCount = 0;
+let confSum = 0;
+
+fetch('/api/platform-stats').then(r=>r.json()).then(d=>{
+  document.getElementById('sb-mode').textContent = d.hs_classifier_mode || 'TF‑IDF';
+}).catch(()=>{document.getElementById('sb-mode').textContent='TF‑IDF';});
+
+function setQuery(btn){
+  document.getElementById('query-input').value = btn.textContent;
+  document.getElementById('query-input').focus();
+}
+
+function runClassify(){
+  const q = document.getElementById('query-input').value.trim();
+  if(!q){alert('Please enter a product description.');return;}
+  const btn=document.getElementById('classify-btn');
+  const btnText=document.getElementById('btn-text');
+  const spinner=document.getElementById('btn-spinner');
+  btn.disabled=true; btnText.textContent='Classifying…'; spinner.style.display='block';
+  fetch('/api/hs-classify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:q})})
+    .then(r=>r.json())
+    .then(data=>render(data,q))
+    .catch(err=>alert('Error: '+err))
+    .finally(()=>{btn.disabled=false; btnText.textContent='🔎 Classify HS Code'; spinner.style.display='none';});
+}
+
+function render(d, query){
+  // Top match
+  const top = d.top_match;
+  document.getElementById('res-hscode').textContent = top.hscode;
+  document.getElementById('res-desc').textContent = top.description;
+  document.getElementById('res-conf').style.width = Math.min(top.confidence,100)+'%';
+  const pathEl = document.getElementById('res-path');
+  pathEl.innerHTML = d.classification_path.split(' → ').map(p=>`<span>${p}</span>`).join('');
+  document.getElementById('result-section').style.display='block';
+
+  // Table
+  const tbody=document.getElementById('table-body');
+  tbody.innerHTML='';
+  d.results.forEach(r=>{
+    const badge = r.rank===1?'<span class="rank-badge gold">'+r.rank+'</span>':'<span class="rank-badge">'+r.rank+'</span>';
+    const confColor = r.confidence>70?'#0f766e':r.confidence>40?'#f59e0b':'#64748b';
+    tbody.innerHTML+=`<tr>
+      <td>${badge}</td>
+      <td><code style="font-weight:700;color:#1e3a8a;">${r.hscode}</code></td>
+      <td>${r.description}</td>
+      <td>Level ${r.level}</td>
+      <td style="color:${confColor}">${r.confidence.toFixed(1)}%</td>
+    </tr>`;
+  });
+  document.getElementById('table-section').style.display='block';
+
+  // Session stats
+  queryCount++;
+  confSum+=top.confidence;
+  document.getElementById('sb-count').textContent=queryCount;
+  document.getElementById('sb-conf').textContent=(confSum/queryCount).toFixed(1)+'%';
+}
+</script>
+{% endblock %}

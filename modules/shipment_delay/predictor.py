@@ -3,8 +3,8 @@ import pickle
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
-from cost_engine import CostEngine
-from recommendation_engine import RecommendationEngine
+from .cost_engine import CostEngine
+from .recommendation_engine import RecommendationEngine
 
 
 def _py(val):

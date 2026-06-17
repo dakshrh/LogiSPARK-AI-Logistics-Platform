@@ -1,0 +1,1101 @@
+shipment_id,origin,destination,carrier,mode,scheduled_departure,scheduled_arrival,distance_km,cargo_value,container_type,customer_tier
+SH100,Port of Tokyo,Port of Sydney,Apex Cargo,Road,2026-06-19T08:00:00,2026-06-27T06:00:00,13918,4354572,Flat Rack,Tier 1
+SH101,Port of Tokyo,Port of Dubai,Swift Logistics,Rail,2026-06-02T08:00:00,2026-06-10T10:00:00,12136,9678519,Dry Van,Tier 1
+SH102,Port of Newark,Port of Sydney,Global Trans,Rail,2026-06-29T08:00:00,2026-06-30T20:00:00,5551,1312752,Open Top,Tier 3
+SH103,Port of Los Angeles,Port of Mumbai,Oceanic Link,Road,2026-06-28T08:00:00,2026-06-30T19:00:00,9774,6163790,Reefer,Tier 1
+SH104,Port of Newark,Port of Singapore,Swift Logistics,Rail,2026-06-07T08:00:00,2026-06-12T17:00:00,8234,8292680,Dry Van,Tier 3
+SH105,Port of Hamburg,Port of Mumbai,Global Trans,Rail,2026-06-26T08:00:00,2026-06-30T10:00:00,9292,3435659,Reefer,Tier 2
+SH106,Port of Hamburg,Port of Dubai,Atlas Freight,Rail,2026-06-15T08:00:00,2026-06-19T03:00:00,5986,4106518,Open Top,Tier 2
+SH107,Port of Rotterdam,Port of New York,Oceanic Link,Rail,2026-06-22T08:00:00,2026-06-23T10:00:00,2085,6299859,Reefer,Tier 2
+SH108,Port of Singapore,Port of Sydney,Apex Cargo,Road,2026-06-04T08:00:00,2026-06-08T09:00:00,7373,2349435,Reefer,Tier 2
+SH109,Port of Mumbai,Port of Shanghai,Atlas Freight,Ocean,2026-06-18T08:00:00,2026-06-24T23:00:00,8369,4824183,Flat Rack,Tier 2
+SH110,Port of Shanghai,Port of Los Angeles,Oceanic Link,Ocean,2026-06-24T08:00:00,2026-06-30T18:00:00,10500,5000000,Reefer,Tier 1
+SH111,Port of Singapore,Port of Mumbai,Atlas Freight,Rail,2026-06-01T08:00:00,2026-06-07T07:00:00,9071,1335160,Flat Rack,Tier 3
+SH112,Port of Shanghai,Port of Singapore,Oceanic Link,Rail,2026-06-08T08:00:00,2026-06-17T16:00:00,13940,2280919,Dry Van,Tier 1
+SH113,Port of Rotterdam,Port of Dubai,Oceanic Link,Road,2026-06-07T08:00:00,2026-06-10T19:00:00,6392,2281785,Reefer,Tier 1
+SH114,Port of Shanghai,Port of Sydney,Global Trans,Ocean,2026-06-08T08:00:00,2026-06-14T10:00:00,7715,3797389,Flat Rack,Tier 3
+SH115,Port of Mumbai,Port of Sydney,Swift Logistics,Ocean,2026-06-26T08:00:00,2026-06-30T04:00:00,8610,9959709,Dry Van,Tier 3
+SH116,Port of Tokyo,Port of Singapore,Swift Logistics,Ocean,2026-06-13T08:00:00,2026-06-13T14:00:00,706,7608158,Reefer,Tier 1
+SH117,Port of Rotterdam,Port of Singapore,Oceanic Link,Rail,2026-06-23T08:00:00,2026-06-26T21:00:00,5616,3306415,Open Top,Tier 3
+SH118,Port of Tokyo,Port of London,Swift Logistics,Ocean,2026-06-28T08:00:00,2026-06-29T07:00:00,1559,6266204,Dry Van,Tier 3
+SH119,Port of Singapore,Port of Hamburg,Apex Cargo,Air,2026-06-12T08:00:00,2026-06-12T14:00:00,11752,1625557,Open Top,Tier 3
+SH120,Port of Los Angeles,Port of New York,Swift Logistics,Rail,2026-06-01T08:00:00,2026-06-08T02:00:00,10221,4320070,Open Top,Tier 2
+SH121,Port of Shanghai,Port of Mumbai,Swift Logistics,Air,2026-06-07T08:00:00,2026-06-07T09:00:00,7276,6958531,Flat Rack,Tier 3
+SH122,Port of Mumbai,Port of Sydney,Oceanic Link,Air,2026-06-24T08:00:00,2026-06-24T05:00:00,4248,4472880,Dry Van,Tier 2
+SH123,Port of Tokyo,Port of Dubai,Oceanic Link,Rail,2026-06-07T08:00:00,2026-06-10T23:00:00,5732,89353,Open Top,Tier 2
+SH124,Port of Singapore,Port of Dubai,Oceanic Link,Ocean,2026-06-02T08:00:00,2026-06-05T11:00:00,4196,7122695,Standard,Tier 2
+SH125,Port of Singapore,Port of Sydney,Apex Cargo,Rail,2026-06-21T08:00:00,2026-06-26T11:00:00,7892,6659280,Dry Van,Tier 3
+SH126,Port of Los Angeles,Port of Hamburg,Atlas Freight,Road,2026-06-06T08:00:00,2026-06-06T10:00:00,702,7153230,Flat Rack,Tier 3
+SH127,Port of Mumbai,Port of Sydney,Oceanic Link,Ocean,2026-06-28T08:00:00,2026-06-30T04:00:00,9839,1709066,Flat Rack,Tier 3
+SH128,Port of Rotterdam,Port of Sydney,Swift Logistics,Air,2026-06-07T08:00:00,2026-06-07T03:00:00,2486,3946830,Dry Van,Tier 2
+SH129,Port of Los Angeles,Port of Mumbai,Oceanic Link,Rail,2026-06-11T08:00:00,2026-06-15T08:00:00,6259,9182582,Reefer,Tier 3
+SH130,Port of Los Angeles,Port of Mumbai,Oceanic Link,Air,2026-06-16T08:00:00,2026-06-16T18:00:00,14986,2076793,Dry Van,Tier 2
+SH131,Port of Singapore,Port of Mumbai,Atlas Freight,Rail,2026-06-27T08:00:00,2026-06-30T11:00:00,13668,736976,Open Top,Tier 3
+SH132,Port of Tokyo,Port of Mumbai,Oceanic Link,Road,2026-06-11T08:00:00,2026-06-17T04:00:00,10374,3724515,Standard,Tier 3
+SH133,Port of Shanghai,Port of Sydney,Atlas Freight,Air,2026-06-14T08:00:00,2026-06-14T14:00:00,11875,4377576,Flat Rack,Tier 2
+SH134,Port of Singapore,Port of Hamburg,Swift Logistics,Rail,2026-06-01T08:00:00,2026-06-02T00:00:00,1456,6978040,Open Top,Tier 3
+SH135,Port of Mumbai,Port of New York,Atlas Freight,Rail,2026-06-01T08:00:00,2026-06-05T12:00:00,6515,8566999,Dry Van,Tier 3
+SH136,Port of Newark,Port of Sydney,Swift Logistics,Road,2026-06-08T08:00:00,2026-06-15T21:00:00,13257,2033509,Flat Rack,Tier 2
+SH137,Port of Rotterdam,Port of Dubai,Global Trans,Ocean,2026-06-01T08:00:00,2026-06-05T11:00:00,5393,2507184,Open Top,Tier 3
+SH138,Port of Hamburg,Port of London,Apex Cargo,Rail,2026-06-17T08:00:00,2026-06-26T08:00:00,13446,7315795,Dry Van,Tier 3
+SH139,Port of Los Angeles,Port of Sydney,Apex Cargo,Air,2026-06-05T08:00:00,2026-06-05T04:00:00,3944,2977109,Dry Van,Tier 3
+SH140,Port of Newark,Port of London,Oceanic Link,Air,2026-06-20T08:00:00,2026-06-20T16:00:00,12968,8553902,Dry Van,Tier 3
+SH141,Port of Tokyo,Port of London,Apex Cargo,Rail,2026-06-25T08:00:00,2026-06-29T14:00:00,6602,2265167,Dry Van,Tier 1
+SH142,Port of Singapore,Port of Shanghai,Global Trans,Road,2026-06-22T08:00:00,2026-06-23T10:00:00,2395,495101,Reefer,Tier 3
+SH143,Port of Tokyo,Port of Hamburg,Swift Logistics,Air,2026-06-09T08:00:00,2026-06-09T02:00:00,1909,9663273,Standard,Tier 3
+SH144,Port of Rotterdam,Port of New York,Apex Cargo,Air,2026-06-24T08:00:00,2026-06-24T04:00:00,3306,7832937,Dry Van,Tier 2
+SH145,Port of Hamburg,Port of London,Global Trans,Road,2026-06-14T08:00:00,2026-06-19T01:00:00,8492,6149628,Open Top,Tier 3
+SH146,Port of Newark,Port of New York,Atlas Freight,Road,2026-06-23T08:00:00,2026-06-27T05:00:00,7114,1222622,Open Top,Tier 3
+SH147,Port of Tokyo,Port of New York,Swift Logistics,Ocean,2026-06-26T08:00:00,2026-06-29T13:00:00,4269,5943309,Flat Rack,Tier 3
+SH148,Port of Mumbai,Port of Hamburg,Atlas Freight,Air,2026-06-01T08:00:00,2026-06-01T17:00:00,13625,3553157,Dry Van,Tier 1
+SH149,Port of Newark,Port of London,Atlas Freight,Rail,2026-06-20T08:00:00,2026-06-20T08:00:00,504,1054646,Open Top,Tier 3
+SH150,Port of Mumbai,Port of Shanghai,Swift Logistics,Road,2026-06-19T08:00:00,2026-06-23T12:00:00,7579,3429569,Open Top,Tier 3
+SH151,Port of Shanghai,Port of Singapore,Swift Logistics,Rail,2026-06-21T08:00:00,2026-06-24T22:00:00,5677,1473286,Reefer,Tier 1
+SH152,Port of Mumbai,Port of Shanghai,Oceanic Link,Rail,2026-06-02T08:00:00,2026-06-08T17:00:00,9704,6145929,Reefer,Tier 1
+SH153,Port of Newark,Port of New York,Oceanic Link,Rail,2026-06-05T08:00:00,2026-06-10T11:00:00,7904,6715088,Flat Rack,Tier 3
+SH154,Port of Mumbai,Port of New York,Swift Logistics,Rail,2026-06-25T08:00:00,2026-06-28T07:00:00,4749,2214367,Dry Van,Tier 3
+SH155,Port of Hamburg,Port of Singapore,Atlas Freight,Ocean,2026-06-16T08:00:00,2026-06-25T20:00:00,11810,7206720,Open Top,Tier 1
+SH156,Port of Singapore,Port of Hamburg,Apex Cargo,Road,2026-06-10T08:00:00,2026-06-16T03:00:00,10327,5748848,Flat Rack,Tier 2
+SH157,Port of Mumbai,Port of New York,Atlas Freight,Air,2026-06-01T08:00:00,2026-06-01T14:00:00,11943,3743305,Dry Van,Tier 3
+SH158,Port of Newark,Port of London,Apex Cargo,Rail,2026-06-27T08:00:00,2026-06-30T04:00:00,11779,1150567,Reefer,Tier 1
+SH159,Port of Los Angeles,Port of Shanghai,Atlas Freight,Air,2026-06-05T08:00:00,2026-06-05T15:00:00,12438,5296880,Flat Rack,Tier 3
+SH160,Port of Los Angeles,Port of Dubai,Oceanic Link,Ocean,2026-06-14T08:00:00,2026-06-25T15:00:00,13979,2105723,Flat Rack,Tier 1
+SH161,Port of Singapore,Port of London,Swift Logistics,Air,2026-06-29T08:00:00,2026-06-29T03:00:00,2582,2698790,Standard,Tier 3
+SH162,Port of Singapore,Port of Hamburg,Global Trans,Air,2026-06-18T08:00:00,2026-06-18T01:00:00,917,2647480,Open Top,Tier 3
+SH163,Port of Hamburg,Port of Sydney,Apex Cargo,Rail,2026-06-09T08:00:00,2026-06-14T14:00:00,8087,3419720,Open Top,Tier 1
+SH164,Port of Newark,Port of Shanghai,Swift Logistics,Ocean,2026-06-24T08:00:00,2026-06-25T08:00:00,1622,4020001,Standard,Tier 3
+SH165,Port of Tokyo,Port of New York,Apex Cargo,Rail,2026-06-03T08:00:00,2026-06-05T17:00:00,3940,725510,Flat Rack,Tier 3
+SH166,Port of Shanghai,Port of New York,Oceanic Link,Ocean,2026-06-27T08:00:00,2026-06-30T09:00:00,14897,2057635,Standard,Tier 2
+SH167,Port of Rotterdam,Port of Mumbai,Atlas Freight,Rail,2026-06-14T08:00:00,2026-06-19T11:00:00,7900,6247323,Standard,Tier 2
+SH168,Port of Tokyo,Port of Shanghai,Atlas Freight,Road,2026-06-12T08:00:00,2026-06-19T07:00:00,12269,5432287,Flat Rack,Tier 1
+SH169,Port of Shanghai,Port of Sydney,Swift Logistics,Ocean,2026-06-21T08:00:00,2026-06-27T19:00:00,8151,3838340,Standard,Tier 1
+SH170,Port of Singapore,Port of Hamburg,Global Trans,Ocean,2026-06-18T08:00:00,2026-06-24T12:00:00,7830,4282406,Flat Rack,Tier 2
+SH171,Port of Tokyo,Port of Sydney,Oceanic Link,Air,2026-06-07T08:00:00,2026-06-07T01:00:00,1453,4476219,Standard,Tier 1
+SH172,Port of Mumbai,Port of New York,Global Trans,Ocean,2026-06-29T08:00:00,2026-06-30T17:00:00,11685,5512810,Reefer,Tier 1
+SH173,Port of Hamburg,Port of Singapore,Swift Logistics,Rail,2026-06-07T08:00:00,2026-06-16T22:00:00,14307,6293669,Open Top,Tier 2
+SH174,Port of Shanghai,Port of London,Atlas Freight,Rail,2026-06-22T08:00:00,2026-06-24T12:00:00,3641,4989003,Dry Van,Tier 3
+SH175,Port of Tokyo,Port of Dubai,Global Trans,Air,2026-06-18T08:00:00,2026-06-18T15:00:00,12294,7877494,Dry Van,Tier 2
+SH176,Port of Los Angeles,Port of New York,Global Trans,Rail,2026-06-07T08:00:00,2026-06-11T22:00:00,7119,6792471,Flat Rack,Tier 3
+SH177,Port of Shanghai,Port of Dubai,Apex Cargo,Rail,2026-06-24T08:00:00,2026-06-30T00:00:00,12977,7718216,Open Top,Tier 2
+SH178,Port of Shanghai,Port of New York,Apex Cargo,Air,2026-06-29T08:00:00,2026-06-29T03:00:00,2605,1921403,Flat Rack,Tier 3
+SH179,Port of Tokyo,Port of London,Apex Cargo,Road,2026-06-15T08:00:00,2026-06-21T20:00:00,11503,473570,Open Top,Tier 1
+SH180,Port of Shanghai,Port of Mumbai,Oceanic Link,Ocean,2026-06-25T08:00:00,2026-06-30T06:00:00,12329,9855685,Dry Van,Tier 3
+SH181,Port of Rotterdam,Port of Sydney,Global Trans,Rail,2026-06-26T08:00:00,2026-06-30T00:00:00,11523,5578983,Open Top,Tier 2
+SH182,Port of Los Angeles,Port of Sydney,Global Trans,Rail,2026-06-09T08:00:00,2026-06-11T06:00:00,3245,7028737,Open Top,Tier 1
+SH183,Port of Los Angeles,Port of Shanghai,Swift Logistics,Air,2026-06-20T08:00:00,2026-06-20T09:00:00,7602,4087776,Standard,Tier 2
+SH184,Port of Hamburg,Port of London,Apex Cargo,Ocean,2026-06-19T08:00:00,2026-06-20T17:00:00,2081,8561010,Flat Rack,Tier 3
+SH185,Port of Newark,Port of London,Oceanic Link,Air,2026-06-05T08:00:00,2026-06-05T00:00:00,509,7186029,Reefer,Tier 3
+SH186,Port of Tokyo,Port of Shanghai,Oceanic Link,Air,2026-06-26T08:00:00,2026-06-26T14:00:00,11828,3962942,Standard,Tier 2
+SH187,Port of Tokyo,Port of Mumbai,Swift Logistics,Road,2026-06-01T08:00:00,2026-06-04T03:00:00,5284,4395760,Reefer,Tier 1
+SH188,Port of Hamburg,Port of Shanghai,Atlas Freight,Ocean,2026-06-05T08:00:00,2026-06-14T12:00:00,11448,2382517,Dry Van,Tier 3
+SH189,Port of Hamburg,Port of New York,Global Trans,Air,2026-06-14T08:00:00,2026-06-14T05:00:00,4678,5437408,Flat Rack,Tier 2
+SH190,Port of Shanghai,Port of Dubai,Apex Cargo,Ocean,2026-06-02T08:00:00,2026-06-09T00:00:00,8439,8984845,Standard,Tier 3
+SH191,Port of Los Angeles,Port of Singapore,Global Trans,Air,2026-06-22T08:00:00,2026-06-22T11:00:00,9365,2765514,Reefer,Tier 3
+SH192,Port of Los Angeles,Port of London,Swift Logistics,Ocean,2026-06-02T08:00:00,2026-06-07T20:00:00,7044,5215679,Flat Rack,Tier 3
+SH193,Port of Rotterdam,Port of Dubai,Atlas Freight,Air,2026-06-27T08:00:00,2026-06-27T09:00:00,7449,367537,Reefer,Tier 2
+SH194,Port of Rotterdam,Port of Singapore,Global Trans,Rail,2026-06-28T08:00:00,2026-06-30T01:00:00,13036,9802741,Standard,Tier 3
+SH195,Port of Mumbai,Port of Shanghai,Global Trans,Road,2026-06-24T08:00:00,2026-06-30T10:00:00,10820,1346516,Flat Rack,Tier 1
+SH196,Port of Shanghai,Port of Hamburg,Oceanic Link,Rail,2026-06-21T08:00:00,2026-06-25T11:00:00,6471,9088807,Flat Rack,Tier 3
+SH197,Port of Singapore,Port of London,Swift Logistics,Road,2026-06-23T08:00:00,2026-06-30T10:00:00,12515,7435034,Dry Van,Tier 3
+SH198,Port of Tokyo,Port of Shanghai,Swift Logistics,Air,2026-06-24T08:00:00,2026-06-24T08:00:00,6531,1122647,Open Top,Tier 1
+SH199,Port of Shanghai,Port of Dubai,Swift Logistics,Road,2026-06-19T08:00:00,2026-06-21T18:00:00,4688,2000367,Reefer,Tier 3
+SH200,Port of Rotterdam,Port of London,Apex Cargo,Air,2026-06-05T08:00:00,2026-06-05T16:00:00,13391,5329548,Flat Rack,Tier 3
+SH201,Port of Shanghai,Port of Sydney,Global Trans,Air,2026-06-26T08:00:00,2026-06-26T03:00:00,3093,8530473,Flat Rack,Tier 2
+SH202,Port of Shanghai,Port of Singapore,Oceanic Link,Air,2026-06-04T08:00:00,2026-06-04T13:00:00,10978,3175354,Flat Rack,Tier 1
+SH203,Port of Shanghai,Port of Mumbai,Swift Logistics,Ocean,2026-06-14T08:00:00,2026-06-19T06:00:00,6311,6210686,Reefer,Tier 3
+SH204,Port of Newark,Port of Hamburg,Apex Cargo,Air,2026-06-14T08:00:00,2026-06-14T06:00:00,5121,1357506,Dry Van,Tier 3
+SH205,Port of Rotterdam,Port of Singapore,Atlas Freight,Ocean,2026-06-25T08:00:00,2026-06-28T04:00:00,3845,9068873,Dry Van,Tier 2
+SH206,Port of Tokyo,Port of London,Atlas Freight,Air,2026-06-26T08:00:00,2026-06-26T01:00:00,1562,7637768,Standard,Tier 2
+SH207,Port of Mumbai,Port of London,Oceanic Link,Ocean,2026-06-09T08:00:00,2026-06-12T09:00:00,4096,5692264,Open Top,Tier 2
+SH208,Port of Hamburg,Port of Dubai,Atlas Freight,Road,2026-06-10T08:00:00,2026-06-16T01:00:00,10185,3930993,Standard,Tier 3
+SH209,Port of Shanghai,Port of London,Atlas Freight,Air,2026-06-05T08:00:00,2026-06-05T02:00:00,2261,9351434,Dry Van,Tier 3
+SH210,Port of Shanghai,Port of Mumbai,Apex Cargo,Air,2026-06-24T08:00:00,2026-06-24T13:00:00,11016,2263573,Open Top,Tier 3
+SH211,Port of Tokyo,Port of Mumbai,Swift Logistics,Road,2026-06-06T08:00:00,2026-06-07T20:00:00,3090,1083255,Flat Rack,Tier 3
+SH212,Port of Singapore,Port of Sydney,Atlas Freight,Road,2026-06-06T08:00:00,2026-06-11T04:00:00,8695,6036126,Standard,Tier 2
+SH213,Port of Rotterdam,Port of New York,Oceanic Link,Air,2026-06-12T08:00:00,2026-06-12T01:00:00,1346,5634263,Reefer,Tier 2
+SH214,Port of Hamburg,Port of Singapore,Global Trans,Air,2026-06-12T08:00:00,2026-06-12T13:00:00,10502,1287715,Standard,Tier 3
+SH215,Port of Tokyo,Port of Mumbai,Global Trans,Air,2026-06-04T08:00:00,2026-06-04T16:00:00,13107,5859701,Flat Rack,Tier 3
+SH216,Port of Hamburg,Port of Sydney,Swift Logistics,Ocean,2026-06-10T08:00:00,2026-06-17T23:00:00,9593,2913793,Reefer,Tier 3
+SH217,Port of Los Angeles,Port of Hamburg,Apex Cargo,Rail,2026-06-09T08:00:00,2026-06-17T14:00:00,12405,8341923,Standard,Tier 1
+SH218,Port of Shanghai,Port of Mumbai,Swift Logistics,Road,2026-06-17T08:00:00,2026-06-25T18:00:00,14731,2769269,Dry Van,Tier 2
+SH219,Port of Hamburg,Port of Singapore,Atlas Freight,Rail,2026-06-12T08:00:00,2026-06-19T09:00:00,10661,1762503,Dry Van,Tier 3
+SH220,Port of Rotterdam,Port of Dubai,Oceanic Link,Rail,2026-06-08T08:00:00,2026-06-10T16:00:00,3891,1142501,Open Top,Tier 3
+SH221,Port of Rotterdam,Port of Mumbai,Apex Cargo,Air,2026-06-19T08:00:00,2026-06-19T18:00:00,14639,3975282,Flat Rack,Tier 1
+SH222,Port of Rotterdam,Port of New York,Global Trans,Air,2026-06-08T08:00:00,2026-06-08T05:00:00,4727,9501244,Reefer,Tier 2
+SH223,Port of Newark,Port of Singapore,Swift Logistics,Ocean,2026-06-01T08:00:00,2026-06-06T21:00:00,7065,3136176,Standard,Tier 2
+SH224,Port of Tokyo,Port of Singapore,Global Trans,Air,2026-06-06T08:00:00,2026-06-06T17:00:00,13608,1003959,Dry Van,Tier 3
+SH225,Port of Mumbai,Port of Sydney,Swift Logistics,Rail,2026-06-07T08:00:00,2026-06-11T05:00:00,6067,4587358,Flat Rack,Tier 2
+SH226,Port of Rotterdam,Port of Sydney,Apex Cargo,Air,2026-06-22T08:00:00,2026-06-22T02:00:00,1620,5325034,Standard,Tier 1
+SH227,Port of Singapore,Port of Hamburg,Apex Cargo,Road,2026-06-04T08:00:00,2026-06-05T09:00:00,2365,9662128,Flat Rack,Tier 1
+SH228,Port of Hamburg,Port of London,Apex Cargo,Rail,2026-06-19T08:00:00,2026-06-27T06:00:00,11920,5575633,Dry Van,Tier 3
+SH229,Port of Los Angeles,Port of Sydney,Global Trans,Road,2026-06-06T08:00:00,2026-06-07T13:00:00,2616,8254298,Reefer,Tier 2
+SH230,Port of Newark,Port of Singapore,Global Trans,Air,2026-06-18T08:00:00,2026-06-18T11:00:00,9054,4377819,Reefer,Tier 3
+SH231,Port of Shanghai,Port of Mumbai,Atlas Freight,Road,2026-06-05T08:00:00,2026-06-07T09:00:00,4031,2842427,Open Top,Tier 3
+SH232,Port of Newark,Port of London,Global Trans,Ocean,2026-06-29T08:00:00,2026-06-30T17:00:00,9295,5402825,Standard,Tier 2
+SH233,Port of Mumbai,Port of Hamburg,Swift Logistics,Road,2026-06-04T08:00:00,2026-06-05T08:00:00,2292,6625716,Flat Rack,Tier 1
+SH234,Port of Mumbai,Port of Shanghai,Oceanic Link,Ocean,2026-06-21T08:00:00,2026-06-22T23:00:00,2354,3628226,Flat Rack,Tier 2
+SH235,Port of Shanghai,Port of Hamburg,Atlas Freight,Ocean,2026-06-20T08:00:00,2026-06-23T22:00:00,4712,9322985,Standard,Tier 1
+SH236,Port of Shanghai,Port of Hamburg,Swift Logistics,Air,2026-06-27T08:00:00,2026-06-27T11:00:00,9077,3728086,Reefer,Tier 2
+SH237,Port of Shanghai,Port of Dubai,Swift Logistics,Rail,2026-06-06T08:00:00,2026-06-15T09:00:00,13550,1046530,Standard,Tier 2
+SH238,Port of Hamburg,Port of Mumbai,Oceanic Link,Ocean,2026-06-21T08:00:00,2026-06-30T17:00:00,12850,1095482,Reefer,Tier 1
+SH239,Port of Shanghai,Port of Singapore,Oceanic Link,Rail,2026-06-28T08:00:00,2026-06-30T17:00:00,3932,1017344,Open Top,Tier 2
+SH240,Port of Tokyo,Port of London,Oceanic Link,Road,2026-06-19T08:00:00,2026-06-25T05:00:00,10484,5818927,Flat Rack,Tier 2
+SH241,Port of Rotterdam,Port of Shanghai,Swift Logistics,Air,2026-06-08T08:00:00,2026-06-08T03:00:00,2579,6034684,Flat Rack,Tier 2
+SH242,Port of Rotterdam,Port of Hamburg,Oceanic Link,Air,2026-06-28T08:00:00,2026-06-28T07:00:00,5990,753662,Reefer,Tier 3
+SH243,Port of Shanghai,Port of Hamburg,Swift Logistics,Road,2026-06-10T08:00:00,2026-06-13T21:00:00,6516,5567366,Dry Van,Tier 2
+SH244,Port of Rotterdam,Port of New York,Global Trans,Rail,2026-06-07T08:00:00,2026-06-15T20:00:00,12756,8420262,Open Top,Tier 3
+SH245,Port of Hamburg,Port of Mumbai,Oceanic Link,Road,2026-06-08T08:00:00,2026-06-11T20:00:00,6454,2652967,Dry Van,Tier 3
+SH246,Port of Mumbai,Port of Hamburg,Apex Cargo,Road,2026-06-02T08:00:00,2026-06-06T14:00:00,7718,1778096,Open Top,Tier 2
+SH247,Port of Rotterdam,Port of Shanghai,Swift Logistics,Rail,2026-06-23T08:00:00,2026-06-26T12:00:00,5047,549876,Flat Rack,Tier 2
+SH248,Port of Newark,Port of Hamburg,Global Trans,Road,2026-06-19T08:00:00,2026-06-20T14:00:00,2698,2076580,Dry Van,Tier 1
+SH249,Port of Los Angeles,Port of London,Atlas Freight,Air,2026-06-10T08:00:00,2026-06-10T11:00:00,9205,2058960,Flat Rack,Tier 2
+SH250,Port of Tokyo,Port of Hamburg,Swift Logistics,Road,2026-06-12T08:00:00,2026-06-19T01:00:00,11882,6243956,Standard,Tier 2
+SH251,Port of Rotterdam,Port of Sydney,Global Trans,Air,2026-06-27T08:00:00,2026-06-27T02:00:00,1887,4158880,Reefer,Tier 3
+SH252,Port of Mumbai,Port of Shanghai,Oceanic Link,Air,2026-06-13T08:00:00,2026-06-13T04:00:00,3686,3223584,Standard,Tier 3
+SH253,Port of Shanghai,Port of Singapore,Oceanic Link,Air,2026-06-13T08:00:00,2026-06-13T02:00:00,1801,166739,Reefer,Tier 3
+SH254,Port of Singapore,Port of Shanghai,Apex Cargo,Road,2026-06-09T08:00:00,2026-06-13T10:00:00,7481,1064929,Flat Rack,Tier 3
+SH255,Port of Mumbai,Port of Dubai,Oceanic Link,Ocean,2026-06-10T08:00:00,2026-06-16T08:00:00,7641,6994121,Open Top,Tier 2
+SH256,Port of Mumbai,Port of New York,Swift Logistics,Ocean,2026-06-25T08:00:00,2026-06-25T22:00:00,1145,7419434,Reefer,Tier 3
+SH257,Port of Hamburg,Port of Shanghai,Global Trans,Ocean,2026-06-26T08:00:00,2026-06-30T03:00:00,12164,3493609,Flat Rack,Tier 2
+SH258,Port of Mumbai,Port of Dubai,Atlas Freight,Air,2026-06-19T08:00:00,2026-06-19T02:00:00,1886,3387920,Dry Van,Tier 1
+SH259,Port of Singapore,Port of London,Apex Cargo,Road,2026-06-07T08:00:00,2026-06-10T12:00:00,5915,926031,Open Top,Tier 3
+SH260,Port of Newark,Port of Dubai,Global Trans,Road,2026-06-26T08:00:00,2026-06-30T07:00:00,7266,4181479,Flat Rack,Tier 2
+SH261,Port of Los Angeles,Port of Singapore,Atlas Freight,Road,2026-06-27T08:00:00,2026-06-28T08:00:00,2262,7290947,Dry Van,Tier 3
+SH262,Port of Hamburg,Port of Sydney,Global Trans,Ocean,2026-06-08T08:00:00,2026-06-08T13:00:00,653,6840593,Flat Rack,Tier 2
+SH263,Port of Shanghai,Port of Mumbai,Oceanic Link,Ocean,2026-06-03T08:00:00,2026-06-11T00:00:00,9630,2754999,Reefer,Tier 2
+SH264,Port of Rotterdam,Port of Hamburg,Apex Cargo,Rail,2026-06-05T08:00:00,2026-06-11T03:00:00,8863,5837749,Reefer,Tier 1
+SH265,Port of Los Angeles,Port of Dubai,Swift Logistics,Ocean,2026-06-17T08:00:00,2026-06-19T22:00:00,3504,4134752,Reefer,Tier 3
+SH266,Port of Tokyo,Port of Sydney,Swift Logistics,Rail,2026-06-22T08:00:00,2026-06-30T20:00:00,12754,8097252,Standard,Tier 3
+SH267,Port of Newark,Port of New York,Oceanic Link,Air,2026-06-13T08:00:00,2026-06-13T17:00:00,13900,9214043,Dry Van,Tier 3
+SH268,Port of Singapore,Port of Shanghai,Global Trans,Rail,2026-06-26T08:00:00,2026-06-29T16:00:00,5306,3863270,Reefer,Tier 3
+SH269,Port of Tokyo,Port of New York,Apex Cargo,Road,2026-06-29T08:00:00,2026-06-30T19:00:00,4732,5172930,Reefer,Tier 2
+SH270,Port of Singapore,Port of Shanghai,Atlas Freight,Road,2026-06-24T08:00:00,2026-06-26T02:00:00,3542,3445049,Standard,Tier 3
+SH271,Port of Rotterdam,Port of Sydney,Atlas Freight,Ocean,2026-06-26T08:00:00,2026-06-30T14:00:00,13909,9438162,Flat Rack,Tier 3
+SH272,Port of Tokyo,Port of Singapore,Atlas Freight,Road,2026-06-25T08:00:00,2026-06-29T21:00:00,8194,1891648,Open Top,Tier 3
+SH273,Port of Hamburg,Port of Dubai,Oceanic Link,Rail,2026-06-10T08:00:00,2026-06-16T09:00:00,9184,7202747,Reefer,Tier 1
+SH274,Port of Singapore,Port of New York,Swift Logistics,Road,2026-06-03T08:00:00,2026-06-09T05:00:00,10496,6893532,Reefer,Tier 3
+SH275,Port of Rotterdam,Port of Singapore,Atlas Freight,Ocean,2026-06-25T08:00:00,2026-06-30T10:00:00,13745,9308731,Standard,Tier 3
+SH276,Port of Tokyo,Port of Singapore,Atlas Freight,Ocean,2026-06-14T08:00:00,2026-06-23T10:00:00,11316,2179885,Standard,Tier 1
+SH277,Port of Newark,Port of New York,Global Trans,Rail,2026-06-09T08:00:00,2026-06-09T10:00:00,645,9709072,Flat Rack,Tier 3
+SH278,Port of Tokyo,Port of Mumbai,Oceanic Link,Rail,2026-06-11T08:00:00,2026-06-17T16:00:00,9655,3238729,Flat Rack,Tier 3
+SH279,Port of Los Angeles,Port of New York,Swift Logistics,Air,2026-06-04T08:00:00,2026-06-04T02:00:00,2368,3931185,Standard,Tier 3
+SH280,Port of Rotterdam,Port of Shanghai,Atlas Freight,Ocean,2026-06-10T08:00:00,2026-06-14T22:00:00,5929,9791172,Dry Van,Tier 3
+SH281,Port of Rotterdam,Port of Hamburg,Oceanic Link,Air,2026-06-05T08:00:00,2026-06-05T01:00:00,1436,1076553,Dry Van,Tier 3
+SH282,Port of Hamburg,Port of Singapore,Oceanic Link,Ocean,2026-06-03T08:00:00,2026-06-12T21:00:00,11862,6896192,Flat Rack,Tier 2
+SH283,Port of Singapore,Port of Hamburg,Oceanic Link,Rail,2026-06-15T08:00:00,2026-06-21T00:00:00,8694,7713589,Flat Rack,Tier 2
+SH284,Port of Shanghai,Port of Mumbai,Atlas Freight,Air,2026-06-03T08:00:00,2026-06-03T02:00:00,1880,7106993,Dry Van,Tier 3
+SH285,Port of Rotterdam,Port of Sydney,Apex Cargo,Ocean,2026-06-15T08:00:00,2026-06-16T10:00:00,1718,2760241,Open Top,Tier 1
+SH286,Port of Newark,Port of Mumbai,Apex Cargo,Road,2026-06-08T08:00:00,2026-06-08T20:00:00,1454,655409,Open Top,Tier 2
+SH287,Port of Rotterdam,Port of London,Global Trans,Air,2026-06-28T08:00:00,2026-06-28T16:00:00,13241,5137268,Open Top,Tier 1
+SH288,Port of Hamburg,Port of New York,Oceanic Link,Air,2026-06-03T08:00:00,2026-06-03T14:00:00,11803,452732,Flat Rack,Tier 3
+SH289,Port of Newark,Port of Shanghai,Global Trans,Rail,2026-06-24T08:00:00,2026-06-27T01:00:00,4430,5253916,Flat Rack,Tier 3
+SH290,Port of Rotterdam,Port of Shanghai,Atlas Freight,Ocean,2026-06-21T08:00:00,2026-06-22T20:00:00,2204,8543836,Dry Van,Tier 2
+SH291,Port of Singapore,Port of Sydney,Swift Logistics,Air,2026-06-19T08:00:00,2026-06-19T06:00:00,5295,8487482,Flat Rack,Tier 3
+SH292,Port of Tokyo,Port of Singapore,Global Trans,Air,2026-06-14T08:00:00,2026-06-14T04:00:00,3219,8909060,Reefer,Tier 3
+SH293,Port of Hamburg,Port of New York,Atlas Freight,Road,2026-06-17T08:00:00,2026-06-23T08:00:00,10677,8132655,Flat Rack,Tier 3
+SH294,Port of Shanghai,Port of Mumbai,Global Trans,Rail,2026-06-06T08:00:00,2026-06-09T12:00:00,5043,4013735,Flat Rack,Tier 3
+SH295,Port of Rotterdam,Port of New York,Global Trans,Ocean,2026-06-05T08:00:00,2026-06-13T06:00:00,9939,1242929,Open Top,Tier 3
+SH296,Port of Hamburg,Port of Singapore,Atlas Freight,Rail,2026-06-17T08:00:00,2026-06-18T15:00:00,2387,5731635,Reefer,Tier 3
+SH297,Port of Los Angeles,Port of New York,Oceanic Link,Air,2026-06-18T08:00:00,2026-06-18T11:00:00,9577,9211408,Reefer,Tier 1
+SH298,Port of Singapore,Port of New York,Apex Cargo,Rail,2026-06-07T08:00:00,2026-06-15T15:00:00,12439,5118002,Open Top,Tier 3
+SH299,Port of Hamburg,Port of Sydney,Oceanic Link,Air,2026-06-26T08:00:00,2026-06-26T18:00:00,14914,3813122,Dry Van,Tier 3
+SH300,Port of Singapore,Port of New York,Global Trans,Ocean,2026-06-07T08:00:00,2026-06-14T16:00:00,9207,1768224,Dry Van,Tier 2
+SH301,Port of Tokyo,Port of Singapore,Apex Cargo,Ocean,2026-06-20T08:00:00,2026-06-21T07:00:00,1598,8724163,Reefer,Tier 3
+SH302,Port of Mumbai,Port of Sydney,Swift Logistics,Road,2026-06-29T08:00:00,2026-06-30T00:00:00,3396,9924813,Open Top,Tier 1
+SH303,Port of Hamburg,Port of Shanghai,Apex Cargo,Road,2026-06-27T08:00:00,2026-06-29T18:00:00,4679,9849314,Standard,Tier 2
+SH304,Port of Shanghai,Port of Hamburg,Atlas Freight,Air,2026-06-25T08:00:00,2026-06-25T05:00:00,4098,9358092,Dry Van,Tier 1
+SH305,Port of Newark,Port of Sydney,Global Trans,Road,2026-06-14T08:00:00,2026-06-18T05:00:00,7135,2427935,Dry Van,Tier 3
+SH306,Port of Shanghai,Port of Mumbai,Apex Cargo,Ocean,2026-06-20T08:00:00,2026-06-27T16:00:00,9211,6022558,Dry Van,Tier 3
+SH307,Port of Tokyo,Port of Dubai,Apex Cargo,Rail,2026-06-20T08:00:00,2026-06-24T13:00:00,6559,5531140,Open Top,Tier 3
+SH308,Port of Mumbai,Port of Shanghai,Oceanic Link,Air,2026-06-20T08:00:00,2026-06-20T13:00:00,10945,2931990,Standard,Tier 3
+SH309,Port of Los Angeles,Port of Mumbai,Oceanic Link,Rail,2026-06-08T08:00:00,2026-06-11T21:00:00,5609,7380292,Flat Rack,Tier 3
+SH310,Port of Rotterdam,Port of Shanghai,Apex Cargo,Ocean,2026-06-06T08:00:00,2026-06-09T21:00:00,4667,9217121,Reefer,Tier 2
+SH311,Port of Newark,Port of Dubai,Apex Cargo,Ocean,2026-06-24T08:00:00,2026-06-26T02:00:00,2543,6787320,Dry Van,Tier 2
+SH312,Port of Shanghai,Port of Mumbai,Atlas Freight,Ocean,2026-06-10T08:00:00,2026-06-13T00:00:00,3617,8083951,Open Top,Tier 3
+SH313,Port of Newark,Port of Shanghai,Global Trans,Rail,2026-06-13T08:00:00,2026-06-18T22:00:00,8532,9012049,Standard,Tier 1
+SH314,Port of Mumbai,Port of Hamburg,Apex Cargo,Rail,2026-06-26T08:00:00,2026-06-30T18:00:00,8333,7704502,Reefer,Tier 3
+SH315,Port of Mumbai,Port of Dubai,Global Trans,Road,2026-06-11T08:00:00,2026-06-13T02:00:00,3541,9159609,Open Top,Tier 1
+SH316,Port of Hamburg,Port of Sydney,Swift Logistics,Air,2026-06-08T08:00:00,2026-06-08T03:00:00,2556,5161142,Standard,Tier 3
+SH317,Port of Newark,Port of Hamburg,Atlas Freight,Air,2026-06-04T08:00:00,2026-06-04T12:00:00,9799,150734,Dry Van,Tier 3
+SH318,Port of Mumbai,Port of Dubai,Global Trans,Road,2026-06-14T08:00:00,2026-06-14T14:00:00,1014,7315406,Standard,Tier 1
+SH319,Port of Rotterdam,Port of Hamburg,Atlas Freight,Road,2026-06-23T08:00:00,2026-06-30T07:00:00,12287,3012732,Dry Van,Tier 2
+SH320,Port of Mumbai,Port of London,Apex Cargo,Rail,2026-06-19T08:00:00,2026-06-27T16:00:00,12496,2781638,Flat Rack,Tier 3
+SH321,Port of Los Angeles,Port of Hamburg,Global Trans,Road,2026-06-28T08:00:00,2026-06-28T16:00:00,1161,1267060,Standard,Tier 2
+SH322,Port of Singapore,Port of Dubai,Swift Logistics,Ocean,2026-06-17T08:00:00,2026-06-22T14:00:00,6736,1901317,Standard,Tier 3
+SH323,Port of Mumbai,Port of New York,Global Trans,Ocean,2026-06-20T08:00:00,2026-06-22T03:00:00,2571,9434451,Open Top,Tier 2
+SH324,Port of Los Angeles,Port of Shanghai,Global Trans,Ocean,2026-06-02T08:00:00,2026-06-06T08:00:00,5203,9159096,Open Top,Tier 1
+SH325,Port of Newark,Port of Sydney,Global Trans,Road,2026-06-13T08:00:00,2026-06-19T00:00:00,10133,9529413,Flat Rack,Tier 2
+SH326,Port of Singapore,Port of London,Oceanic Link,Road,2026-06-23T08:00:00,2026-06-30T02:00:00,13581,4264279,Open Top,Tier 3
+SH327,Port of Singapore,Port of Sydney,Global Trans,Road,2026-06-28T08:00:00,2026-06-30T13:00:00,11032,438076,Standard,Tier 2
+SH328,Port of Hamburg,Port of Shanghai,Oceanic Link,Rail,2026-06-25T08:00:00,2026-06-30T03:00:00,8821,6541878,Standard,Tier 2
+SH329,Port of Los Angeles,Port of Hamburg,Swift Logistics,Ocean,2026-06-24T08:00:00,2026-06-28T01:00:00,4856,4221774,Standard,Tier 3
+SH330,Port of Los Angeles,Port of London,Swift Logistics,Air,2026-06-12T08:00:00,2026-06-12T15:00:00,12470,2704837,Reefer,Tier 2
+SH331,Port of Mumbai,Port of Hamburg,Oceanic Link,Ocean,2026-06-15T08:00:00,2026-06-20T07:00:00,6395,1992811,Standard,Tier 3
+SH332,Port of Hamburg,Port of London,Apex Cargo,Ocean,2026-06-15T08:00:00,2026-06-18T09:00:00,4068,9759175,Open Top,Tier 2
+SH333,Port of Tokyo,Port of New York,Atlas Freight,Road,2026-06-05T08:00:00,2026-06-05T20:00:00,1456,987841,Reefer,Tier 1
+SH334,Port of Los Angeles,Port of Hamburg,Apex Cargo,Ocean,2026-06-05T08:00:00,2026-06-10T15:00:00,6762,8832882,Flat Rack,Tier 3
+SH335,Port of Shanghai,Port of Mumbai,Swift Logistics,Air,2026-06-11T08:00:00,2026-06-11T12:00:00,9727,9735684,Reefer,Tier 3
+SH336,Port of Mumbai,Port of Dubai,Oceanic Link,Air,2026-06-12T08:00:00,2026-06-12T15:00:00,12560,3188744,Dry Van,Tier 2
+SH337,Port of Mumbai,Port of London,Apex Cargo,Rail,2026-06-23T08:00:00,2026-06-30T19:00:00,14147,6739142,Reefer,Tier 1
+SH338,Port of Newark,Port of London,Apex Cargo,Road,2026-06-23T08:00:00,2026-06-30T15:00:00,12873,6064126,Reefer,Tier 3
+SH339,Port of Singapore,Port of Dubai,Global Trans,Air,2026-06-15T08:00:00,2026-06-15T08:00:00,6757,8467233,Standard,Tier 3
+SH340,Port of Newark,Port of Mumbai,Atlas Freight,Road,2026-06-19T08:00:00,2026-06-25T06:00:00,10555,8754813,Open Top,Tier 3
+SH341,Port of Tokyo,Port of Shanghai,Apex Cargo,Rail,2026-06-06T08:00:00,2026-06-15T15:00:00,13880,4878761,Open Top,Tier 1
+SH342,Port of Tokyo,Port of Mumbai,Oceanic Link,Ocean,2026-06-09T08:00:00,2026-06-13T18:00:00,5708,4926872,Flat Rack,Tier 3
+SH343,Port of Rotterdam,Port of Sydney,Global Trans,Ocean,2026-06-09T08:00:00,2026-06-12T01:00:00,3673,2937698,Reefer,Tier 3
+SH344,Port of Tokyo,Port of Dubai,Apex Cargo,Road,2026-06-01T08:00:00,2026-06-03T12:00:00,4212,6579845,Standard,Tier 2
+SH345,Port of Los Angeles,Port of Hamburg,Apex Cargo,Road,2026-06-17T08:00:00,2026-06-19T00:00:00,3375,7028140,Standard,Tier 3
+SH346,Port of Rotterdam,Port of Sydney,Global Trans,Road,2026-06-09T08:00:00,2026-06-13T11:00:00,7510,2092823,Reefer,Tier 3
+SH347,Port of Rotterdam,Port of London,Global Trans,Rail,2026-06-25T08:00:00,2026-06-27T08:00:00,3363,797419,Flat Rack,Tier 3
+SH348,Port of Los Angeles,Port of London,Global Trans,Rail,2026-06-06T08:00:00,2026-06-14T08:00:00,12056,621107,Dry Van,Tier 3
+SH349,Port of Mumbai,Port of Dubai,Atlas Freight,Road,2026-06-15T08:00:00,2026-06-19T05:00:00,7070,8987492,Dry Van,Tier 1
+SH350,Port of Hamburg,Port of London,Oceanic Link,Rail,2026-06-22T08:00:00,2026-06-28T12:00:00,9406,5067650,Open Top,Tier 3
+SH351,Port of Rotterdam,Port of Hamburg,Apex Cargo,Rail,2026-06-28T08:00:00,2026-06-30T07:00:00,7651,9186621,Dry Van,Tier 3
+SH352,Port of Rotterdam,Port of Shanghai,Global Trans,Rail,2026-06-26T08:00:00,2026-06-30T04:00:00,10373,6353745,Standard,Tier 3
+SH353,Port of Shanghai,Port of New York,Swift Logistics,Road,2026-06-24T08:00:00,2026-06-30T01:00:00,11871,7569817,Flat Rack,Tier 1
+SH354,Port of Shanghai,Port of Hamburg,Apex Cargo,Air,2026-06-07T08:00:00,2026-06-07T06:00:00,5547,8594291,Open Top,Tier 2
+SH355,Port of Mumbai,Port of Hamburg,Atlas Freight,Rail,2026-06-22T08:00:00,2026-06-29T05:00:00,10400,1505465,Dry Van,Tier 1
+SH356,Port of Mumbai,Port of New York,Atlas Freight,Ocean,2026-06-25T08:00:00,2026-06-27T23:00:00,3597,4805976,Reefer,Tier 1
+SH357,Port of Hamburg,Port of Dubai,Oceanic Link,Air,2026-06-04T08:00:00,2026-06-04T17:00:00,13646,5544339,Reefer,Tier 3
+SH358,Port of Los Angeles,Port of Singapore,Global Trans,Ocean,2026-06-23T08:00:00,2026-06-23T12:00:00,645,4478690,Open Top,Tier 1
+SH359,Port of Singapore,Port of London,Oceanic Link,Road,2026-06-16T08:00:00,2026-06-18T04:00:00,3679,1062384,Flat Rack,Tier 1
+SH360,Port of Hamburg,Port of Shanghai,Swift Logistics,Rail,2026-06-13T08:00:00,2026-06-18T15:00:00,8122,5384538,Reefer,Tier 2
+SH361,Port of Hamburg,Port of Mumbai,Oceanic Link,Air,2026-06-29T08:00:00,2026-06-29T02:00:00,1843,307681,Dry Van,Tier 2
+SH362,Port of Tokyo,Port of Mumbai,Oceanic Link,Road,2026-06-04T08:00:00,2026-06-12T04:00:00,13786,5402727,Open Top,Tier 3
+SH363,Port of Singapore,Port of New York,Global Trans,Rail,2026-06-01T08:00:00,2026-06-07T20:00:00,9882,5609277,Open Top,Tier 1
+SH364,Port of Los Angeles,Port of Dubai,Oceanic Link,Rail,2026-06-13T08:00:00,2026-06-17T03:00:00,5972,453322,Standard,Tier 3
+SH365,Port of Shanghai,Port of Sydney,Global Trans,Rail,2026-06-12T08:00:00,2026-06-19T19:00:00,11256,4127716,Reefer,Tier 3
+SH366,Port of Hamburg,Port of Dubai,Swift Logistics,Air,2026-06-17T08:00:00,2026-06-17T07:00:00,5749,8433190,Open Top,Tier 3
+SH367,Port of Rotterdam,Port of Hamburg,Atlas Freight,Rail,2026-06-15T08:00:00,2026-06-15T19:00:00,1161,2601331,Flat Rack,Tier 1
+SH368,Port of Shanghai,Port of Singapore,Global Trans,Air,2026-06-12T08:00:00,2026-06-12T09:00:00,7313,4998600,Open Top,Tier 2
+SH369,Port of Newark,Port of Sydney,Swift Logistics,Rail,2026-06-05T08:00:00,2026-06-05T12:00:00,736,3822763,Dry Van,Tier 1
+SH370,Port of Los Angeles,Port of Shanghai,Atlas Freight,Ocean,2026-06-18T08:00:00,2026-06-18T15:00:00,785,6177764,Open Top,Tier 3
+SH371,Port of Newark,Port of Singapore,Oceanic Link,Ocean,2026-06-14T08:00:00,2026-06-23T14:00:00,11523,3391861,Open Top,Tier 3
+SH372,Port of Los Angeles,Port of Mumbai,Global Trans,Ocean,2026-06-25T08:00:00,2026-06-30T13:00:00,10293,8654008,Flat Rack,Tier 2
+SH373,Port of Shanghai,Port of Mumbai,Swift Logistics,Road,2026-06-23T08:00:00,2026-06-26T10:00:00,5799,8167654,Reefer,Tier 3
+SH374,Port of Mumbai,Port of Sydney,Swift Logistics,Road,2026-06-12T08:00:00,2026-06-14T22:00:00,4937,776331,Flat Rack,Tier 2
+SH375,Port of Tokyo,Port of Mumbai,Global Trans,Air,2026-06-06T08:00:00,2026-06-06T11:00:00,9285,7424626,Reefer,Tier 3
+SH376,Port of Rotterdam,Port of Shanghai,Atlas Freight,Air,2026-06-27T08:00:00,2026-06-27T10:00:00,8764,9565406,Flat Rack,Tier 1
+SH377,Port of Singapore,Port of Dubai,Global Trans,Air,2026-06-25T08:00:00,2026-06-25T08:00:00,6407,1540687,Reefer,Tier 3
+SH378,Port of Hamburg,Port of Singapore,Oceanic Link,Rail,2026-06-03T08:00:00,2026-06-09T02:00:00,8786,3418045,Flat Rack,Tier 2
+SH379,Port of Shanghai,Port of New York,Oceanic Link,Ocean,2026-06-25T08:00:00,2026-06-27T12:00:00,3029,7635159,Flat Rack,Tier 1
+SH380,Port of Tokyo,Port of Sydney,Apex Cargo,Rail,2026-06-14T08:00:00,2026-06-19T07:00:00,7679,4252271,Open Top,Tier 2
+SH381,Port of Los Angeles,Port of Hamburg,Apex Cargo,Rail,2026-06-02T08:00:00,2026-06-04T01:00:00,2994,914645,Flat Rack,Tier 1
+SH382,Port of Los Angeles,Port of Singapore,Swift Logistics,Road,2026-06-25T08:00:00,2026-06-29T13:00:00,7654,8386900,Dry Van,Tier 1
+SH383,Port of Singapore,Port of New York,Swift Logistics,Air,2026-06-09T08:00:00,2026-06-09T17:00:00,14064,9972462,Standard,Tier 2
+SH384,Port of Rotterdam,Port of London,Oceanic Link,Rail,2026-06-04T08:00:00,2026-06-13T00:00:00,12977,8576086,Open Top,Tier 3
+SH385,Port of Tokyo,Port of Shanghai,Oceanic Link,Ocean,2026-06-04T08:00:00,2026-06-05T13:00:00,1882,8865995,Open Top,Tier 1
+SH386,Port of Los Angeles,Port of New York,Global Trans,Road,2026-06-27T08:00:00,2026-06-30T01:00:00,10200,2480525,Flat Rack,Tier 2
+SH387,Port of Los Angeles,Port of New York,Apex Cargo,Ocean,2026-06-06T08:00:00,2026-06-15T10:00:00,11337,9032913,Dry Van,Tier 2
+SH388,Port of Tokyo,Port of London,Global Trans,Road,2026-06-21T08:00:00,2026-06-26T01:00:00,8493,9476807,Flat Rack,Tier 2
+SH389,Port of Singapore,Port of Hamburg,Apex Cargo,Ocean,2026-06-17T08:00:00,2026-06-19T09:00:00,2885,9141044,Flat Rack,Tier 1
+SH390,Port of Rotterdam,Port of Mumbai,Atlas Freight,Road,2026-06-04T08:00:00,2026-06-07T03:00:00,5298,2657411,Flat Rack,Tier 2
+SH391,Port of Singapore,Port of Sydney,Atlas Freight,Air,2026-06-29T08:00:00,2026-06-29T06:00:00,5339,9035826,Standard,Tier 3
+SH392,Port of Mumbai,Port of Dubai,Apex Cargo,Air,2026-06-24T08:00:00,2026-06-24T13:00:00,11136,1478080,Standard,Tier 1
+SH393,Port of Shanghai,Port of Mumbai,Oceanic Link,Air,2026-06-18T08:00:00,2026-06-18T01:00:00,1071,9490815,Flat Rack,Tier 2
+SH394,Port of Singapore,Port of Sydney,Apex Cargo,Rail,2026-06-28T08:00:00,2026-06-30T12:00:00,9406,2568970,Standard,Tier 3
+SH395,Port of Tokyo,Port of Shanghai,Apex Cargo,Road,2026-06-08T08:00:00,2026-06-16T11:00:00,14227,2211088,Flat Rack,Tier 1
+SH396,Port of Shanghai,Port of Singapore,Swift Logistics,Ocean,2026-06-05T08:00:00,2026-06-11T21:00:00,8288,5845250,Dry Van,Tier 1
+SH397,Port of Los Angeles,Port of London,Global Trans,Road,2026-06-07T08:00:00,2026-06-07T12:00:00,865,8841690,Open Top,Tier 3
+SH398,Port of Rotterdam,Port of Sydney,Swift Logistics,Road,2026-06-08T08:00:00,2026-06-14T15:00:00,11181,3225684,Flat Rack,Tier 3
+SH399,Port of Newark,Port of Hamburg,Atlas Freight,Ocean,2026-06-15T08:00:00,2026-06-16T10:00:00,1746,5353943,Standard,Tier 3
+SH400,Port of Singapore,Port of Dubai,Oceanic Link,Rail,2026-06-26T08:00:00,2026-06-30T04:00:00,7479,5187997,Standard,Tier 3
+SH401,Port of Tokyo,Port of New York,Global Trans,Air,2026-06-02T08:00:00,2026-06-02T03:00:00,2696,1053171,Open Top,Tier 2
+SH402,Port of Mumbai,Port of New York,Apex Cargo,Rail,2026-06-15T08:00:00,2026-06-18T02:00:00,4483,1031883,Reefer,Tier 1
+SH403,Port of Shanghai,Port of Hamburg,Oceanic Link,Ocean,2026-06-22T08:00:00,2026-06-26T05:00:00,5083,8231883,Reefer,Tier 3
+SH404,Port of Los Angeles,Port of New York,Atlas Freight,Ocean,2026-06-24T08:00:00,2026-06-30T22:00:00,11935,9318511,Dry Van,Tier 3
+SH405,Port of Hamburg,Port of Sydney,Global Trans,Rail,2026-06-15T08:00:00,2026-06-19T01:00:00,5841,8618438,Standard,Tier 2
+SH406,Port of Singapore,Port of London,Apex Cargo,Air,2026-06-22T08:00:00,2026-06-22T14:00:00,11400,7930317,Open Top,Tier 1
+SH407,Port of Mumbai,Port of Sydney,Oceanic Link,Air,2026-06-29T08:00:00,2026-06-29T09:00:00,7503,930412,Flat Rack,Tier 1
+SH408,Port of Hamburg,Port of Shanghai,Atlas Freight,Road,2026-06-12T08:00:00,2026-06-19T08:00:00,12370,534814,Dry Van,Tier 1
+SH409,Port of Hamburg,Port of Singapore,Swift Logistics,Ocean,2026-06-19T08:00:00,2026-06-20T20:00:00,2224,5359792,Dry Van,Tier 2
+SH410,Port of Tokyo,Port of London,Atlas Freight,Road,2026-06-08T08:00:00,2026-06-13T22:00:00,9996,938036,Reefer,Tier 3
+SH411,Port of Shanghai,Port of Sydney,Apex Cargo,Road,2026-06-10T08:00:00,2026-06-10T13:00:00,948,2448083,Dry Van,Tier 2
+SH412,Port of Singapore,Port of Dubai,Oceanic Link,Air,2026-06-16T08:00:00,2026-06-16T02:00:00,1928,7338538,Dry Van,Tier 3
+SH413,Port of Hamburg,Port of Mumbai,Atlas Freight,Rail,2026-06-14T08:00:00,2026-06-21T14:00:00,10973,566409,Open Top,Tier 3
+SH414,Port of Shanghai,Port of Hamburg,Apex Cargo,Ocean,2026-06-04T08:00:00,2026-06-06T14:00:00,3134,1985090,Dry Van,Tier 3
+SH415,Port of Tokyo,Port of London,Atlas Freight,Rail,2026-06-22T08:00:00,2026-06-23T16:00:00,2429,4792297,Flat Rack,Tier 3
+SH416,Port of Newark,Port of Singapore,Apex Cargo,Air,2026-06-20T08:00:00,2026-06-20T13:00:00,10777,154195,Open Top,Tier 3
+SH417,Port of Shanghai,Port of Singapore,Atlas Freight,Ocean,2026-06-23T08:00:00,2026-06-30T02:00:00,13313,3264850,Flat Rack,Tier 3
+SH418,Port of Los Angeles,Port of Sydney,Global Trans,Air,2026-06-17T08:00:00,2026-06-17T01:00:00,1093,2554594,Open Top,Tier 3
+SH419,Port of Tokyo,Port of New York,Swift Logistics,Air,2026-06-06T08:00:00,2026-06-06T01:00:00,1163,9529276,Open Top,Tier 3
+SH420,Port of Hamburg,Port of Shanghai,Atlas Freight,Rail,2026-06-18T08:00:00,2026-06-25T11:00:00,10758,5560493,Standard,Tier 2
+SH421,Port of Tokyo,Port of Sydney,Oceanic Link,Road,2026-06-22T08:00:00,2026-06-27T10:00:00,9167,5582410,Dry Van,Tier 3
+SH422,Port of Hamburg,Port of Mumbai,Oceanic Link,Air,2026-06-15T08:00:00,2026-06-15T02:00:00,1783,361955,Dry Van,Tier 3
+SH423,Port of Mumbai,Port of London,Swift Logistics,Road,2026-06-29T08:00:00,2026-06-30T21:00:00,14972,4748713,Flat Rack,Tier 1
+SH424,Port of Singapore,Port of Hamburg,Swift Logistics,Ocean,2026-06-27T08:00:00,2026-06-30T00:00:00,14430,3289536,Flat Rack,Tier 3
+SH425,Port of Hamburg,Port of Sydney,Apex Cargo,Road,2026-06-29T08:00:00,2026-06-30T03:00:00,1949,5055858,Reefer,Tier 3
+SH426,Port of Newark,Port of London,Atlas Freight,Ocean,2026-06-07T08:00:00,2026-06-14T19:00:00,9395,2916757,Reefer,Tier 1
+SH427,Port of Tokyo,Port of Hamburg,Swift Logistics,Ocean,2026-06-20T08:00:00,2026-06-22T18:00:00,3339,3701387,Open Top,Tier 1
+SH428,Port of Newark,Port of Mumbai,Atlas Freight,Ocean,2026-06-23T08:00:00,2026-06-24T14:00:00,1931,7034297,Open Top,Tier 2
+SH429,Port of Los Angeles,Port of New York,Global Trans,Rail,2026-06-06T08:00:00,2026-06-14T10:00:00,12163,6860805,Reefer,Tier 3
+SH430,Port of Los Angeles,Port of Mumbai,Apex Cargo,Rail,2026-06-25T08:00:00,2026-06-30T05:00:00,10411,708003,Reefer,Tier 3
+SH431,Port of Hamburg,Port of London,Global Trans,Ocean,2026-06-11T08:00:00,2026-06-23T07:00:00,14798,2142101,Reefer,Tier 3
+SH432,Port of Los Angeles,Port of Shanghai,Apex Cargo,Air,2026-06-21T08:00:00,2026-06-21T15:00:00,12429,3591483,Standard,Tier 2
+SH433,Port of Singapore,Port of London,Swift Logistics,Road,2026-06-12T08:00:00,2026-06-13T08:00:00,2253,500930,Standard,Tier 3
+SH434,Port of Shanghai,Port of London,Oceanic Link,Ocean,2026-06-25T08:00:00,2026-06-30T12:00:00,7845,5453252,Open Top,Tier 2
+SH435,Port of Tokyo,Port of New York,Oceanic Link,Ocean,2026-06-26T08:00:00,2026-06-30T15:00:00,10379,6439308,Flat Rack,Tier 3
+SH436,Port of Rotterdam,Port of Mumbai,Oceanic Link,Ocean,2026-06-21T08:00:00,2026-06-22T18:00:00,2133,5501973,Reefer,Tier 2
+SH437,Port of Hamburg,Port of Dubai,Oceanic Link,Air,2026-06-22T08:00:00,2026-06-22T09:00:00,7485,5882801,Dry Van,Tier 3
+SH438,Port of Los Angeles,Port of Shanghai,Atlas Freight,Road,2026-06-07T08:00:00,2026-06-07T15:00:00,1110,5097999,Dry Van,Tier 3
+SH439,Port of Hamburg,Port of London,Global Trans,Road,2026-06-20T08:00:00,2026-06-25T19:00:00,9783,915139,Flat Rack,Tier 3
+SH440,Port of Los Angeles,Port of New York,Swift Logistics,Ocean,2026-06-17T08:00:00,2026-06-26T18:00:00,11740,6872567,Reefer,Tier 3
+SH441,Port of Tokyo,Port of Hamburg,Oceanic Link,Rail,2026-06-03T08:00:00,2026-06-12T18:00:00,14065,5121915,Standard,Tier 2
+SH442,Port of Mumbai,Port of Shanghai,Atlas Freight,Road,2026-06-19T08:00:00,2026-06-23T07:00:00,7244,6551553,Dry Van,Tier 3
+SH443,Port of Rotterdam,Port of Shanghai,Atlas Freight,Air,2026-06-04T08:00:00,2026-06-04T00:00:00,507,8561383,Open Top,Tier 3
+SH444,Port of Hamburg,Port of New York,Oceanic Link,Road,2026-06-20T08:00:00,2026-06-25T02:00:00,8578,4463359,Reefer,Tier 1
+SH445,Port of Mumbai,Port of London,Global Trans,Road,2026-06-18T08:00:00,2026-06-21T05:00:00,5443,7396562,Flat Rack,Tier 3
+SH446,Port of Rotterdam,Port of Shanghai,Oceanic Link,Rail,2026-06-16T08:00:00,2026-06-18T13:00:00,3700,9213766,Flat Rack,Tier 3
+SH447,Port of Rotterdam,Port of London,Atlas Freight,Air,2026-06-12T08:00:00,2026-06-12T14:00:00,11705,6203973,Dry Van,Tier 3
+SH448,Port of Rotterdam,Port of New York,Oceanic Link,Road,2026-06-02T08:00:00,2026-06-08T07:00:00,10602,5805892,Flat Rack,Tier 3
+SH449,Port of Los Angeles,Port of Sydney,Global Trans,Road,2026-06-03T08:00:00,2026-06-09T02:00:00,10286,8971334,Dry Van,Tier 3
+SH450,Port of Shanghai,Port of Sydney,Oceanic Link,Rail,2026-06-28T08:00:00,2026-06-30T12:00:00,13717,5554381,Flat Rack,Tier 3
+SH451,Port of Hamburg,Port of Mumbai,Atlas Freight,Air,2026-06-25T08:00:00,2026-06-25T17:00:00,14245,5948885,Dry Van,Tier 3
+SH452,Port of Rotterdam,Port of Hamburg,Atlas Freight,Rail,2026-06-12T08:00:00,2026-06-14T02:00:00,3004,1835559,Reefer,Tier 3
+SH453,Port of Los Angeles,Port of New York,Global Trans,Rail,2026-06-21T08:00:00,2026-06-23T16:00:00,3848,7606855,Reefer,Tier 1
+SH454,Port of Rotterdam,Port of Sydney,Global Trans,Ocean,2026-06-25T08:00:00,2026-06-30T19:00:00,6950,4912894,Reefer,Tier 3
+SH455,Port of Tokyo,Port of Shanghai,Oceanic Link,Ocean,2026-06-29T08:00:00,2026-06-30T01:00:00,7263,344746,Dry Van,Tier 1
+SH456,Port of Newark,Port of Hamburg,Global Trans,Road,2026-06-01T08:00:00,2026-06-06T17:00:00,9627,8562558,Standard,Tier 3
+SH457,Port of Newark,Port of Singapore,Swift Logistics,Rail,2026-06-21T08:00:00,2026-06-21T15:00:00,941,4070120,Flat Rack,Tier 1
+SH458,Port of Hamburg,Port of Singapore,Atlas Freight,Air,2026-06-03T08:00:00,2026-06-03T08:00:00,6615,525595,Standard,Tier 3
+SH459,Port of Los Angeles,Port of London,Global Trans,Road,2026-06-24T08:00:00,2026-06-30T10:00:00,12500,859178,Dry Van,Tier 1
+SH460,Port of Mumbai,Port of Singapore,Atlas Freight,Ocean,2026-06-14T08:00:00,2026-06-21T22:00:00,9531,6467954,Dry Van,Tier 3
+SH461,Port of Rotterdam,Port of Sydney,Oceanic Link,Ocean,2026-06-22T08:00:00,2026-06-22T18:00:00,923,7020199,Reefer,Tier 3
+SH462,Port of Newark,Port of Mumbai,Swift Logistics,Air,2026-06-20T08:00:00,2026-06-20T04:00:00,3446,289017,Dry Van,Tier 3
+SH463,Port of Hamburg,Port of Shanghai,Oceanic Link,Road,2026-06-15T08:00:00,2026-06-23T14:00:00,14447,5503174,Standard,Tier 2
+SH464,Port of Los Angeles,Port of New York,Apex Cargo,Ocean,2026-06-24T08:00:00,2026-06-26T16:00:00,3223,6909216,Standard,Tier 1
+SH465,Port of Los Angeles,Port of Mumbai,Swift Logistics,Ocean,2026-06-04T08:00:00,2026-06-05T21:00:00,2262,4369453,Standard,Tier 1
+SH466,Port of Los Angeles,Port of Shanghai,Global Trans,Ocean,2026-06-23T08:00:00,2026-06-29T22:00:00,8304,2464165,Standard,Tier 3
+SH467,Port of Newark,Port of London,Oceanic Link,Rail,2026-06-18T08:00:00,2026-06-25T05:00:00,10385,3381106,Dry Van,Tier 3
+SH468,Port of Hamburg,Port of Shanghai,Apex Cargo,Ocean,2026-06-21T08:00:00,2026-06-30T18:00:00,14115,6386356,Dry Van,Tier 2
+SH469,Port of Hamburg,Port of Mumbai,Apex Cargo,Ocean,2026-06-01T08:00:00,2026-06-12T18:00:00,14135,5908338,Standard,Tier 1
+SH470,Port of Newark,Port of London,Atlas Freight,Air,2026-06-20T08:00:00,2026-06-20T15:00:00,12351,1949054,Standard,Tier 2
+SH471,Port of Hamburg,Port of Singapore,Apex Cargo,Road,2026-06-04T08:00:00,2026-06-10T02:00:00,10265,8010339,Standard,Tier 3
+SH472,Port of Tokyo,Port of Singapore,Atlas Freight,Rail,2026-06-22T08:00:00,2026-06-22T21:00:00,1271,7346405,Open Top,Tier 2
+SH473,Port of Los Angeles,Port of Hamburg,Global Trans,Road,2026-06-29T08:00:00,2026-06-30T23:00:00,11690,5597094,Standard,Tier 1
+SH474,Port of Los Angeles,Port of New York,Global Trans,Road,2026-06-25T08:00:00,2026-06-29T22:00:00,8315,2521378,Open Top,Tier 2
+SH475,Port of Hamburg,Port of New York,Oceanic Link,Road,2026-06-20T08:00:00,2026-06-28T11:00:00,14235,4318173,Dry Van,Tier 2
+SH476,Port of Newark,Port of Mumbai,Apex Cargo,Ocean,2026-06-01T08:00:00,2026-06-05T15:00:00,5593,1419277,Dry Van,Tier 3
+SH477,Port of Singapore,Port of Shanghai,Apex Cargo,Ocean,2026-06-09T08:00:00,2026-06-11T01:00:00,2468,4125837,Reefer,Tier 2
+SH478,Port of Shanghai,Port of London,Oceanic Link,Ocean,2026-06-23T08:00:00,2026-06-24T03:00:00,1355,1550948,Dry Van,Tier 3
+SH479,Port of Shanghai,Port of Singapore,Apex Cargo,Rail,2026-06-14T08:00:00,2026-06-15T09:00:00,2017,2752994,Dry Van,Tier 1
+SH480,Port of Hamburg,Port of Mumbai,Atlas Freight,Road,2026-06-12T08:00:00,2026-06-19T04:00:00,12095,5895447,Flat Rack,Tier 3
+SH481,Port of Hamburg,Port of Mumbai,Apex Cargo,Air,2026-06-25T08:00:00,2026-06-25T08:00:00,6746,3950379,Reefer,Tier 3
+SH482,Port of Rotterdam,Port of New York,Apex Cargo,Road,2026-06-02T08:00:00,2026-06-02T17:00:00,1226,6476288,Open Top,Tier 3
+SH483,Port of Los Angeles,Port of New York,Oceanic Link,Road,2026-06-28T08:00:00,2026-06-30T10:00:00,9111,8062369,Flat Rack,Tier 1
+SH484,Port of Newark,Port of Sydney,Oceanic Link,Ocean,2026-06-07T08:00:00,2026-06-07T16:00:00,831,8876233,Dry Van,Tier 2
+SH485,Port of Singapore,Port of Shanghai,Apex Cargo,Ocean,2026-06-14T08:00:00,2026-06-14T14:00:00,701,5720706,Dry Van,Tier 3
+SH486,Port of Singapore,Port of Dubai,Oceanic Link,Ocean,2026-06-29T08:00:00,2026-06-30T20:00:00,8218,5705635,Dry Van,Tier 3
+SH487,Port of Mumbai,Port of Sydney,Global Trans,Ocean,2026-06-01T08:00:00,2026-06-04T18:00:00,4508,734029,Open Top,Tier 2
+SH488,Port of Tokyo,Port of London,Global Trans,Ocean,2026-06-25T08:00:00,2026-06-30T06:00:00,9928,258944,Standard,Tier 3
+SH489,Port of Mumbai,Port of London,Apex Cargo,Air,2026-06-23T08:00:00,2026-06-23T02:00:00,1630,1096161,Open Top,Tier 3
+SH490,Port of Shanghai,Port of London,Global Trans,Air,2026-06-12T08:00:00,2026-06-12T04:00:00,3759,6515377,Dry Van,Tier 2
+SH491,Port of Tokyo,Port of Mumbai,Swift Logistics,Rail,2026-06-24T08:00:00,2026-06-30T10:00:00,10733,378821,Open Top,Tier 2
+SH492,Port of Tokyo,Port of Hamburg,Atlas Freight,Ocean,2026-06-01T08:00:00,2026-06-01T10:00:00,506,8507411,Flat Rack,Tier 3
+SH493,Port of Tokyo,Port of Sydney,Swift Logistics,Ocean,2026-06-11T08:00:00,2026-06-14T03:00:00,3773,5595403,Reefer,Tier 3
+SH494,Port of Tokyo,Port of Singapore,Swift Logistics,Air,2026-06-16T08:00:00,2026-06-16T17:00:00,13604,5802613,Flat Rack,Tier 3
+SH495,Port of Los Angeles,Port of Shanghai,Atlas Freight,Air,2026-06-05T08:00:00,2026-06-05T17:00:00,13620,3375315,Standard,Tier 1
+SH496,Port of Mumbai,Port of Sydney,Swift Logistics,Road,2026-06-22T08:00:00,2026-06-25T01:00:00,5152,6038099,Reefer,Tier 1
+SH497,Port of Rotterdam,Port of Shanghai,Swift Logistics,Air,2026-06-21T08:00:00,2026-06-21T15:00:00,12326,3083349,Dry Van,Tier 1
+SH498,Port of Mumbai,Port of Dubai,Apex Cargo,Air,2026-06-04T08:00:00,2026-06-04T03:00:00,2672,6349492,Dry Van,Tier 3
+SH499,Port of Singapore,Port of Sydney,Oceanic Link,Ocean,2026-06-16T08:00:00,2026-06-23T21:00:00,9488,6099850,Open Top,Tier 1
+SH500,Port of Mumbai,Port of London,Apex Cargo,Ocean,2026-06-21T08:00:00,2026-06-23T09:00:00,2852,4377308,Reefer,Tier 1
+SH501,Port of Rotterdam,Port of Singapore,Swift Logistics,Road,2026-06-17T08:00:00,2026-06-25T13:00:00,14365,6588655,Flat Rack,Tier 1
+SH502,Port of Hamburg,Port of Singapore,Atlas Freight,Ocean,2026-06-24T08:00:00,2026-06-30T11:00:00,8991,8033939,Dry Van,Tier 1
+SH503,Port of Hamburg,Port of Sydney,Apex Cargo,Road,2026-06-03T08:00:00,2026-06-09T11:00:00,10878,1242931,Dry Van,Tier 3
+SH504,Port of Los Angeles,Port of Hamburg,Oceanic Link,Rail,2026-06-08T08:00:00,2026-06-13T03:00:00,7405,2231906,Flat Rack,Tier 3
+SH505,Port of Los Angeles,Port of London,Oceanic Link,Ocean,2026-06-27T08:00:00,2026-06-30T02:00:00,10903,3025605,Dry Van,Tier 1
+SH506,Port of Hamburg,Port of Dubai,Swift Logistics,Air,2026-06-22T08:00:00,2026-06-22T02:00:00,2208,6214014,Open Top,Tier 1
+SH507,Port of Rotterdam,Port of Singapore,Atlas Freight,Ocean,2026-06-26T08:00:00,2026-06-30T01:00:00,9668,4638727,Open Top,Tier 2
+SH508,Port of Los Angeles,Port of New York,Oceanic Link,Road,2026-06-06T08:00:00,2026-06-12T11:00:00,10886,5133801,Open Top,Tier 2
+SH509,Port of Tokyo,Port of Singapore,Global Trans,Rail,2026-06-25T08:00:00,2026-06-30T09:00:00,7769,471280,Dry Van,Tier 3
+SH510,Port of Rotterdam,Port of Hamburg,Oceanic Link,Road,2026-06-19T08:00:00,2026-06-22T21:00:00,6568,1212189,Dry Van,Tier 2
+SH511,Port of Tokyo,Port of Singapore,Atlas Freight,Road,2026-06-13T08:00:00,2026-06-13T12:00:00,864,5443455,Standard,Tier 1
+SH512,Port of Shanghai,Port of Mumbai,Oceanic Link,Ocean,2026-06-03T08:00:00,2026-06-06T16:00:00,4435,9074327,Dry Van,Tier 2
+SH513,Port of Rotterdam,Port of London,Apex Cargo,Road,2026-06-29T08:00:00,2026-06-30T20:00:00,8161,8620556,Reefer,Tier 2
+SH514,Port of Mumbai,Port of Sydney,Swift Logistics,Air,2026-06-02T08:00:00,2026-06-02T04:00:00,3453,7019129,Flat Rack,Tier 2
+SH515,Port of Shanghai,Port of Dubai,Oceanic Link,Air,2026-06-26T08:00:00,2026-06-26T09:00:00,7970,9777138,Dry Van,Tier 2
+SH516,Port of Shanghai,Port of Singapore,Swift Logistics,Ocean,2026-06-05T08:00:00,2026-06-08T05:00:00,3863,9126760,Flat Rack,Tier 3
+SH517,Port of Hamburg,Port of New York,Atlas Freight,Rail,2026-06-02T08:00:00,2026-06-08T04:00:00,8892,2158542,Standard,Tier 3
+SH518,Port of Tokyo,Port of Shanghai,Oceanic Link,Air,2026-06-06T08:00:00,2026-06-06T06:00:00,5537,5603535,Open Top,Tier 2
+SH519,Port of Rotterdam,Port of Dubai,Swift Logistics,Air,2026-06-27T08:00:00,2026-06-27T00:00:00,687,8657009,Flat Rack,Tier 3
+SH520,Port of Mumbai,Port of Dubai,Oceanic Link,Road,2026-06-28T08:00:00,2026-06-30T16:00:00,12949,6693433,Open Top,Tier 3
+SH521,Port of Singapore,Port of Hamburg,Global Trans,Ocean,2026-06-03T08:00:00,2026-06-12T01:00:00,10850,801518,Open Top,Tier 3
+SH522,Port of Newark,Port of Singapore,Swift Logistics,Air,2026-06-17T08:00:00,2026-06-17T04:00:00,3280,5316662,Flat Rack,Tier 3
+SH523,Port of Shanghai,Port of New York,Apex Cargo,Ocean,2026-06-17T08:00:00,2026-06-18T17:00:00,2056,8893026,Standard,Tier 3
+SH524,Port of Tokyo,Port of Singapore,Global Trans,Air,2026-06-14T08:00:00,2026-06-14T10:00:00,8151,6334851,Open Top,Tier 3
+SH525,Port of Singapore,Port of Sydney,Atlas Freight,Ocean,2026-06-23T08:00:00,2026-06-30T12:00:00,13833,3438445,Open Top,Tier 1
+SH526,Port of Newark,Port of Hamburg,Atlas Freight,Road,2026-06-09T08:00:00,2026-06-12T21:00:00,6546,4413089,Reefer,Tier 3
+SH527,Port of Los Angeles,Port of Mumbai,Oceanic Link,Road,2026-06-22T08:00:00,2026-06-27T22:00:00,9956,7637676,Reefer,Tier 3
+SH528,Port of Mumbai,Port of Hamburg,Global Trans,Rail,2026-06-29T08:00:00,2026-06-30T13:00:00,6556,2313429,Flat Rack,Tier 3
+SH529,Port of Los Angeles,Port of Dubai,Oceanic Link,Ocean,2026-06-12T08:00:00,2026-06-17T04:00:00,6238,3752418,Standard,Tier 3
+SH530,Port of Los Angeles,Port of Sydney,Global Trans,Road,2026-06-16T08:00:00,2026-06-21T15:00:00,9510,1010652,Dry Van,Tier 3
+SH531,Port of Newark,Port of Sydney,Swift Logistics,Ocean,2026-06-27T08:00:00,2026-06-30T06:00:00,11140,7035945,Flat Rack,Tier 2
+SH532,Port of Shanghai,Port of Singapore,Global Trans,Road,2026-06-05T08:00:00,2026-06-12T15:00:00,12810,1446436,Flat Rack,Tier 3
+SH533,Port of Shanghai,Port of Sydney,Swift Logistics,Ocean,2026-06-19T08:00:00,2026-06-29T04:00:00,12215,5106093,Standard,Tier 1
+SH534,Port of Rotterdam,Port of Sydney,Apex Cargo,Air,2026-06-03T08:00:00,2026-06-03T17:00:00,13700,2951092,Open Top,Tier 3
+SH535,Port of Tokyo,Port of Shanghai,Global Trans,Rail,2026-06-07T08:00:00,2026-06-11T13:00:00,6593,5415986,Open Top,Tier 1
+SH536,Port of Shanghai,Port of London,Global Trans,Ocean,2026-06-09T08:00:00,2026-06-16T13:00:00,9088,7501747,Reefer,Tier 2
+SH537,Port of Mumbai,Port of Sydney,Oceanic Link,Rail,2026-06-09T08:00:00,2026-06-16T21:00:00,11360,551590,Flat Rack,Tier 1
+SH538,Port of Newark,Port of Shanghai,Atlas Freight,Air,2026-06-28T08:00:00,2026-06-28T09:00:00,7670,8363157,Open Top,Tier 1
+SH539,Port of Newark,Port of New York,Oceanic Link,Rail,2026-06-25T08:00:00,2026-06-30T12:00:00,12296,9728075,Dry Van,Tier 2
+SH540,Port of Shanghai,Port of New York,Global Trans,Ocean,2026-06-13T08:00:00,2026-06-24T13:00:00,13855,9544318,Flat Rack,Tier 3
+SH541,Port of Hamburg,Port of Singapore,Global Trans,Air,2026-06-06T08:00:00,2026-06-06T10:00:00,8516,787954,Standard,Tier 3
+SH542,Port of Shanghai,Port of Sydney,Atlas Freight,Rail,2026-06-28T08:00:00,2026-06-30T06:00:00,13328,7613493,Standard,Tier 2
+SH543,Port of Newark,Port of Singapore,Oceanic Link,Rail,2026-06-10T08:00:00,2026-06-18T14:00:00,12367,7183131,Dry Van,Tier 3
+SH544,Port of Rotterdam,Port of Singapore,Oceanic Link,Air,2026-06-23T08:00:00,2026-06-23T17:00:00,14232,8270038,Flat Rack,Tier 2
+SH545,Port of Singapore,Port of Shanghai,Atlas Freight,Ocean,2026-06-13T08:00:00,2026-06-16T12:00:00,4209,1497947,Dry Van,Tier 3
+SH546,Port of Tokyo,Port of Sydney,Swift Logistics,Ocean,2026-06-24T08:00:00,2026-06-26T06:00:00,2707,578714,Standard,Tier 3
+SH547,Port of Newark,Port of London,Swift Logistics,Rail,2026-06-28T08:00:00,2026-06-30T07:00:00,13403,7234872,Flat Rack,Tier 2
+SH548,Port of Hamburg,Port of Shanghai,Atlas Freight,Road,2026-06-23T08:00:00,2026-06-28T21:00:00,9933,812371,Reefer,Tier 3
+SH549,Port of Hamburg,Port of London,Global Trans,Road,2026-06-26T08:00:00,2026-06-30T11:00:00,12563,6004075,Standard,Tier 2
+SH550,Port of Los Angeles,Port of Singapore,Global Trans,Ocean,2026-06-11T08:00:00,2026-06-11T10:00:00,525,358617,Dry Van,Tier 3
+SH551,Port of Hamburg,Port of New York,Atlas Freight,Road,2026-06-17T08:00:00,2026-06-21T11:00:00,7506,9736427,Dry Van,Tier 2
+SH552,Port of Tokyo,Port of Sydney,Atlas Freight,Ocean,2026-06-26T08:00:00,2026-06-28T14:00:00,3106,8791022,Standard,Tier 3
+SH553,Port of Shanghai,Port of Hamburg,Apex Cargo,Rail,2026-06-27T08:00:00,2026-06-30T11:00:00,6439,6900807,Standard,Tier 3
+SH554,Port of Singapore,Port of Shanghai,Apex Cargo,Air,2026-06-22T08:00:00,2026-06-22T08:00:00,6920,5945725,Flat Rack,Tier 3
+SH555,Port of Mumbai,Port of Dubai,Global Trans,Air,2026-06-29T08:00:00,2026-06-29T03:00:00,2432,6778926,Dry Van,Tier 1
+SH556,Port of Newark,Port of Sydney,Apex Cargo,Road,2026-06-11T08:00:00,2026-06-16T13:00:00,9311,1253920,Dry Van,Tier 3
+SH557,Port of Tokyo,Port of Sydney,Atlas Freight,Air,2026-06-16T08:00:00,2026-06-16T15:00:00,12444,6978655,Open Top,Tier 3
+SH558,Port of Newark,Port of Shanghai,Swift Logistics,Air,2026-06-18T08:00:00,2026-06-18T13:00:00,11185,1628315,Dry Van,Tier 2
+SH559,Port of Rotterdam,Port of Singapore,Global Trans,Air,2026-06-29T08:00:00,2026-06-29T17:00:00,14201,5490107,Dry Van,Tier 3
+SH560,Port of Singapore,Port of Mumbai,Swift Logistics,Road,2026-06-13T08:00:00,2026-06-18T07:00:00,8936,3251473,Reefer,Tier 3
+SH561,Port of Singapore,Port of New York,Atlas Freight,Road,2026-06-24T08:00:00,2026-06-30T13:00:00,14417,5218554,Standard,Tier 1
+SH562,Port of Singapore,Port of New York,Apex Cargo,Air,2026-06-05T08:00:00,2026-06-05T14:00:00,11807,1700824,Flat Rack,Tier 1
+SH563,Port of Los Angeles,Port of Shanghai,Atlas Freight,Air,2026-06-28T08:00:00,2026-06-28T04:00:00,3826,6712314,Flat Rack,Tier 2
+SH564,Port of Newark,Port of Hamburg,Swift Logistics,Air,2026-06-13T08:00:00,2026-06-13T14:00:00,11352,7892680,Flat Rack,Tier 2
+SH565,Port of Hamburg,Port of Dubai,Atlas Freight,Ocean,2026-06-01T08:00:00,2026-06-09T11:00:00,10153,7802950,Dry Van,Tier 3
+SH566,Port of Newark,Port of Mumbai,Apex Cargo,Road,2026-06-03T08:00:00,2026-06-05T13:00:00,4324,7923491,Open Top,Tier 3
+SH567,Port of Rotterdam,Port of Mumbai,Swift Logistics,Air,2026-06-29T08:00:00,2026-06-29T04:00:00,3265,4112224,Reefer,Tier 3
+SH568,Port of Los Angeles,Port of London,Swift Logistics,Air,2026-06-13T08:00:00,2026-06-13T04:00:00,3508,9145281,Standard,Tier 1
+SH569,Port of Los Angeles,Port of Sydney,Global Trans,Road,2026-06-01T08:00:00,2026-06-03T13:00:00,4286,7661432,Standard,Tier 2
+SH570,Port of Shanghai,Port of New York,Global Trans,Rail,2026-06-11T08:00:00,2026-06-12T13:00:00,2272,9644792,Flat Rack,Tier 2
+SH571,Port of Newark,Port of Dubai,Apex Cargo,Road,2026-06-28T08:00:00,2026-06-30T17:00:00,11327,4189289,Dry Van,Tier 2
+SH572,Port of Tokyo,Port of Singapore,Global Trans,Rail,2026-06-20T08:00:00,2026-06-25T18:00:00,8312,6403300,Open Top,Tier 3
+SH573,Port of Tokyo,Port of Hamburg,Atlas Freight,Ocean,2026-06-16T08:00:00,2026-06-20T00:00:00,4816,6075095,Standard,Tier 2
+SH574,Port of Tokyo,Port of New York,Atlas Freight,Air,2026-06-03T08:00:00,2026-06-03T15:00:00,12268,4658474,Open Top,Tier 2
+SH575,Port of Hamburg,Port of Mumbai,Swift Logistics,Road,2026-06-29T08:00:00,2026-06-30T04:00:00,12046,3341070,Flat Rack,Tier 3
+SH576,Port of Newark,Port of Shanghai,Global Trans,Rail,2026-06-21T08:00:00,2026-06-29T17:00:00,12598,197745,Standard,Tier 2
+SH577,Port of Newark,Port of Sydney,Apex Cargo,Ocean,2026-06-28T08:00:00,2026-06-30T13:00:00,5458,3364344,Standard,Tier 3
+SH578,Port of Mumbai,Port of Singapore,Apex Cargo,Ocean,2026-06-03T08:00:00,2026-06-11T15:00:00,10365,5811703,Flat Rack,Tier 2
+SH579,Port of Newark,Port of Dubai,Atlas Freight,Rail,2026-06-15T08:00:00,2026-06-24T11:00:00,13631,7081845,Dry Van,Tier 3
+SH580,Port of Shanghai,Port of London,Apex Cargo,Road,2026-06-27T08:00:00,2026-06-28T09:00:00,2349,9282689,Flat Rack,Tier 3
+SH581,Port of Rotterdam,Port of New York,Oceanic Link,Air,2026-06-24T08:00:00,2026-06-24T06:00:00,5091,8665797,Open Top,Tier 3
+SH582,Port of Mumbai,Port of New York,Apex Cargo,Rail,2026-06-27T08:00:00,2026-06-30T05:00:00,8963,1470858,Reefer,Tier 3
+SH583,Port of Singapore,Port of Shanghai,Oceanic Link,Ocean,2026-06-16T08:00:00,2026-06-19T12:00:00,4222,6057509,Standard,Tier 2
+SH584,Port of Los Angeles,Port of Singapore,Oceanic Link,Road,2026-06-25T08:00:00,2026-06-30T22:00:00,11656,6483636,Standard,Tier 3
+SH585,Port of Rotterdam,Port of Sydney,Oceanic Link,Ocean,2026-06-15T08:00:00,2026-06-26T09:00:00,13682,8197047,Dry Van,Tier 3
+SH586,Port of Tokyo,Port of Hamburg,Apex Cargo,Air,2026-06-06T08:00:00,2026-06-06T05:00:00,4164,4834808,Flat Rack,Tier 1
+SH587,Port of Mumbai,Port of London,Atlas Freight,Ocean,2026-06-15T08:00:00,2026-06-16T16:00:00,2038,7295136,Standard,Tier 3
+SH588,Port of Hamburg,Port of Shanghai,Oceanic Link,Ocean,2026-06-04T08:00:00,2026-06-10T08:00:00,7606,8775977,Open Top,Tier 3
+SH589,Port of Singapore,Port of Mumbai,Swift Logistics,Road,2026-06-02T08:00:00,2026-06-03T10:00:00,2407,2937757,Reefer,Tier 3
+SH590,Port of Hamburg,Port of Shanghai,Atlas Freight,Rail,2026-06-01T08:00:00,2026-06-09T09:00:00,12078,4722412,Dry Van,Tier 3
+SH591,Port of Shanghai,Port of Dubai,Apex Cargo,Ocean,2026-06-03T08:00:00,2026-06-04T15:00:00,1976,7762079,Flat Rack,Tier 3
+SH592,Port of Rotterdam,Port of Sydney,Swift Logistics,Road,2026-06-12T08:00:00,2026-06-13T04:00:00,1981,892840,Open Top,Tier 3
+SH593,Port of Tokyo,Port of Hamburg,Swift Logistics,Ocean,2026-06-23T08:00:00,2026-06-26T19:00:00,4568,2537111,Dry Van,Tier 3
+SH594,Port of Rotterdam,Port of Dubai,Global Trans,Rail,2026-06-21T08:00:00,2026-06-24T12:00:00,5059,4579275,Standard,Tier 3
+SH595,Port of Rotterdam,Port of London,Swift Logistics,Rail,2026-06-28T08:00:00,2026-06-29T08:00:00,1924,6065877,Standard,Tier 2
+SH596,Port of Mumbai,Port of New York,Swift Logistics,Ocean,2026-06-05T08:00:00,2026-06-16T18:00:00,14129,8160129,Standard,Tier 3
+SH597,Port of Rotterdam,Port of Hamburg,Atlas Freight,Ocean,2026-06-29T08:00:00,2026-06-30T15:00:00,13952,1618146,Flat Rack,Tier 1
+SH598,Port of Newark,Port of Hamburg,Global Trans,Ocean,2026-06-02T08:00:00,2026-06-13T03:00:00,13356,4758569,Flat Rack,Tier 3
+SH599,Port of Mumbai,Port of Dubai,Apex Cargo,Rail,2026-06-20T08:00:00,2026-06-26T23:00:00,10033,3519992,Flat Rack,Tier 1
+SH600,Port of Shanghai,Port of Mumbai,Swift Logistics,Ocean,2026-06-03T08:00:00,2026-06-12T23:00:00,11967,109778,Reefer,Tier 3
+SH601,Port of Newark,Port of Hamburg,Atlas Freight,Rail,2026-06-07T08:00:00,2026-06-14T20:00:00,11325,9837557,Reefer,Tier 3
+SH602,Port of Rotterdam,Port of London,Atlas Freight,Road,2026-06-20T08:00:00,2026-06-21T20:00:00,3100,9598725,Open Top,Tier 3
+SH603,Port of Rotterdam,Port of Singapore,Global Trans,Air,2026-06-27T08:00:00,2026-06-27T04:00:00,3349,2916069,Dry Van,Tier 2
+SH604,Port of Singapore,Port of Mumbai,Oceanic Link,Rail,2026-06-27T08:00:00,2026-06-30T06:00:00,13347,6602901,Standard,Tier 3
+SH605,Port of Los Angeles,Port of Hamburg,Apex Cargo,Rail,2026-06-15T08:00:00,2026-06-21T19:00:00,9780,1927145,Standard,Tier 1
+SH606,Port of Rotterdam,Port of New York,Swift Logistics,Rail,2026-06-25T08:00:00,2026-06-30T02:00:00,11656,7129701,Open Top,Tier 3
+SH607,Port of Hamburg,Port of London,Oceanic Link,Ocean,2026-06-19T08:00:00,2026-06-23T01:00:00,4896,3893139,Standard,Tier 3
+SH608,Port of Shanghai,Port of Hamburg,Atlas Freight,Ocean,2026-06-27T08:00:00,2026-06-29T03:00:00,2593,4519353,Standard,Tier 2
+SH609,Port of Mumbai,Port of Dubai,Swift Logistics,Rail,2026-06-15T08:00:00,2026-06-20T16:00:00,8174,9799844,Standard,Tier 2
+SH610,Port of Los Angeles,Port of London,Swift Logistics,Ocean,2026-06-25T08:00:00,2026-06-30T03:00:00,8589,773858,Open Top,Tier 3
+SH611,Port of Shanghai,Port of Hamburg,Global Trans,Rail,2026-06-15T08:00:00,2026-06-24T22:00:00,14304,6697463,Standard,Tier 3
+SH612,Port of Newark,Port of Sydney,Oceanic Link,Ocean,2026-06-08T08:00:00,2026-06-12T23:00:00,5985,5526420,Dry Van,Tier 2
+SH613,Port of Rotterdam,Port of London,Global Trans,Road,2026-06-18T08:00:00,2026-06-20T14:00:00,4401,5474441,Standard,Tier 3
+SH614,Port of Mumbai,Port of Shanghai,Global Trans,Air,2026-06-13T08:00:00,2026-06-13T12:00:00,10265,2076110,Dry Van,Tier 2
+SH615,Port of Newark,Port of New York,Swift Logistics,Air,2026-06-19T08:00:00,2026-06-19T01:00:00,1369,3030672,Dry Van,Tier 3
+SH616,Port of Mumbai,Port of Dubai,Oceanic Link,Ocean,2026-06-01T08:00:00,2026-06-10T08:00:00,11248,6816886,Standard,Tier 3
+SH617,Port of Mumbai,Port of New York,Oceanic Link,Air,2026-06-26T08:00:00,2026-06-26T16:00:00,13355,9572362,Flat Rack,Tier 2
+SH618,Port of Rotterdam,Port of Dubai,Atlas Freight,Air,2026-06-05T08:00:00,2026-06-05T03:00:00,2541,4943091,Reefer,Tier 3
+SH619,Port of Tokyo,Port of Sydney,Global Trans,Air,2026-06-22T08:00:00,2026-06-22T00:00:00,562,5157385,Standard,Tier 2
+SH620,Port of Newark,Port of Singapore,Apex Cargo,Road,2026-06-01T08:00:00,2026-06-09T02:00:00,13609,4205479,Open Top,Tier 2
+SH621,Port of Tokyo,Port of Dubai,Global Trans,Ocean,2026-06-05T08:00:00,2026-06-11T17:00:00,8052,9292213,Flat Rack,Tier 1
+SH622,Port of Shanghai,Port of Hamburg,Atlas Freight,Ocean,2026-06-19T08:00:00,2026-06-19T14:00:00,741,7847698,Flat Rack,Tier 3
+SH623,Port of Rotterdam,Port of Sydney,Apex Cargo,Ocean,2026-06-21T08:00:00,2026-06-21T13:00:00,695,8211562,Reefer,Tier 3
+SH624,Port of Hamburg,Port of Shanghai,Global Trans,Rail,2026-06-23T08:00:00,2026-06-26T01:00:00,4427,1039336,Flat Rack,Tier 2
+SH625,Port of Newark,Port of London,Atlas Freight,Air,2026-06-01T08:00:00,2026-06-01T08:00:00,6621,7471289,Reefer,Tier 3
+SH626,Port of Shanghai,Port of London,Apex Cargo,Ocean,2026-06-09T08:00:00,2026-06-10T06:00:00,1529,3255228,Dry Van,Tier 2
+SH627,Port of Mumbai,Port of New York,Global Trans,Road,2026-06-22T08:00:00,2026-06-28T16:00:00,11204,4479899,Dry Van,Tier 2
+SH628,Port of Shanghai,Port of London,Apex Cargo,Road,2026-06-08T08:00:00,2026-06-09T21:00:00,3200,8601795,Flat Rack,Tier 1
+SH629,Port of Hamburg,Port of Dubai,Apex Cargo,Air,2026-06-11T08:00:00,2026-06-11T14:00:00,11781,5232101,Standard,Tier 2
+SH630,Port of Newark,Port of Hamburg,Swift Logistics,Air,2026-06-02T08:00:00,2026-06-02T06:00:00,5229,7895870,Open Top,Tier 3
+SH631,Port of Shanghai,Port of Hamburg,Atlas Freight,Road,2026-06-28T08:00:00,2026-06-30T12:00:00,10945,6672766,Dry Van,Tier 2
+SH632,Port of Newark,Port of Shanghai,Swift Logistics,Ocean,2026-06-19T08:00:00,2026-06-26T08:00:00,8828,7405566,Standard,Tier 2
+SH633,Port of Rotterdam,Port of Hamburg,Global Trans,Ocean,2026-06-22T08:00:00,2026-06-24T00:00:00,2448,534273,Reefer,Tier 2
+SH634,Port of Shanghai,Port of Hamburg,Apex Cargo,Rail,2026-06-29T08:00:00,2026-06-29T12:00:00,738,9126940,Standard,Tier 2
+SH635,Port of Hamburg,Port of Shanghai,Global Trans,Ocean,2026-06-03T08:00:00,2026-06-13T17:00:00,12858,4364380,Flat Rack,Tier 3
+SH636,Port of Tokyo,Port of Hamburg,Oceanic Link,Road,2026-06-27T08:00:00,2026-06-30T15:00:00,9512,8475021,Standard,Tier 3
+SH637,Port of Hamburg,Port of Sydney,Apex Cargo,Ocean,2026-06-25T08:00:00,2026-06-30T08:00:00,14814,4910319,Reefer,Tier 2
+SH638,Port of Mumbai,Port of London,Oceanic Link,Rail,2026-06-16T08:00:00,2026-06-23T07:00:00,10539,823952,Flat Rack,Tier 3
+SH639,Port of Shanghai,Port of Dubai,Atlas Freight,Road,2026-06-02T08:00:00,2026-06-06T07:00:00,7273,1456150,Flat Rack,Tier 1
+SH640,Port of Shanghai,Port of London,Swift Logistics,Road,2026-06-19T08:00:00,2026-06-21T12:00:00,4264,4805997,Standard,Tier 3
+SH641,Port of Newark,Port of Shanghai,Global Trans,Rail,2026-06-15T08:00:00,2026-06-17T22:00:00,4219,8793662,Standard,Tier 3
+SH642,Port of Los Angeles,Port of Sydney,Oceanic Link,Ocean,2026-06-22T08:00:00,2026-06-26T09:00:00,5280,5460897,Reefer,Tier 3
+SH643,Port of Tokyo,Port of Sydney,Apex Cargo,Road,2026-06-22T08:00:00,2026-06-28T05:00:00,10461,3699244,Dry Van,Tier 2
+SH644,Port of Mumbai,Port of Sydney,Atlas Freight,Road,2026-06-11T08:00:00,2026-06-15T21:00:00,8239,400067,Dry Van,Tier 3
+SH645,Port of Newark,Port of Dubai,Swift Logistics,Air,2026-06-02T08:00:00,2026-06-02T12:00:00,9777,9273048,Open Top,Tier 3
+SH646,Port of Hamburg,Port of Shanghai,Oceanic Link,Rail,2026-06-16T08:00:00,2026-06-19T23:00:00,5755,1294360,Reefer,Tier 3
+SH647,Port of Hamburg,Port of Singapore,Global Trans,Rail,2026-06-07T08:00:00,2026-06-09T23:00:00,4292,956450,Open Top,Tier 3
+SH648,Port of Los Angeles,Port of Mumbai,Atlas Freight,Air,2026-06-26T08:00:00,2026-06-26T04:00:00,3472,8547552,Dry Van,Tier 2
+SH649,Port of Los Angeles,Port of Hamburg,Apex Cargo,Ocean,2026-06-29T08:00:00,2026-06-30T11:00:00,10185,2003341,Reefer,Tier 2
+SH650,Port of Hamburg,Port of Sydney,Swift Logistics,Ocean,2026-06-12T08:00:00,2026-06-18T14:00:00,7904,345866,Reefer,Tier 2
+SH651,Port of Singapore,Port of Sydney,Swift Logistics,Road,2026-06-26T08:00:00,2026-06-29T13:00:00,5955,3673425,Reefer,Tier 2
+SH652,Port of Tokyo,Port of Hamburg,Oceanic Link,Rail,2026-06-06T08:00:00,2026-06-16T08:00:00,14897,4141685,Standard,Tier 2
+SH653,Port of Rotterdam,Port of New York,Apex Cargo,Ocean,2026-06-27T08:00:00,2026-06-30T12:00:00,6611,9401060,Reefer,Tier 2
+SH654,Port of Los Angeles,Port of Singapore,Global Trans,Road,2026-06-23T08:00:00,2026-06-28T18:00:00,9666,5785630,Open Top,Tier 2
+SH655,Port of Mumbai,Port of London,Global Trans,Ocean,2026-06-01T08:00:00,2026-06-06T19:00:00,6983,5030939,Standard,Tier 2
+SH656,Port of Hamburg,Port of Shanghai,Apex Cargo,Ocean,2026-06-14T08:00:00,2026-06-21T17:00:00,9299,5243378,Flat Rack,Tier 3
+SH657,Port of Singapore,Port of New York,Oceanic Link,Rail,2026-06-13T08:00:00,2026-06-13T14:00:00,865,6060554,Flat Rack,Tier 2
+SH658,Port of Mumbai,Port of Dubai,Global Trans,Rail,2026-06-16T08:00:00,2026-06-17T23:00:00,2878,967472,Flat Rack,Tier 1
+SH659,Port of Rotterdam,Port of Sydney,Atlas Freight,Road,2026-06-10T08:00:00,2026-06-10T20:00:00,1456,9027182,Dry Van,Tier 3
+SH660,Port of Rotterdam,Port of London,Swift Logistics,Road,2026-06-03T08:00:00,2026-06-10T19:00:00,13138,5583326,Flat Rack,Tier 2
+SH661,Port of Los Angeles,Port of Dubai,Swift Logistics,Ocean,2026-06-03T08:00:00,2026-06-07T05:00:00,5094,8553197,Open Top,Tier 3
+SH662,Port of Mumbai,Port of Singapore,Global Trans,Ocean,2026-06-03T08:00:00,2026-06-04T05:00:00,1491,1605811,Dry Van,Tier 1
+SH663,Port of Newark,Port of London,Apex Cargo,Ocean,2026-06-10T08:00:00,2026-06-22T11:00:00,14973,6936940,Dry Van,Tier 2
+SH664,Port of Hamburg,Port of Sydney,Oceanic Link,Rail,2026-06-23T08:00:00,2026-06-24T21:00:00,2758,5303974,Dry Van,Tier 3
+SH665,Port of Los Angeles,Port of London,Swift Logistics,Ocean,2026-06-22T08:00:00,2026-06-30T06:00:00,12326,7150052,Open Top,Tier 2
+SH666,Port of Shanghai,Port of Hamburg,Atlas Freight,Air,2026-06-29T08:00:00,2026-06-29T18:00:00,14732,468829,Dry Van,Tier 3
+SH667,Port of Singapore,Port of Dubai,Global Trans,Rail,2026-06-25T08:00:00,2026-06-30T19:00:00,9790,1593812,Standard,Tier 3
+SH668,Port of Shanghai,Port of New York,Global Trans,Air,2026-06-08T08:00:00,2026-06-08T13:00:00,10566,7354000,Open Top,Tier 2
+SH669,Port of Los Angeles,Port of New York,Global Trans,Road,2026-06-16T08:00:00,2026-06-23T16:00:00,12880,7607773,Reefer,Tier 1
+SH670,Port of Shanghai,Port of Singapore,Swift Logistics,Road,2026-06-03T08:00:00,2026-06-03T10:00:00,706,9573979,Open Top,Tier 3
+SH671,Port of Los Angeles,Port of Shanghai,Global Trans,Air,2026-06-06T08:00:00,2026-06-06T05:00:00,4608,5836572,Reefer,Tier 3
+SH672,Port of Singapore,Port of Sydney,Global Trans,Road,2026-06-08T08:00:00,2026-06-13T03:00:00,8635,5025467,Dry Van,Tier 1
+SH673,Port of Hamburg,Port of Dubai,Oceanic Link,Rail,2026-06-13T08:00:00,2026-06-15T00:00:00,2887,8926659,Dry Van,Tier 2
+SH674,Port of Rotterdam,Port of Singapore,Swift Logistics,Ocean,2026-06-20T08:00:00,2026-06-26T13:00:00,7882,5905319,Standard,Tier 3
+SH675,Port of Hamburg,Port of Dubai,Oceanic Link,Road,2026-06-21T08:00:00,2026-06-23T06:00:00,3794,3169734,Standard,Tier 2
+SH676,Port of Mumbai,Port of Singapore,Atlas Freight,Rail,2026-06-10T08:00:00,2026-06-19T19:00:00,14120,6193243,Standard,Tier 3
+SH677,Port of Mumbai,Port of New York,Swift Logistics,Air,2026-06-26T08:00:00,2026-06-26T02:00:00,2046,1540017,Reefer,Tier 2
+SH678,Port of Singapore,Port of Dubai,Atlas Freight,Air,2026-06-20T08:00:00,2026-06-20T04:00:00,3275,2637551,Open Top,Tier 2
+SH679,Port of Rotterdam,Port of London,Oceanic Link,Rail,2026-06-08T08:00:00,2026-06-14T10:00:00,9275,9672823,Open Top,Tier 2
+SH680,Port of Rotterdam,Port of New York,Apex Cargo,Air,2026-06-17T08:00:00,2026-06-17T09:00:00,7211,3368843,Reefer,Tier 2
+SH681,Port of Los Angeles,Port of London,Apex Cargo,Rail,2026-06-06T08:00:00,2026-06-09T05:00:00,4631,9269865,Open Top,Tier 1
+SH682,Port of Tokyo,Port of Shanghai,Global Trans,Road,2026-06-10T08:00:00,2026-06-14T18:00:00,8042,3951403,Flat Rack,Tier 2
+SH683,Port of Newark,Port of Shanghai,Swift Logistics,Rail,2026-06-10T08:00:00,2026-06-12T13:00:00,3683,1792166,Standard,Tier 2
+SH684,Port of Shanghai,Port of Singapore,Global Trans,Ocean,2026-06-25T08:00:00,2026-06-30T16:00:00,6827,2319409,Standard,Tier 1
+SH685,Port of Newark,Port of Hamburg,Swift Logistics,Rail,2026-06-23T08:00:00,2026-06-30T12:00:00,13723,647904,Reefer,Tier 2
+SH686,Port of Tokyo,Port of London,Oceanic Link,Rail,2026-06-18T08:00:00,2026-06-20T01:00:00,2940,1654243,Reefer,Tier 1
+SH687,Port of Hamburg,Port of Mumbai,Atlas Freight,Rail,2026-06-03T08:00:00,2026-06-05T12:00:00,3609,9898018,Open Top,Tier 2
+SH688,Port of Newark,Port of Hamburg,Atlas Freight,Road,2026-06-17T08:00:00,2026-06-23T21:00:00,11569,4148535,Flat Rack,Tier 3
+SH689,Port of Hamburg,Port of Singapore,Swift Logistics,Ocean,2026-06-22T08:00:00,2026-06-30T12:00:00,13804,5110795,Reefer,Tier 3
+SH690,Port of Los Angeles,Port of Sydney,Oceanic Link,Ocean,2026-06-03T08:00:00,2026-06-04T19:00:00,2195,8949770,Open Top,Tier 1
+SH691,Port of Los Angeles,Port of Dubai,Apex Cargo,Air,2026-06-23T08:00:00,2026-06-23T04:00:00,3285,3687967,Flat Rack,Tier 3
+SH692,Port of Newark,Port of New York,Oceanic Link,Air,2026-06-27T08:00:00,2026-06-27T12:00:00,9921,3731890,Reefer,Tier 2
+SH693,Port of Los Angeles,Port of Mumbai,Swift Logistics,Road,2026-06-09T08:00:00,2026-06-09T12:00:00,848,7402132,Open Top,Tier 3
+SH694,Port of Tokyo,Port of New York,Apex Cargo,Air,2026-06-10T08:00:00,2026-06-10T18:00:00,14407,6615269,Open Top,Tier 1
+SH695,Port of Singapore,Port of Mumbai,Atlas Freight,Rail,2026-06-15T08:00:00,2026-06-22T22:00:00,11456,6866080,Open Top,Tier 2
+SH696,Port of Hamburg,Port of Mumbai,Global Trans,Rail,2026-06-27T08:00:00,2026-06-30T14:00:00,6629,4330428,Dry Van,Tier 2
+SH697,Port of Hamburg,Port of Shanghai,Apex Cargo,Ocean,2026-06-17T08:00:00,2026-06-24T08:00:00,8847,9277535,Reefer,Tier 3
+SH698,Port of Mumbai,Port of Shanghai,Apex Cargo,Rail,2026-06-21T08:00:00,2026-06-21T16:00:00,997,4734013,Reefer,Tier 1
+SH699,Port of Mumbai,Port of New York,Oceanic Link,Rail,2026-06-12T08:00:00,2026-06-21T21:00:00,14278,7986627,Standard,Tier 2
+SH700,Port of Tokyo,Port of London,Atlas Freight,Air,2026-06-15T08:00:00,2026-06-15T06:00:00,5012,6146696,Open Top,Tier 3
+SH701,Port of Shanghai,Port of Sydney,Swift Logistics,Road,2026-06-12T08:00:00,2026-06-20T06:00:00,13909,2871839,Standard,Tier 2
+SH702,Port of Shanghai,Port of London,Oceanic Link,Ocean,2026-06-08T08:00:00,2026-06-17T16:00:00,11643,2165226,Open Top,Tier 2
+SH703,Port of Singapore,Port of New York,Swift Logistics,Road,2026-06-26T08:00:00,2026-06-30T18:00:00,11354,2138618,Standard,Tier 2
+SH704,Port of Hamburg,Port of New York,Apex Cargo,Rail,2026-06-13T08:00:00,2026-06-21T10:00:00,12170,6809991,Reefer,Tier 2
+SH705,Port of Newark,Port of Dubai,Oceanic Link,Ocean,2026-06-21T08:00:00,2026-06-25T00:00:00,4822,2685122,Dry Van,Tier 2
+SH706,Port of Rotterdam,Port of Hamburg,Swift Logistics,Road,2026-06-28T08:00:00,2026-06-30T03:00:00,5263,9020512,Dry Van,Tier 1
+SH707,Port of Singapore,Port of New York,Apex Cargo,Road,2026-06-04T08:00:00,2026-06-08T17:00:00,7911,3424659,Reefer,Tier 3
+SH708,Port of Singapore,Port of London,Atlas Freight,Air,2026-06-28T08:00:00,2026-06-28T04:00:00,3859,276256,Standard,Tier 2
+SH709,Port of Mumbai,Port of Sydney,Global Trans,Rail,2026-06-10T08:00:00,2026-06-16T23:00:00,10070,7051837,Dry Van,Tier 3
+SH710,Port of Singapore,Port of Mumbai,Atlas Freight,Rail,2026-06-12T08:00:00,2026-06-15T12:00:00,5067,6128159,Reefer,Tier 3
+SH711,Port of Rotterdam,Port of Mumbai,Atlas Freight,Road,2026-06-02T08:00:00,2026-06-06T05:00:00,7115,6842566,Flat Rack,Tier 2
+SH712,Port of Rotterdam,Port of Hamburg,Global Trans,Ocean,2026-06-03T08:00:00,2026-06-11T07:00:00,9997,6111266,Dry Van,Tier 2
+SH713,Port of Singapore,Port of Dubai,Oceanic Link,Road,2026-06-26T08:00:00,2026-06-27T00:00:00,1686,6534427,Standard,Tier 3
+SH714,Port of Tokyo,Port of Hamburg,Global Trans,Rail,2026-06-02T08:00:00,2026-06-10T23:00:00,12927,9084883,Standard,Tier 2
+SH715,Port of Mumbai,Port of Sydney,Global Trans,Ocean,2026-06-01T08:00:00,2026-06-12T11:00:00,13772,9422275,Flat Rack,Tier 3
+SH716,Port of Los Angeles,Port of New York,Apex Cargo,Road,2026-06-25T08:00:00,2026-06-30T04:00:00,8685,1642173,Open Top,Tier 3
+SH717,Port of Hamburg,Port of Mumbai,Global Trans,Ocean,2026-06-15T08:00:00,2026-06-24T00:00:00,10809,347584,Dry Van,Tier 2
+SH718,Port of Tokyo,Port of Sydney,Swift Logistics,Air,2026-06-23T08:00:00,2026-06-23T16:00:00,13448,2921259,Dry Van,Tier 3
+SH719,Port of Newark,Port of Dubai,Global Trans,Air,2026-06-11T08:00:00,2026-06-11T06:00:00,4940,5431299,Standard,Tier 1
+SH720,Port of Hamburg,Port of New York,Global Trans,Ocean,2026-06-29T08:00:00,2026-06-30T20:00:00,2216,9354612,Dry Van,Tier 3
+SH721,Port of Hamburg,Port of Mumbai,Swift Logistics,Rail,2026-06-11T08:00:00,2026-06-20T22:00:00,14325,2564368,Open Top,Tier 3
+SH722,Port of Los Angeles,Port of Sydney,Atlas Freight,Road,2026-06-29T08:00:00,2026-06-30T06:00:00,2125,1895964,Dry Van,Tier 3
+SH723,Port of Hamburg,Port of Singapore,Atlas Freight,Air,2026-06-15T08:00:00,2026-06-15T16:00:00,13393,8031512,Reefer,Tier 2
+SH724,Port of Singapore,Port of Shanghai,Atlas Freight,Ocean,2026-06-01T08:00:00,2026-06-09T14:00:00,10303,689872,Flat Rack,Tier 3
+SH725,Port of Shanghai,Port of Singapore,Global Trans,Air,2026-06-08T08:00:00,2026-06-08T02:00:00,1949,1697824,Dry Van,Tier 2
+SH726,Port of Mumbai,Port of Shanghai,Oceanic Link,Ocean,2026-06-17T08:00:00,2026-06-25T22:00:00,10729,8760745,Flat Rack,Tier 1
+SH727,Port of Newark,Port of New York,Apex Cargo,Air,2026-06-29T08:00:00,2026-06-29T16:00:00,12950,9005118,Flat Rack,Tier 3
+SH728,Port of Rotterdam,Port of London,Oceanic Link,Road,2026-06-05T08:00:00,2026-06-10T22:00:00,9960,4867911,Dry Van,Tier 1
+SH729,Port of Mumbai,Port of Dubai,Oceanic Link,Road,2026-06-26T08:00:00,2026-06-30T16:00:00,7884,563953,Reefer,Tier 3
+SH730,Port of Los Angeles,Port of New York,Swift Logistics,Rail,2026-06-14T08:00:00,2026-06-23T09:00:00,13541,387283,Standard,Tier 3
+SH731,Port of Hamburg,Port of Shanghai,Atlas Freight,Road,2026-06-03T08:00:00,2026-06-07T19:00:00,8066,628110,Dry Van,Tier 1
+SH732,Port of Shanghai,Port of Dubai,Swift Logistics,Rail,2026-06-08T08:00:00,2026-06-09T11:00:00,2135,7203314,Reefer,Tier 3
+SH733,Port of Newark,Port of London,Apex Cargo,Ocean,2026-06-04T08:00:00,2026-06-14T01:00:00,12090,6192314,Reefer,Tier 1
+SH734,Port of Hamburg,Port of Singapore,Global Trans,Rail,2026-06-16T08:00:00,2026-06-23T17:00:00,11137,3295988,Open Top,Tier 3
+SH735,Port of Los Angeles,Port of Shanghai,Atlas Freight,Ocean,2026-06-22T08:00:00,2026-06-30T07:00:00,9999,1870908,Reefer,Tier 3
+SH736,Port of Newark,Port of Shanghai,Swift Logistics,Road,2026-06-24T08:00:00,2026-06-26T09:00:00,4058,7334268,Reefer,Tier 3
+SH737,Port of Los Angeles,Port of Dubai,Global Trans,Ocean,2026-06-06T08:00:00,2026-06-16T01:00:00,12076,2383647,Dry Van,Tier 1
+SH738,Port of Singapore,Port of Hamburg,Apex Cargo,Ocean,2026-06-13T08:00:00,2026-06-22T13:00:00,11472,4464011,Reefer,Tier 3
+SH739,Port of Tokyo,Port of London,Global Trans,Ocean,2026-06-06T08:00:00,2026-06-08T12:00:00,3041,9264571,Open Top,Tier 3
+SH740,Port of Newark,Port of Hamburg,Global Trans,Road,2026-06-20T08:00:00,2026-06-21T03:00:00,1947,2611913,Standard,Tier 2
+SH741,Port of Mumbai,Port of Sydney,Swift Logistics,Air,2026-06-04T08:00:00,2026-06-04T05:00:00,4222,8246906,Standard,Tier 3
+SH742,Port of Shanghai,Port of Mumbai,Swift Logistics,Ocean,2026-06-20T08:00:00,2026-06-29T07:00:00,11155,540999,Dry Van,Tier 3
+SH743,Port of Mumbai,Port of Shanghai,Swift Logistics,Ocean,2026-06-14T08:00:00,2026-06-23T14:00:00,11502,6617304,Open Top,Tier 1
+SH744,Port of Shanghai,Port of Hamburg,Oceanic Link,Road,2026-06-15T08:00:00,2026-06-20T16:00:00,9532,6474342,Reefer,Tier 3
+SH745,Port of Hamburg,Port of Shanghai,Atlas Freight,Rail,2026-06-16T08:00:00,2026-06-26T02:00:00,14538,347883,Reefer,Tier 1
+SH746,Port of Tokyo,Port of Mumbai,Global Trans,Air,2026-06-09T08:00:00,2026-06-09T05:00:00,4061,9054024,Reefer,Tier 2
+SH747,Port of Shanghai,Port of New York,Swift Logistics,Rail,2026-06-22T08:00:00,2026-06-29T11:00:00,10787,2709786,Dry Van,Tier 3
+SH748,Port of Hamburg,Port of Shanghai,Oceanic Link,Rail,2026-06-10T08:00:00,2026-06-12T09:00:00,3441,5298575,Reefer,Tier 3
+SH749,Port of Singapore,Port of New York,Swift Logistics,Road,2026-06-27T08:00:00,2026-06-30T15:00:00,9475,8100418,Reefer,Tier 3
+SH750,Port of Singapore,Port of New York,Oceanic Link,Rail,2026-06-13T08:00:00,2026-06-16T12:00:00,5086,7546110,Reefer,Tier 3
+SH751,Port of Los Angeles,Port of Singapore,Global Trans,Air,2026-06-08T08:00:00,2026-06-08T06:00:00,5422,959210,Dry Van,Tier 3
+SH752,Port of Tokyo,Port of Singapore,Atlas Freight,Rail,2026-06-29T08:00:00,2026-06-29T10:00:00,640,1477197,Dry Van,Tier 3
+SH753,Port of Shanghai,Port of Sydney,Apex Cargo,Rail,2026-06-29T08:00:00,2026-06-30T11:00:00,6456,361385,Open Top,Tier 2
+SH754,Port of Tokyo,Port of Sydney,Apex Cargo,Air,2026-06-20T08:00:00,2026-06-20T15:00:00,12426,859359,Reefer,Tier 3
+SH755,Port of Los Angeles,Port of London,Apex Cargo,Ocean,2026-06-20T08:00:00,2026-06-23T23:00:00,4790,119518,Open Top,Tier 3
+SH756,Port of Rotterdam,Port of London,Global Trans,Ocean,2026-06-25T08:00:00,2026-06-28T21:00:00,4659,2826374,Open Top,Tier 3
+SH757,Port of Mumbai,Port of Shanghai,Atlas Freight,Air,2026-06-04T08:00:00,2026-06-04T04:00:00,3465,2479151,Reefer,Tier 1
+SH758,Port of Mumbai,Port of New York,Swift Logistics,Road,2026-06-29T08:00:00,2026-06-30T09:00:00,10773,8764892,Dry Van,Tier 3
+SH759,Port of Los Angeles,Port of New York,Atlas Freight,Rail,2026-06-19T08:00:00,2026-06-28T20:00:00,14178,1820403,Standard,Tier 2
+SH760,Port of Mumbai,Port of Singapore,Atlas Freight,Road,2026-06-04T08:00:00,2026-06-06T07:00:00,3906,7978248,Open Top,Tier 3
+SH761,Port of Singapore,Port of Hamburg,Apex Cargo,Rail,2026-06-12T08:00:00,2026-06-19T08:00:00,10570,4772340,Reefer,Tier 1
+SH762,Port of Singapore,Port of London,Global Trans,Ocean,2026-06-03T08:00:00,2026-06-07T08:00:00,5213,3111342,Open Top,Tier 3
+SH763,Port of Shanghai,Port of London,Apex Cargo,Road,2026-06-27T08:00:00,2026-06-30T10:00:00,14150,3484078,Flat Rack,Tier 3
+SH764,Port of Los Angeles,Port of Hamburg,Global Trans,Air,2026-06-16T08:00:00,2026-06-16T03:00:00,2863,5645095,Standard,Tier 3
+SH765,Port of Mumbai,Port of Shanghai,Apex Cargo,Road,2026-06-21T08:00:00,2026-06-23T04:00:00,3678,6897575,Standard,Tier 1
+SH766,Port of Los Angeles,Port of Singapore,Global Trans,Road,2026-06-28T08:00:00,2026-06-30T08:00:00,8997,4672942,Standard,Tier 3
+SH767,Port of Newark,Port of Mumbai,Atlas Freight,Ocean,2026-06-26T08:00:00,2026-06-30T01:00:00,7261,3946937,Open Top,Tier 1
+SH768,Port of Rotterdam,Port of Shanghai,Global Trans,Road,2026-06-27T08:00:00,2026-06-30T18:00:00,7998,9789458,Open Top,Tier 1
+SH769,Port of Shanghai,Port of New York,Global Trans,Ocean,2026-06-20T08:00:00,2026-06-30T04:00:00,13443,6486737,Open Top,Tier 1
+SH770,Port of Mumbai,Port of London,Oceanic Link,Rail,2026-06-13T08:00:00,2026-06-16T17:00:00,5373,4121867,Reefer,Tier 2
+SH771,Port of Newark,Port of Mumbai,Global Trans,Road,2026-06-20T08:00:00,2026-06-27T20:00:00,13208,8587333,Flat Rack,Tier 3
+SH772,Port of Singapore,Port of Dubai,Swift Logistics,Ocean,2026-06-12T08:00:00,2026-06-22T22:00:00,13123,6384625,Reefer,Tier 3
+SH773,Port of Newark,Port of Mumbai,Atlas Freight,Air,2026-06-20T08:00:00,2026-06-20T16:00:00,12988,7087449,Standard,Tier 2
+SH774,Port of Tokyo,Port of Sydney,Global Trans,Ocean,2026-06-27T08:00:00,2026-06-30T20:00:00,14246,5505483,Open Top,Tier 1
+SH775,Port of Singapore,Port of Shanghai,Oceanic Link,Air,2026-06-20T08:00:00,2026-06-20T09:00:00,7952,5596510,Open Top,Tier 3
+SH776,Port of Hamburg,Port of Shanghai,Apex Cargo,Air,2026-06-14T08:00:00,2026-06-14T03:00:00,3169,192157,Flat Rack,Tier 3
+SH777,Port of Singapore,Port of Hamburg,Atlas Freight,Air,2026-06-22T08:00:00,2026-06-22T08:00:00,6635,186645,Open Top,Tier 3
+SH778,Port of Mumbai,Port of Shanghai,Apex Cargo,Rail,2026-06-18T08:00:00,2026-06-21T11:00:00,5035,2540272,Flat Rack,Tier 3
+SH779,Port of Mumbai,Port of Sydney,Apex Cargo,Road,2026-06-14T08:00:00,2026-06-20T00:00:00,10115,7258387,Flat Rack,Tier 3
+SH780,Port of Tokyo,Port of Singapore,Atlas Freight,Rail,2026-06-15T08:00:00,2026-06-24T19:00:00,14148,4316988,Flat Rack,Tier 2
+SH781,Port of Los Angeles,Port of Mumbai,Oceanic Link,Air,2026-06-20T08:00:00,2026-06-20T08:00:00,7138,5850545,Flat Rack,Tier 1
+SH782,Port of Tokyo,Port of Shanghai,Swift Logistics,Air,2026-06-03T08:00:00,2026-06-03T06:00:00,5442,2519930,Standard,Tier 1
+SH783,Port of Shanghai,Port of Sydney,Swift Logistics,Air,2026-06-03T08:00:00,2026-06-03T03:00:00,2737,5362470,Flat Rack,Tier 3
+SH784,Port of Hamburg,Port of Mumbai,Apex Cargo,Air,2026-06-28T08:00:00,2026-06-28T12:00:00,10226,8630504,Reefer,Tier 3
+SH785,Port of Rotterdam,Port of Mumbai,Oceanic Link,Rail,2026-06-26T08:00:00,2026-06-30T04:00:00,14666,4841882,Dry Van,Tier 3
+SH786,Port of Newark,Port of Dubai,Atlas Freight,Air,2026-06-29T08:00:00,2026-06-29T03:00:00,2486,4587454,Standard,Tier 2
+SH787,Port of Los Angeles,Port of New York,Apex Cargo,Rail,2026-06-05T08:00:00,2026-06-07T10:00:00,3494,6017520,Dry Van,Tier 3
+SH788,Port of Rotterdam,Port of Sydney,Atlas Freight,Rail,2026-06-06T08:00:00,2026-06-07T11:00:00,2144,7633491,Dry Van,Tier 2
+SH789,Port of Rotterdam,Port of London,Swift Logistics,Ocean,2026-06-20T08:00:00,2026-06-30T06:00:00,14720,9722891,Standard,Tier 2
+SH790,Port of Tokyo,Port of London,Apex Cargo,Air,2026-06-26T08:00:00,2026-06-26T07:00:00,5662,4058146,Open Top,Tier 3
+SH791,Port of Newark,Port of Dubai,Global Trans,Road,2026-06-24T08:00:00,2026-06-24T11:00:00,798,2203548,Open Top,Tier 3
+SH792,Port of Rotterdam,Port of Shanghai,Swift Logistics,Rail,2026-06-27T08:00:00,2026-06-30T01:00:00,5826,5960494,Dry Van,Tier 3
+SH793,Port of Rotterdam,Port of New York,Global Trans,Road,2026-06-10T08:00:00,2026-06-12T06:00:00,3846,7825679,Open Top,Tier 2
+SH794,Port of Los Angeles,Port of Mumbai,Swift Logistics,Rail,2026-06-24T08:00:00,2026-06-30T02:00:00,13115,4770058,Open Top,Tier 3
+SH795,Port of Tokyo,Port of Dubai,Apex Cargo,Rail,2026-06-12T08:00:00,2026-06-19T09:00:00,10636,5259995,Reefer,Tier 3
+SH796,Port of Rotterdam,Port of Dubai,Apex Cargo,Ocean,2026-06-29T08:00:00,2026-06-30T16:00:00,12833,8295044,Standard,Tier 3
+SH797,Port of Mumbai,Port of Singapore,Oceanic Link,Rail,2026-06-26T08:00:00,2026-06-30T01:00:00,13047,6088602,Standard,Tier 3
+SH798,Port of Rotterdam,Port of Sydney,Oceanic Link,Road,2026-06-25T08:00:00,2026-06-30T15:00:00,11168,6820161,Open Top,Tier 3
+SH799,Port of Singapore,Port of Mumbai,Apex Cargo,Road,2026-06-17T08:00:00,2026-06-21T11:00:00,7508,8749043,Dry Van,Tier 3
+SH800,Port of Rotterdam,Port of Shanghai,Atlas Freight,Ocean,2026-06-10T08:00:00,2026-06-14T09:00:00,5280,8059806,Standard,Tier 2
+SH801,Port of Rotterdam,Port of Singapore,Apex Cargo,Rail,2026-06-22T08:00:00,2026-06-28T04:00:00,8935,9748623,Standard,Tier 3
+SH802,Port of Shanghai,Port of Hamburg,Oceanic Link,Ocean,2026-06-29T08:00:00,2026-06-30T22:00:00,13117,3716569,Standard,Tier 3
+SH803,Port of Singapore,Port of New York,Swift Logistics,Rail,2026-06-02T08:00:00,2026-06-08T12:00:00,9364,7884112,Open Top,Tier 2
+SH804,Port of Los Angeles,Port of Mumbai,Atlas Freight,Road,2026-06-18T08:00:00,2026-06-23T11:00:00,9193,362579,Standard,Tier 1
+SH805,Port of Shanghai,Port of London,Swift Logistics,Rail,2026-06-20T08:00:00,2026-06-28T16:00:00,12528,1574631,Dry Van,Tier 2
+SH806,Port of Rotterdam,Port of Dubai,Swift Logistics,Rail,2026-06-16T08:00:00,2026-06-23T08:00:00,10561,7700961,Open Top,Tier 2
+SH807,Port of Rotterdam,Port of Singapore,Swift Logistics,Road,2026-06-16T08:00:00,2026-06-23T00:00:00,11794,8338515,Flat Rack,Tier 1
+SH808,Port of Mumbai,Port of Dubai,Oceanic Link,Rail,2026-06-04T08:00:00,2026-06-09T18:00:00,8337,1237018,Reefer,Tier 3
+SH809,Port of Singapore,Port of Hamburg,Apex Cargo,Road,2026-06-13T08:00:00,2026-06-14T04:00:00,1978,623881,Reefer,Tier 3
+SH810,Port of Mumbai,Port of Singapore,Atlas Freight,Rail,2026-06-05T08:00:00,2026-06-13T15:00:00,12427,3351394,Flat Rack,Tier 2
+SH811,Port of Mumbai,Port of Hamburg,Global Trans,Ocean,2026-06-27T08:00:00,2026-06-30T11:00:00,6589,4694068,Open Top,Tier 3
+SH812,Port of Tokyo,Port of Mumbai,Apex Cargo,Rail,2026-06-21T08:00:00,2026-06-28T06:00:00,10474,600428,Standard,Tier 3
+SH813,Port of Tokyo,Port of Hamburg,Atlas Freight,Road,2026-06-18T08:00:00,2026-06-20T15:00:00,4456,9053281,Dry Van,Tier 1
+SH814,Port of Los Angeles,Port of New York,Apex Cargo,Air,2026-06-02T08:00:00,2026-06-02T06:00:00,5175,878282,Reefer,Tier 2
+SH815,Port of Hamburg,Port of Singapore,Global Trans,Rail,2026-06-21T08:00:00,2026-06-30T03:00:00,13170,5515513,Standard,Tier 2
+SH816,Port of Tokyo,Port of Dubai,Atlas Freight,Rail,2026-06-13T08:00:00,2026-06-19T04:00:00,8911,2845126,Standard,Tier 3
+SH817,Port of Mumbai,Port of New York,Apex Cargo,Air,2026-06-26T08:00:00,2026-06-26T04:00:00,3624,5632266,Reefer,Tier 3
+SH818,Port of Tokyo,Port of Singapore,Apex Cargo,Road,2026-06-15T08:00:00,2026-06-21T07:00:00,10594,3766434,Reefer,Tier 2
+SH819,Port of Rotterdam,Port of New York,Atlas Freight,Road,2026-06-04T08:00:00,2026-06-06T07:00:00,3865,3280786,Reefer,Tier 1
+SH820,Port of Rotterdam,Port of London,Swift Logistics,Ocean,2026-06-09T08:00:00,2026-06-20T14:00:00,13947,3993439,Flat Rack,Tier 3
+SH821,Port of Los Angeles,Port of New York,Apex Cargo,Ocean,2026-06-24T08:00:00,2026-06-25T06:00:00,1516,1559390,Reefer,Tier 1
+SH822,Port of Shanghai,Port of London,Atlas Freight,Ocean,2026-06-12T08:00:00,2026-06-14T08:00:00,2813,2877754,Standard,Tier 1
+SH823,Port of Shanghai,Port of Mumbai,Atlas Freight,Air,2026-06-23T08:00:00,2026-06-23T12:00:00,10209,3789469,Standard,Tier 1
+SH824,Port of Rotterdam,Port of New York,Apex Cargo,Road,2026-06-28T08:00:00,2026-06-30T00:00:00,11788,8345953,Flat Rack,Tier 1
+SH825,Port of Singapore,Port of Dubai,Atlas Freight,Road,2026-06-15T08:00:00,2026-06-18T14:00:00,6060,3178411,Dry Van,Tier 2
+SH826,Port of Shanghai,Port of Sydney,Atlas Freight,Ocean,2026-06-03T08:00:00,2026-06-09T10:00:00,7735,5637757,Standard,Tier 1
+SH827,Port of Singapore,Port of New York,Apex Cargo,Ocean,2026-06-02T08:00:00,2026-06-08T23:00:00,8376,881635,Reefer,Tier 3
+SH828,Port of Singapore,Port of Shanghai,Apex Cargo,Air,2026-06-18T08:00:00,2026-06-18T05:00:00,4770,2452110,Open Top,Tier 1
+SH829,Port of Tokyo,Port of Mumbai,Swift Logistics,Road,2026-06-14T08:00:00,2026-06-21T15:00:00,12822,3073846,Flat Rack,Tier 3
+SH830,Port of Mumbai,Port of New York,Atlas Freight,Rail,2026-06-22T08:00:00,2026-06-29T14:00:00,10972,7829008,Dry Van,Tier 3
+SH831,Port of Tokyo,Port of Shanghai,Swift Logistics,Air,2026-06-27T08:00:00,2026-06-27T08:00:00,6719,1774854,Open Top,Tier 2
+SH832,Port of Shanghai,Port of Dubai,Atlas Freight,Road,2026-06-03T08:00:00,2026-06-11T00:00:00,13479,6655949,Standard,Tier 3
+SH833,Port of Singapore,Port of Shanghai,Swift Logistics,Rail,2026-06-16T08:00:00,2026-06-18T04:00:00,3139,1749660,Open Top,Tier 3
+SH834,Port of Los Angeles,Port of Shanghai,Swift Logistics,Rail,2026-06-22T08:00:00,2026-06-28T12:00:00,9376,897405,Open Top,Tier 3
+SH835,Port of Hamburg,Port of Dubai,Apex Cargo,Ocean,2026-06-11T08:00:00,2026-06-14T09:00:00,4060,5565328,Dry Van,Tier 3
+SH836,Port of Rotterdam,Port of Singapore,Apex Cargo,Road,2026-06-07T08:00:00,2026-06-09T12:00:00,4229,5954214,Standard,Tier 3
+SH837,Port of Tokyo,Port of Dubai,Apex Cargo,Rail,2026-06-18T08:00:00,2026-06-22T05:00:00,6085,410306,Dry Van,Tier 2
+SH838,Port of Newark,Port of Sydney,Swift Logistics,Air,2026-06-26T08:00:00,2026-06-26T12:00:00,10062,4279228,Standard,Tier 3
+SH839,Port of Newark,Port of Shanghai,Apex Cargo,Ocean,2026-06-21T08:00:00,2026-06-30T22:00:00,11940,1637542,Open Top,Tier 2
+SH840,Port of Los Angeles,Port of Mumbai,Atlas Freight,Ocean,2026-06-06T08:00:00,2026-06-08T01:00:00,2485,6284408,Dry Van,Tier 2
+SH841,Port of Mumbai,Port of New York,Swift Logistics,Air,2026-06-03T08:00:00,2026-06-03T04:00:00,3381,342007,Dry Van,Tier 1
+SH842,Port of Shanghai,Port of Dubai,Global Trans,Rail,2026-06-03T08:00:00,2026-06-09T21:00:00,9956,9808579,Flat Rack,Tier 1
+SH843,Port of Mumbai,Port of Hamburg,Atlas Freight,Ocean,2026-06-16T08:00:00,2026-06-18T11:00:00,2976,9885003,Dry Van,Tier 3
+SH844,Port of Singapore,Port of London,Swift Logistics,Road,2026-06-10T08:00:00,2026-06-13T03:00:00,5318,9805672,Dry Van,Tier 2
+SH845,Port of Rotterdam,Port of Mumbai,Global Trans,Rail,2026-06-29T08:00:00,2026-06-30T20:00:00,8415,7044791,Reefer,Tier 2
+SH846,Port of Hamburg,Port of Singapore,Apex Cargo,Air,2026-06-07T08:00:00,2026-06-07T09:00:00,7737,9239215,Standard,Tier 1
+SH847,Port of Tokyo,Port of Hamburg,Global Trans,Air,2026-06-29T08:00:00,2026-06-29T13:00:00,10732,3712097,Open Top,Tier 1
+SH848,Port of Shanghai,Port of Singapore,Atlas Freight,Road,2026-06-04T08:00:00,2026-06-05T00:00:00,1691,3948888,Flat Rack,Tier 3
+SH849,Port of Shanghai,Port of Singapore,Swift Logistics,Ocean,2026-06-18T08:00:00,2026-06-25T01:00:00,8487,6437958,Flat Rack,Tier 3
+SH850,Port of Tokyo,Port of Hamburg,Apex Cargo,Ocean,2026-06-09T08:00:00,2026-06-15T04:00:00,7415,3725049,Flat Rack,Tier 3
+SH851,Port of Newark,Port of Dubai,Oceanic Link,Air,2026-06-10T08:00:00,2026-06-10T02:00:00,1640,4041818,Dry Van,Tier 3
+SH852,Port of Hamburg,Port of London,Apex Cargo,Rail,2026-06-20T08:00:00,2026-06-20T17:00:00,1048,3422105,Open Top,Tier 3
+SH853,Port of Tokyo,Port of Hamburg,Atlas Freight,Road,2026-06-14T08:00:00,2026-06-20T03:00:00,10330,4651318,Flat Rack,Tier 3
+SH854,Port of Singapore,Port of Dubai,Apex Cargo,Road,2026-06-23T08:00:00,2026-06-23T17:00:00,1234,1121192,Reefer,Tier 2
+SH855,Port of Shanghai,Port of London,Global Trans,Ocean,2026-06-06T08:00:00,2026-06-08T23:00:00,3584,3665590,Open Top,Tier 2
+SH856,Port of Rotterdam,Port of Hamburg,Swift Logistics,Air,2026-06-27T08:00:00,2026-06-27T04:00:00,3433,3341987,Flat Rack,Tier 2
+SH857,Port of Los Angeles,Port of Dubai,Oceanic Link,Rail,2026-06-23T08:00:00,2026-06-30T04:00:00,11778,5542952,Open Top,Tier 3
+SH858,Port of Mumbai,Port of Hamburg,Swift Logistics,Air,2026-06-16T08:00:00,2026-06-16T07:00:00,6231,7250262,Dry Van,Tier 3
+SH859,Port of Tokyo,Port of New York,Swift Logistics,Rail,2026-06-17T08:00:00,2026-06-19T23:00:00,4293,2353707,Open Top,Tier 2
+SH860,Port of Tokyo,Port of London,Apex Cargo,Road,2026-06-18T08:00:00,2026-06-24T17:00:00,11285,1170803,Standard,Tier 3
+SH861,Port of Tokyo,Port of New York,Apex Cargo,Air,2026-06-19T08:00:00,2026-06-19T08:00:00,6540,2538144,Dry Van,Tier 3
+SH862,Port of Mumbai,Port of Dubai,Atlas Freight,Road,2026-06-26T08:00:00,2026-06-30T06:00:00,13886,8824821,Flat Rack,Tier 1
+SH863,Port of Newark,Port of London,Swift Logistics,Rail,2026-06-13T08:00:00,2026-06-17T17:00:00,6822,1927779,Dry Van,Tier 3
+SH864,Port of Shanghai,Port of London,Atlas Freight,Road,2026-06-27T08:00:00,2026-06-27T12:00:00,878,7058642,Flat Rack,Tier 1
+SH865,Port of Shanghai,Port of Dubai,Atlas Freight,Road,2026-06-01T08:00:00,2026-06-03T10:00:00,4124,1079242,Dry Van,Tier 3
+SH866,Port of Singapore,Port of Shanghai,Atlas Freight,Ocean,2026-06-16T08:00:00,2026-06-21T12:00:00,6620,2788384,Dry Van,Tier 3
+SH867,Port of Newark,Port of Dubai,Atlas Freight,Road,2026-06-17T08:00:00,2026-06-20T14:00:00,6065,221277,Flat Rack,Tier 3
+SH868,Port of Los Angeles,Port of Shanghai,Atlas Freight,Road,2026-06-06T08:00:00,2026-06-09T20:00:00,6469,6612865,Reefer,Tier 1
+SH869,Port of Rotterdam,Port of Singapore,Global Trans,Rail,2026-06-13T08:00:00,2026-06-20T15:00:00,10986,4465239,Dry Van,Tier 3
+SH870,Port of Shanghai,Port of Hamburg,Apex Cargo,Rail,2026-06-02T08:00:00,2026-06-08T22:00:00,9971,5884611,Standard,Tier 2
+SH871,Port of Mumbai,Port of Shanghai,Atlas Freight,Air,2026-06-29T08:00:00,2026-06-29T11:00:00,9580,4399025,Reefer,Tier 2
+SH872,Port of Tokyo,Port of Singapore,Apex Cargo,Ocean,2026-06-17T08:00:00,2026-06-21T06:00:00,5145,2755421,Dry Van,Tier 2
+SH873,Port of Hamburg,Port of Singapore,Oceanic Link,Rail,2026-06-21T08:00:00,2026-06-29T05:00:00,11857,4702124,Open Top,Tier 2
+SH874,Port of Mumbai,Port of Sydney,Apex Cargo,Rail,2026-06-16T08:00:00,2026-06-20T19:00:00,6949,1379785,Standard,Tier 1
+SH875,Port of Singapore,Port of Shanghai,Global Trans,Rail,2026-06-17T08:00:00,2026-06-17T18:00:00,1096,2808566,Reefer,Tier 3
+SH876,Port of Tokyo,Port of Mumbai,Apex Cargo,Ocean,2026-06-08T08:00:00,2026-06-18T08:00:00,12423,7109903,Dry Van,Tier 1
+SH877,Port of Shanghai,Port of London,Global Trans,Ocean,2026-06-22T08:00:00,2026-06-27T09:00:00,6453,1025112,Dry Van,Tier 3
+SH878,Port of Mumbai,Port of Dubai,Apex Cargo,Air,2026-06-01T08:00:00,2026-06-01T13:00:00,10990,5197501,Standard,Tier 3
+SH879,Port of Tokyo,Port of Mumbai,Oceanic Link,Rail,2026-06-11T08:00:00,2026-06-16T09:00:00,7799,2945107,Flat Rack,Tier 2
+SH880,Port of Rotterdam,Port of Shanghai,Oceanic Link,Rail,2026-06-16T08:00:00,2026-06-23T12:00:00,10845,5326776,Open Top,Tier 3
+SH881,Port of Singapore,Port of Shanghai,Global Trans,Air,2026-06-17T08:00:00,2026-06-17T06:00:00,5067,5143388,Reefer,Tier 2
+SH882,Port of Hamburg,Port of Sydney,Apex Cargo,Air,2026-06-19T08:00:00,2026-06-19T17:00:00,13764,8943518,Reefer,Tier 3
+SH883,Port of Mumbai,Port of Dubai,Global Trans,Air,2026-06-08T08:00:00,2026-06-08T05:00:00,4279,2452114,Reefer,Tier 3
+SH884,Port of Mumbai,Port of Singapore,Global Trans,Ocean,2026-06-29T08:00:00,2026-06-30T17:00:00,5687,930432,Open Top,Tier 3
+SH885,Port of Hamburg,Port of Dubai,Oceanic Link,Road,2026-06-19T08:00:00,2026-06-27T11:00:00,14242,4934299,Reefer,Tier 2
+SH886,Port of Mumbai,Port of London,Swift Logistics,Air,2026-06-15T08:00:00,2026-06-15T17:00:00,13627,9404933,Standard,Tier 1
+SH887,Port of Tokyo,Port of Dubai,Oceanic Link,Road,2026-06-20T08:00:00,2026-06-25T01:00:00,8495,8068205,Flat Rack,Tier 3
+SH888,Port of Mumbai,Port of New York,Swift Logistics,Ocean,2026-06-16T08:00:00,2026-06-18T14:00:00,3101,5770673,Standard,Tier 3
+SH889,Port of Singapore,Port of Shanghai,Global Trans,Ocean,2026-06-24T08:00:00,2026-06-25T12:00:00,1817,431325,Standard,Tier 3
+SH890,Port of Mumbai,Port of Sydney,Swift Logistics,Ocean,2026-06-01T08:00:00,2026-06-08T04:00:00,8607,5318961,Dry Van,Tier 3
+SH891,Port of Los Angeles,Port of London,Apex Cargo,Air,2026-06-21T08:00:00,2026-06-21T13:00:00,10648,56464,Dry Van,Tier 2
+SH892,Port of Hamburg,Port of London,Swift Logistics,Ocean,2026-06-01T08:00:00,2026-06-09T03:00:00,9769,6535671,Reefer,Tier 3
+SH893,Port of Los Angeles,Port of Hamburg,Swift Logistics,Ocean,2026-06-12T08:00:00,2026-06-22T13:00:00,12652,9499146,Open Top,Tier 3
+SH894,Port of Tokyo,Port of Hamburg,Apex Cargo,Rail,2026-06-18T08:00:00,2026-06-22T01:00:00,5825,6864285,Dry Van,Tier 3
+SH895,Port of Hamburg,Port of Mumbai,Apex Cargo,Rail,2026-06-22T08:00:00,2026-06-23T15:00:00,2361,5152367,Standard,Tier 3
+SH896,Port of Tokyo,Port of London,Global Trans,Air,2026-06-23T08:00:00,2026-06-23T10:00:00,8581,7603925,Flat Rack,Tier 1
+SH897,Port of Singapore,Port of London,Atlas Freight,Road,2026-06-27T08:00:00,2026-06-30T10:00:00,7437,1482672,Open Top,Tier 1
+SH898,Port of Shanghai,Port of London,Apex Cargo,Air,2026-06-06T08:00:00,2026-06-06T02:00:00,2090,4455113,Standard,Tier 3
+SH899,Port of Tokyo,Port of Shanghai,Apex Cargo,Air,2026-06-09T08:00:00,2026-06-09T15:00:00,12310,2669222,Flat Rack,Tier 1
+SH900,Port of Shanghai,Port of Singapore,Swift Logistics,Air,2026-06-09T08:00:00,2026-06-09T13:00:00,10771,5413998,Reefer,Tier 3
+SH901,Port of Shanghai,Port of London,Atlas Freight,Rail,2026-06-02T08:00:00,2026-06-04T03:00:00,3065,2150326,Reefer,Tier 1
+SH902,Port of Mumbai,Port of London,Apex Cargo,Air,2026-06-15T08:00:00,2026-06-15T09:00:00,7599,978864,Reefer,Tier 3
+SH903,Port of Singapore,Port of Dubai,Atlas Freight,Rail,2026-06-14T08:00:00,2026-06-20T12:00:00,9411,3345784,Dry Van,Tier 3
+SH904,Port of Rotterdam,Port of Hamburg,Global Trans,Air,2026-06-15T08:00:00,2026-06-15T06:00:00,5234,2146419,Reefer,Tier 3
+SH905,Port of Shanghai,Port of Singapore,Atlas Freight,Air,2026-06-25T08:00:00,2026-06-25T13:00:00,11186,6780713,Standard,Tier 3
+SH906,Port of Hamburg,Port of Sydney,Apex Cargo,Air,2026-06-05T08:00:00,2026-06-05T05:00:00,4636,160957,Standard,Tier 1
+SH907,Port of Shanghai,Port of Hamburg,Oceanic Link,Rail,2026-06-16T08:00:00,2026-06-22T23:00:00,10033,1245344,Standard,Tier 1
+SH908,Port of Mumbai,Port of Dubai,Swift Logistics,Ocean,2026-06-13T08:00:00,2026-06-15T16:00:00,3208,7206406,Flat Rack,Tier 3
+SH909,Port of Shanghai,Port of Hamburg,Global Trans,Rail,2026-06-14T08:00:00,2026-06-22T16:00:00,12487,7423356,Reefer,Tier 2
+SH910,Port of Shanghai,Port of London,Atlas Freight,Air,2026-06-13T08:00:00,2026-06-13T09:00:00,7662,4759751,Dry Van,Tier 1
+SH911,Port of Tokyo,Port of Dubai,Atlas Freight,Ocean,2026-06-25T08:00:00,2026-06-30T03:00:00,10986,7427426,Reefer,Tier 3
+SH912,Port of Singapore,Port of Hamburg,Atlas Freight,Ocean,2026-06-01T08:00:00,2026-06-06T19:00:00,6981,5462319,Flat Rack,Tier 1
+SH913,Port of Singapore,Port of Dubai,Oceanic Link,Rail,2026-06-03T08:00:00,2026-06-08T23:00:00,8596,5078427,Standard,Tier 2
+SH914,Port of Rotterdam,Port of Mumbai,Global Trans,Road,2026-06-07T08:00:00,2026-06-09T13:00:00,4283,4200579,Open Top,Tier 3
+SH915,Port of Mumbai,Port of Singapore,Atlas Freight,Rail,2026-06-10T08:00:00,2026-06-19T03:00:00,13195,5589004,Standard,Tier 1
+SH916,Port of Mumbai,Port of Dubai,Apex Cargo,Road,2026-06-09T08:00:00,2026-06-17T02:00:00,13647,8712149,Open Top,Tier 1
+SH917,Port of Mumbai,Port of Sydney,Global Trans,Air,2026-06-20T08:00:00,2026-06-20T12:00:00,10049,1400816,Reefer,Tier 1
+SH918,Port of Tokyo,Port of Dubai,Atlas Freight,Rail,2026-06-12T08:00:00,2026-06-20T16:00:00,12528,5403369,Dry Van,Tier 3
+SH919,Port of Mumbai,Port of Hamburg,Atlas Freight,Air,2026-06-02T08:00:00,2026-06-02T11:00:00,9247,2104048,Flat Rack,Tier 3
+SH920,Port of Los Angeles,Port of Hamburg,Apex Cargo,Rail,2026-06-15T08:00:00,2026-06-18T21:00:00,5591,919953,Reefer,Tier 3
+SH921,Port of Hamburg,Port of Shanghai,Oceanic Link,Air,2026-06-03T08:00:00,2026-06-03T08:00:00,6947,3489187,Open Top,Tier 3
+SH922,Port of Tokyo,Port of Sydney,Global Trans,Rail,2026-06-14T08:00:00,2026-06-20T02:00:00,8769,3567778,Reefer,Tier 3
+SH923,Port of Mumbai,Port of New York,Atlas Freight,Air,2026-06-21T08:00:00,2026-06-21T04:00:00,3589,9769987,Dry Van,Tier 3
+SH924,Port of Rotterdam,Port of Shanghai,Swift Logistics,Air,2026-06-27T08:00:00,2026-06-27T03:00:00,2631,9485754,Flat Rack,Tier 3
+SH925,Port of Hamburg,Port of Sydney,Swift Logistics,Air,2026-06-29T08:00:00,2026-06-29T01:00:00,1034,872564,Standard,Tier 3
+SH926,Port of Mumbai,Port of Hamburg,Global Trans,Ocean,2026-06-10T08:00:00,2026-06-11T09:00:00,1672,2598600,Dry Van,Tier 3
+SH927,Port of Newark,Port of London,Swift Logistics,Road,2026-06-12T08:00:00,2026-06-19T07:00:00,12289,2176861,Reefer,Tier 3
+SH928,Port of Tokyo,Port of New York,Global Trans,Ocean,2026-06-19T08:00:00,2026-06-24T23:00:00,7165,948704,Dry Van,Tier 2
+SH929,Port of Shanghai,Port of Sydney,Atlas Freight,Air,2026-06-25T08:00:00,2026-06-25T17:00:00,14208,1746609,Reefer,Tier 3
+SH930,Port of Los Angeles,Port of Hamburg,Apex Cargo,Road,2026-06-06T08:00:00,2026-06-06T16:00:00,1141,1429339,Standard,Tier 3
+SH931,Port of Newark,Port of London,Swift Logistics,Road,2026-06-08T08:00:00,2026-06-10T09:00:00,4018,5751048,Open Top,Tier 2
+SH932,Port of Singapore,Port of Dubai,Atlas Freight,Ocean,2026-06-08T08:00:00,2026-06-09T00:00:00,1239,9685337,Flat Rack,Tier 3
+SH933,Port of Los Angeles,Port of London,Global Trans,Rail,2026-06-21T08:00:00,2026-06-28T15:00:00,10992,8886621,Reefer,Tier 2
+SH934,Port of Los Angeles,Port of Hamburg,Atlas Freight,Rail,2026-06-12T08:00:00,2026-06-17T04:00:00,7498,8811753,Flat Rack,Tier 2
+SH935,Port of Singapore,Port of Shanghai,Global Trans,Air,2026-06-08T08:00:00,2026-06-08T02:00:00,2180,2654325,Dry Van,Tier 1
+SH936,Port of Hamburg,Port of Singapore,Apex Cargo,Ocean,2026-06-24T08:00:00,2026-06-30T19:00:00,14193,2386806,Standard,Tier 2
+SH937,Port of Los Angeles,Port of Mumbai,Atlas Freight,Rail,2026-06-14T08:00:00,2026-06-21T10:00:00,10687,6658687,Reefer,Tier 1
+SH938,Port of Shanghai,Port of Sydney,Global Trans,Rail,2026-06-25T08:00:00,2026-06-30T02:00:00,14557,6103912,Dry Van,Tier 3
+SH939,Port of Los Angeles,Port of Shanghai,Apex Cargo,Road,2026-06-18T08:00:00,2026-06-19T20:00:00,3123,2811158,Standard,Tier 3
+SH940,Port of Tokyo,Port of Mumbai,Apex Cargo,Air,2026-06-18T08:00:00,2026-06-18T11:00:00,9287,6165762,Reefer,Tier 2
+SH941,Port of Mumbai,Port of Singapore,Apex Cargo,Air,2026-06-02T08:00:00,2026-06-02T01:00:00,808,7945945,Open Top,Tier 3
+SH942,Port of Singapore,Port of Hamburg,Atlas Freight,Ocean,2026-06-19T08:00:00,2026-06-20T04:00:00,1442,7123575,Standard,Tier 2
+SH943,Port of Singapore,Port of London,Swift Logistics,Air,2026-06-02T08:00:00,2026-06-02T12:00:00,9994,2920581,Standard,Tier 1
+SH944,Port of Hamburg,Port of Mumbai,Global Trans,Ocean,2026-06-13T08:00:00,2026-06-25T10:00:00,14947,4293460,Reefer,Tier 3
+SH945,Port of Rotterdam,Port of London,Swift Logistics,Air,2026-06-12T08:00:00,2026-06-12T03:00:00,3163,2731722,Reefer,Tier 3
+SH946,Port of Singapore,Port of Dubai,Atlas Freight,Rail,2026-06-02T08:00:00,2026-06-07T00:00:00,7237,8580508,Flat Rack,Tier 3
+SH947,Port of Tokyo,Port of London,Global Trans,Air,2026-06-15T08:00:00,2026-06-15T04:00:00,3659,9107483,Open Top,Tier 3
+SH948,Port of Hamburg,Port of New York,Apex Cargo,Road,2026-06-14T08:00:00,2026-06-21T04:00:00,12093,2130563,Flat Rack,Tier 2
+SH949,Port of Singapore,Port of Shanghai,Global Trans,Rail,2026-06-15T08:00:00,2026-06-20T01:00:00,7282,7719510,Open Top,Tier 3
+SH950,Port of Newark,Port of Sydney,Apex Cargo,Air,2026-06-29T08:00:00,2026-06-29T14:00:00,11316,8664787,Dry Van,Tier 3
+SH951,Port of Hamburg,Port of Shanghai,Apex Cargo,Ocean,2026-06-13T08:00:00,2026-06-18T22:00:00,7139,6162240,Dry Van,Tier 3
+SH952,Port of Tokyo,Port of Dubai,Apex Cargo,Road,2026-06-12T08:00:00,2026-06-19T15:00:00,12855,6397572,Reefer,Tier 1
+SH953,Port of Singapore,Port of London,Oceanic Link,Rail,2026-06-24T08:00:00,2026-06-29T16:00:00,8188,3003028,Open Top,Tier 2
+SH954,Port of Rotterdam,Port of London,Global Trans,Air,2026-06-10T08:00:00,2026-06-10T02:00:00,2368,3640511,Reefer,Tier 2
+SH955,Port of Mumbai,Port of London,Apex Cargo,Ocean,2026-06-19T08:00:00,2026-06-29T17:00:00,12858,6877575,Standard,Tier 3
+SH956,Port of Singapore,Port of Dubai,Oceanic Link,Road,2026-06-22T08:00:00,2026-06-26T08:00:00,7321,7408862,Flat Rack,Tier 2
+SH957,Port of Rotterdam,Port of Hamburg,Atlas Freight,Air,2026-06-04T08:00:00,2026-06-04T13:00:00,10743,2424494,Reefer,Tier 1
+SH958,Port of Shanghai,Port of Singapore,Atlas Freight,Air,2026-06-18T08:00:00,2026-06-18T12:00:00,10135,4075282,Standard,Tier 3
+SH959,Port of Rotterdam,Port of Dubai,Oceanic Link,Road,2026-06-13T08:00:00,2026-06-18T07:00:00,8917,9868216,Open Top,Tier 2
+SH960,Port of Singapore,Port of Shanghai,Atlas Freight,Air,2026-06-26T08:00:00,2026-06-26T04:00:00,3907,829105,Reefer,Tier 2
+SH961,Port of Shanghai,Port of Dubai,Swift Logistics,Rail,2026-06-06T08:00:00,2026-06-11T23:00:00,8598,6625273,Reefer,Tier 3
+SH962,Port of Tokyo,Port of New York,Atlas Freight,Ocean,2026-06-02T08:00:00,2026-06-14T09:00:00,14894,2520856,Open Top,Tier 3
+SH963,Port of Shanghai,Port of Singapore,Swift Logistics,Road,2026-06-25T08:00:00,2026-06-27T16:00:00,4522,8787456,Open Top,Tier 2
+SH964,Port of Tokyo,Port of London,Swift Logistics,Rail,2026-06-03T08:00:00,2026-06-12T13:00:00,13747,8541485,Open Top,Tier 2
+SH965,Port of Mumbai,Port of Hamburg,Global Trans,Ocean,2026-06-23T08:00:00,2026-06-30T20:00:00,9445,441670,Open Top,Tier 1
+SH966,Port of Hamburg,Port of London,Atlas Freight,Road,2026-06-23T08:00:00,2026-06-27T23:00:00,8365,9695910,Flat Rack,Tier 1
+SH967,Port of Los Angeles,Port of Shanghai,Apex Cargo,Ocean,2026-06-13T08:00:00,2026-06-21T21:00:00,10690,2871105,Flat Rack,Tier 3
+SH968,Port of Singapore,Port of New York,Atlas Freight,Rail,2026-06-25T08:00:00,2026-06-30T21:00:00,14279,2646882,Flat Rack,Tier 2
+SH969,Port of Los Angeles,Port of London,Atlas Freight,Road,2026-06-10T08:00:00,2026-06-15T11:00:00,9237,1047057,Flat Rack,Tier 1
+SH970,Port of Shanghai,Port of London,Apex Cargo,Air,2026-06-19T08:00:00,2026-06-19T08:00:00,7037,3668313,Dry Van,Tier 3
+SH971,Port of Hamburg,Port of Mumbai,Atlas Freight,Ocean,2026-06-17T08:00:00,2026-06-27T10:00:00,12506,3089316,Flat Rack,Tier 1
+SH972,Port of Hamburg,Port of Dubai,Oceanic Link,Air,2026-06-11T08:00:00,2026-06-11T03:00:00,3026,1535619,Flat Rack,Tier 3
+SH973,Port of Tokyo,Port of Dubai,Atlas Freight,Air,2026-06-11T08:00:00,2026-06-11T18:00:00,14657,612167,Standard,Tier 3
+SH974,Port of Shanghai,Port of Sydney,Global Trans,Rail,2026-06-26T08:00:00,2026-06-30T08:00:00,12029,7969710,Standard,Tier 3
+SH975,Port of Rotterdam,Port of London,Atlas Freight,Road,2026-06-22T08:00:00,2026-06-24T18:00:00,4675,4864647,Open Top,Tier 2
+SH976,Port of Shanghai,Port of Sydney,Apex Cargo,Rail,2026-06-01T08:00:00,2026-06-02T14:00:00,2312,7371105,Standard,Tier 2
+SH977,Port of Shanghai,Port of London,Swift Logistics,Air,2026-06-25T08:00:00,2026-06-25T06:00:00,4872,7102514,Standard,Tier 2
+SH978,Port of Tokyo,Port of London,Apex Cargo,Road,2026-06-21T08:00:00,2026-06-24T22:00:00,6599,268547,Open Top,Tier 1
+SH979,Port of Newark,Port of Singapore,Swift Logistics,Ocean,2026-06-19T08:00:00,2026-06-24T02:00:00,6116,5262360,Standard,Tier 3
+SH980,Port of Rotterdam,Port of Shanghai,Global Trans,Air,2026-06-04T08:00:00,2026-06-04T01:00:00,814,2643050,Reefer,Tier 2
+SH981,Port of Rotterdam,Port of Mumbai,Apex Cargo,Road,2026-06-04T08:00:00,2026-06-07T14:00:00,6085,8955808,Open Top,Tier 1
+SH982,Port of Mumbai,Port of Hamburg,Apex Cargo,Air,2026-06-19T08:00:00,2026-06-19T00:00:00,703,5471251,Flat Rack,Tier 2
+SH983,Port of Newark,Port of New York,Apex Cargo,Air,2026-06-17T08:00:00,2026-06-17T13:00:00,10653,8656776,Dry Van,Tier 3
+SH984,Port of Mumbai,Port of Sydney,Swift Logistics,Road,2026-06-28T08:00:00,2026-06-30T07:00:00,8900,5182928,Open Top,Tier 2
+SH985,Port of Newark,Port of Sydney,Apex Cargo,Road,2026-06-01T08:00:00,2026-06-02T08:00:00,2249,9609250,Flat Rack,Tier 3
+SH986,Port of Hamburg,Port of Mumbai,Apex Cargo,Ocean,2026-06-16T08:00:00,2026-06-17T16:00:00,2045,5524106,Open Top,Tier 3
+SH987,Port of Mumbai,Port of Sydney,Atlas Freight,Air,2026-06-08T08:00:00,2026-06-08T01:00:00,1178,6175488,Flat Rack,Tier 2
+SH988,Port of Mumbai,Port of Shanghai,Global Trans,Road,2026-06-27T08:00:00,2026-06-30T06:00:00,5527,3782517,Dry Van,Tier 2
+SH989,Port of Shanghai,Port of New York,Swift Logistics,Road,2026-06-07T08:00:00,2026-06-10T02:00:00,5189,6655188,Open Top,Tier 3
+SH990,Port of Los Angeles,Port of Shanghai,Oceanic Link,Rail,2026-06-23T08:00:00,2026-06-28T11:00:00,7871,2100241,Dry Van,Tier 1
+SH991,Port of Newark,Port of Sydney,Apex Cargo,Air,2026-06-25T08:00:00,2026-06-25T04:00:00,3882,6234398,Standard,Tier 2
+SH992,Port of Tokyo,Port of Sydney,Global Trans,Ocean,2026-06-12T08:00:00,2026-06-17T04:00:00,6239,3707905,Reefer,Tier 2
+SH993,Port of Tokyo,Port of Hamburg,Global Trans,Air,2026-06-07T08:00:00,2026-06-07T08:00:00,7106,1767355,Reefer,Tier 3
+SH994,Port of Mumbai,Port of Hamburg,Swift Logistics,Rail,2026-06-06T08:00:00,2026-06-07T18:00:00,2542,4735942,Reefer,Tier 1
+SH995,Port of Hamburg,Port of Dubai,Swift Logistics,Air,2026-06-03T08:00:00,2026-06-03T11:00:00,9109,7687547,Reefer,Tier 2
+SH996,Port of Rotterdam,Port of New York,Global Trans,Road,2026-06-24T08:00:00,2026-06-30T13:00:00,14390,763391,Standard,Tier 3
+SH997,Port of Singapore,Port of Sydney,Global Trans,Road,2026-06-05T08:00:00,2026-06-09T07:00:00,7243,2070880,Open Top,Tier 2
+SH998,Port of Newark,Port of Hamburg,Oceanic Link,Road,2026-06-03T08:00:00,2026-06-11T00:00:00,13504,1305959,Open Top,Tier 3
+SH999,Port of Rotterdam,Port of Sydney,Oceanic Link,Ocean,2026-06-12T08:00:00,2026-06-20T05:00:00,9883,7620095,Dry Van,Tier 2
+SH1000,Port of Shanghai,Port of London,Atlas Freight,Air,2026-06-04T08:00:00,2026-06-04T01:00:00,1345,3819484,Dry Van,Tier 3
+SH1001,Port of Newark,Port of Mumbai,Swift Logistics,Ocean,2026-06-02T08:00:00,2026-06-04T02:00:00,2524,3296849,Standard,Tier 3
+SH1002,Port of Los Angeles,Port of Sydney,Swift Logistics,Road,2026-06-26T08:00:00,2026-06-30T16:00:00,11213,1484730,Dry Van,Tier 2
+SH1003,Port of Los Angeles,Port of Shanghai,Apex Cargo,Rail,2026-06-13T08:00:00,2026-06-21T14:00:00,12378,7751516,Standard,Tier 1
+SH1004,Port of Los Angeles,Port of London,Global Trans,Ocean,2026-06-24T08:00:00,2026-06-29T13:00:00,6683,6591173,Flat Rack,Tier 1
+SH1005,Port of Hamburg,Port of Dubai,Swift Logistics,Air,2026-06-02T08:00:00,2026-06-02T04:00:00,3386,9849796,Reefer,Tier 3
+SH1006,Port of Rotterdam,Port of Shanghai,Swift Logistics,Ocean,2026-06-20T08:00:00,2026-06-24T12:00:00,5434,7100305,Standard,Tier 1
+SH1007,Port of Shanghai,Port of Hamburg,Global Trans,Rail,2026-06-06T08:00:00,2026-06-10T21:00:00,7039,2076182,Standard,Tier 2
+SH1008,Port of Hamburg,Port of Shanghai,Swift Logistics,Air,2026-06-20T08:00:00,2026-06-20T12:00:00,9785,4425717,Reefer,Tier 3
+SH1009,Port of Shanghai,Port of Singapore,Atlas Freight,Ocean,2026-06-15T08:00:00,2026-06-18T16:00:00,4432,8107907,Standard,Tier 2
+SH1010,Port of Hamburg,Port of Shanghai,Global Trans,Air,2026-06-10T08:00:00,2026-06-10T12:00:00,10089,6152493,Dry Van,Tier 2
+SH1011,Port of Tokyo,Port of Hamburg,Swift Logistics,Rail,2026-06-06T08:00:00,2026-06-15T19:00:00,14111,8823713,Standard,Tier 1
+SH1012,Port of Rotterdam,Port of Hamburg,Atlas Freight,Air,2026-06-28T08:00:00,2026-06-28T13:00:00,11089,6574367,Dry Van,Tier 3
+SH1013,Port of Hamburg,Port of Shanghai,Apex Cargo,Rail,2026-06-26T08:00:00,2026-06-30T20:00:00,8459,4602538,Reefer,Tier 3
+SH1014,Port of Newark,Port of Singapore,Global Trans,Road,2026-06-02T08:00:00,2026-06-02T15:00:00,1064,3149834,Flat Rack,Tier 3
+SH1015,Port of Hamburg,Port of Shanghai,Global Trans,Rail,2026-06-22T08:00:00,2026-06-22T14:00:00,850,8036322,Standard,Tier 3
+SH1016,Port of Hamburg,Port of Dubai,Swift Logistics,Road,2026-06-01T08:00:00,2026-06-09T01:00:00,13559,7921490,Flat Rack,Tier 3
+SH1017,Port of Mumbai,Port of Dubai,Swift Logistics,Road,2026-06-11T08:00:00,2026-06-17T23:00:00,11732,1944420,Reefer,Tier 1
+SH1018,Port of Tokyo,Port of Hamburg,Swift Logistics,Ocean,2026-06-25T08:00:00,2026-06-30T14:00:00,9138,602226,Open Top,Tier 3
+SH1019,Port of Rotterdam,Port of New York,Atlas Freight,Road,2026-06-10T08:00:00,2026-06-16T19:00:00,11442,9376801,Open Top,Tier 3
+SH1020,Port of Hamburg,Port of Mumbai,Global Trans,Air,2026-06-04T08:00:00,2026-06-04T02:00:00,1711,6783214,Reefer,Tier 2
+SH1021,Port of Mumbai,Port of New York,Oceanic Link,Road,2026-06-14T08:00:00,2026-06-16T02:00:00,3555,2991616,Dry Van,Tier 2
+SH1022,Port of Singapore,Port of London,Apex Cargo,Ocean,2026-06-05T08:00:00,2026-06-15T02:00:00,12109,2105397,Open Top,Tier 1
+SH1023,Port of Mumbai,Port of Shanghai,Swift Logistics,Rail,2026-06-15T08:00:00,2026-06-21T22:00:00,9972,905695,Flat Rack,Tier 1
+SH1024,Port of Tokyo,Port of London,Swift Logistics,Ocean,2026-06-27T08:00:00,2026-06-30T02:00:00,8501,4116981,Reefer,Tier 2
+SH1025,Port of Mumbai,Port of Singapore,Oceanic Link,Road,2026-06-06T08:00:00,2026-06-09T00:00:00,5051,4312663,Standard,Tier 3
+SH1026,Port of Hamburg,Port of Sydney,Apex Cargo,Rail,2026-06-18T08:00:00,2026-06-27T01:00:00,13035,8173155,Reefer,Tier 3
+SH1027,Port of Shanghai,Port of London,Oceanic Link,Road,2026-06-22T08:00:00,2026-06-25T17:00:00,6285,1784428,Open Top,Tier 1
+SH1028,Port of Hamburg,Port of Singapore,Oceanic Link,Rail,2026-06-14T08:00:00,2026-06-14T22:00:00,1347,8672693,Open Top,Tier 1
+SH1029,Port of Hamburg,Port of Mumbai,Oceanic Link,Ocean,2026-06-19T08:00:00,2026-06-22T04:00:00,3820,3380263,Flat Rack,Tier 1
+SH1030,Port of Shanghai,Port of Dubai,Atlas Freight,Rail,2026-06-26T08:00:00,2026-06-30T00:00:00,11579,8284025,Open Top,Tier 2
+SH1031,Port of Mumbai,Port of Dubai,Oceanic Link,Ocean,2026-06-25T08:00:00,2026-06-30T05:00:00,14696,7759824,Reefer,Tier 3
+SH1032,Port of Mumbai,Port of New York,Swift Logistics,Air,2026-06-26T08:00:00,2026-06-26T11:00:00,9328,8692873,Flat Rack,Tier 3
+SH1033,Port of Singapore,Port of Shanghai,Global Trans,Rail,2026-06-16T08:00:00,2026-06-25T08:00:00,13449,6178420,Open Top,Tier 3
+SH1034,Port of Los Angeles,Port of Mumbai,Oceanic Link,Ocean,2026-06-09T08:00:00,2026-06-15T04:00:00,7406,4086480,Flat Rack,Tier 1
+SH1035,Port of Tokyo,Port of Dubai,Swift Logistics,Rail,2026-06-13T08:00:00,2026-06-16T20:00:00,5577,620303,Open Top,Tier 1
+SH1036,Port of Shanghai,Port of Singapore,Global Trans,Road,2026-06-16T08:00:00,2026-06-17T05:00:00,2059,2710891,Open Top,Tier 3
+SH1037,Port of Rotterdam,Port of Mumbai,Swift Logistics,Air,2026-06-11T08:00:00,2026-06-11T17:00:00,13699,2895376,Reefer,Tier 2
+SH1038,Port of Hamburg,Port of Sydney,Apex Cargo,Air,2026-06-23T08:00:00,2026-06-23T01:00:00,1598,7989174,Standard,Tier 2
+SH1039,Port of Tokyo,Port of Dubai,Swift Logistics,Rail,2026-06-15T08:00:00,2026-06-25T07:00:00,14842,5566825,Standard,Tier 1
+SH1040,Port of Singapore,Port of Mumbai,Atlas Freight,Rail,2026-06-13T08:00:00,2026-06-20T19:00:00,11237,1688004,Open Top,Tier 1
+SH1041,Port of Shanghai,Port of Sydney,Swift Logistics,Rail,2026-06-19T08:00:00,2026-06-24T21:00:00,8465,1611014,Standard,Tier 3
+SH1042,Port of Shanghai,Port of London,Swift Logistics,Air,2026-06-04T08:00:00,2026-06-04T05:00:00,4299,8083651,Flat Rack,Tier 1
+SH1043,Port of Los Angeles,Port of Sydney,Atlas Freight,Ocean,2026-06-12T08:00:00,2026-06-18T18:00:00,8133,9152869,Reefer,Tier 3
+SH1044,Port of Tokyo,Port of Singapore,Apex Cargo,Air,2026-06-09T08:00:00,2026-06-09T11:00:00,9293,5617248,Open Top,Tier 3
+SH1045,Port of Tokyo,Port of New York,Oceanic Link,Ocean,2026-06-26T08:00:00,2026-06-30T23:00:00,7157,1645123,Dry Van,Tier 3
+SH1046,Port of Tokyo,Port of Hamburg,Swift Logistics,Rail,2026-06-05T08:00:00,2026-06-06T09:00:00,2037,6751810,Standard,Tier 3
+SH1047,Port of Singapore,Port of Sydney,Atlas Freight,Ocean,2026-06-17T08:00:00,2026-06-22T00:00:00,6010,1188422,Open Top,Tier 2
+SH1048,Port of Singapore,Port of Hamburg,Global Trans,Road,2026-06-04T08:00:00,2026-06-12T17:00:00,14660,4564153,Standard,Tier 3
+SH1049,Port of Los Angeles,Port of Hamburg,Oceanic Link,Air,2026-06-15T08:00:00,2026-06-15T12:00:00,9744,1622732,Reefer,Tier 3
+SH1050,Port of Mumbai,Port of Dubai,Apex Cargo,Road,2026-06-12T08:00:00,2026-06-14T15:00:00,4432,7580577,Reefer,Tier 1
+SH1051,Port of Tokyo,Port of Shanghai,Swift Logistics,Air,2026-06-13T08:00:00,2026-06-13T13:00:00,10614,5914049,Reefer,Tier 1
+SH1052,Port of Singapore,Port of Hamburg,Global Trans,Road,2026-06-14T08:00:00,2026-06-20T02:00:00,10247,3522696,Flat Rack,Tier 2
+SH1053,Port of Shanghai,Port of Sydney,Atlas Freight,Ocean,2026-06-05T08:00:00,2026-06-09T06:00:00,5115,2154417,Open Top,Tier 3
+SH1054,Port of Tokyo,Port of London,Oceanic Link,Air,2026-06-03T08:00:00,2026-06-03T12:00:00,9747,9508242,Reefer,Tier 2
+SH1055,Port of Singapore,Port of Mumbai,Apex Cargo,Air,2026-06-25T08:00:00,2026-06-25T17:00:00,13692,4322513,Dry Van,Tier 3
+SH1056,Port of Rotterdam,Port of London,Atlas Freight,Road,2026-06-09T08:00:00,2026-06-15T13:00:00,11050,1026264,Reefer,Tier 1
+SH1057,Port of Los Angeles,Port of Shanghai,Atlas Freight,Road,2026-06-05T08:00:00,2026-06-12T16:00:00,12917,6581423,Reefer,Tier 2
+SH1058,Port of Singapore,Port of Hamburg,Atlas Freight,Air,2026-06-07T08:00:00,2026-06-07T01:00:00,1267,9020922,Standard,Tier 3
+SH1059,Port of Tokyo,Port of New York,Swift Logistics,Ocean,2026-06-21T08:00:00,2026-06-29T12:00:00,10230,8113001,Standard,Tier 3
+SH1060,Port of Mumbai,Port of Sydney,Atlas Freight,Air,2026-06-11T08:00:00,2026-06-11T14:00:00,11549,4812315,Standard,Tier 3
+SH1061,Port of Tokyo,Port of Hamburg,Global Trans,Air,2026-06-22T08:00:00,2026-06-22T11:00:00,9288,7654323,Open Top,Tier 1
+SH1062,Port of Hamburg,Port of Sydney,Global Trans,Road,2026-06-02T08:00:00,2026-06-04T21:00:00,4850,3837132,Open Top,Tier 3
+SH1063,Port of Shanghai,Port of Singapore,Oceanic Link,Road,2026-06-08T08:00:00,2026-06-10T21:00:00,4876,1239138,Flat Rack,Tier 2
+SH1064,Port of Rotterdam,Port of Singapore,Swift Logistics,Rail,2026-06-18T08:00:00,2026-06-24T00:00:00,8659,2902889,Dry Van,Tier 2
+SH1065,Port of Singapore,Port of London,Atlas Freight,Ocean,2026-06-15T08:00:00,2026-06-22T01:00:00,8468,5579554,Flat Rack,Tier 3
+SH1066,Port of Newark,Port of Singapore,Global Trans,Rail,2026-06-21T08:00:00,2026-06-24T13:00:00,5119,726935,Flat Rack,Tier 2
+SH1067,Port of Hamburg,Port of Mumbai,Global Trans,Ocean,2026-06-01T08:00:00,2026-06-03T22:00:00,3522,7893227,Standard,Tier 3
+SH1068,Port of Rotterdam,Port of Hamburg,Global Trans,Ocean,2026-06-26T08:00:00,2026-06-30T21:00:00,9489,6799977,Flat Rack,Tier 3
+SH1069,Port of Newark,Port of Mumbai,Oceanic Link,Air,2026-06-24T08:00:00,2026-06-24T15:00:00,12661,7658965,Reefer,Tier 2
+SH1070,Port of Singapore,Port of Dubai,Oceanic Link,Rail,2026-06-29T08:00:00,2026-06-30T13:00:00,13775,3956377,Standard,Tier 2
+SH1071,Port of Singapore,Port of New York,Global Trans,Road,2026-06-07T08:00:00,2026-06-13T04:00:00,10367,1626845,Dry Van,Tier 1
+SH1072,Port of Newark,Port of Hamburg,Oceanic Link,Ocean,2026-06-27T08:00:00,2026-06-30T06:00:00,13512,6757432,Reefer,Tier 3
+SH1073,Port of Shanghai,Port of Singapore,Atlas Freight,Air,2026-06-02T08:00:00,2026-06-02T09:00:00,7564,3503708,Reefer,Tier 3
+SH1074,Port of Rotterdam,Port of New York,Swift Logistics,Road,2026-06-18T08:00:00,2026-06-24T18:00:00,11371,1114367,Standard,Tier 3
+SH1075,Port of Tokyo,Port of Mumbai,Atlas Freight,Rail,2026-06-27T08:00:00,2026-06-30T06:00:00,4728,1655752,Open Top,Tier 3
+SH1076,Port of Los Angeles,Port of Singapore,Apex Cargo,Air,2026-06-13T08:00:00,2026-06-13T07:00:00,6143,2204828,Standard,Tier 2
+SH1077,Port of Newark,Port of Shanghai,Swift Logistics,Air,2026-06-03T08:00:00,2026-06-03T01:00:00,855,4909382,Reefer,Tier 2
+SH1078,Port of Newark,Port of New York,Atlas Freight,Road,2026-06-19T08:00:00,2026-06-20T12:00:00,2524,566394,Reefer,Tier 1
+SH1079,Port of Singapore,Port of Shanghai,Global Trans,Air,2026-06-26T08:00:00,2026-06-26T03:00:00,2406,7299127,Reefer,Tier 3
+SH1080,Port of Mumbai,Port of Hamburg,Oceanic Link,Ocean,2026-06-23T08:00:00,2026-06-29T19:00:00,8169,1441449,Reefer,Tier 2
+SH1081,Port of Hamburg,Port of Mumbai,Oceanic Link,Ocean,2026-06-12T08:00:00,2026-06-16T01:00:00,4878,7954617,Dry Van,Tier 2
+SH1082,Port of Los Angeles,Port of Sydney,Apex Cargo,Ocean,2026-06-12T08:00:00,2026-06-14T15:00:00,3186,7271626,Reefer,Tier 3
+SH1083,Port of Tokyo,Port of Sydney,Global Trans,Rail,2026-06-11T08:00:00,2026-06-12T23:00:00,2849,1904165,Flat Rack,Tier 2
+SH1084,Port of Hamburg,Port of Sydney,Swift Logistics,Ocean,2026-06-14T08:00:00,2026-06-18T15:00:00,5557,414446,Standard,Tier 2
+SH1085,Port of Hamburg,Port of Sydney,Atlas Freight,Rail,2026-06-02T08:00:00,2026-06-08T01:00:00,8722,9910225,Standard,Tier 1
+SH1086,Port of Tokyo,Port of London,Apex Cargo,Air,2026-06-20T08:00:00,2026-06-20T12:00:00,10104,871939,Flat Rack,Tier 3
+SH1087,Port of Tokyo,Port of London,Atlas Freight,Air,2026-06-01T08:00:00,2026-06-01T12:00:00,10252,3982613,Standard,Tier 1
+SH1088,Port of Shanghai,Port of Dubai,Apex Cargo,Ocean,2026-06-03T08:00:00,2026-06-13T13:00:00,12671,9970047,Standard,Tier 1
+SH1089,Port of Los Angeles,Port of New York,Apex Cargo,Air,2026-06-22T08:00:00,2026-06-22T10:00:00,8457,2654902,Flat Rack,Tier 1
+SH1090,Port of Rotterdam,Port of Sydney,Apex Cargo,Rail,2026-06-18T08:00:00,2026-06-19T08:00:00,1938,7917863,Standard,Tier 1
+SH1091,Port of Los Angeles,Port of Sydney,Global Trans,Rail,2026-06-25T08:00:00,2026-06-25T13:00:00,831,138780,Flat Rack,Tier 1
+SH1092,Port of Mumbai,Port of Singapore,Atlas Freight,Ocean,2026-06-27T08:00:00,2026-06-30T15:00:00,5595,5404993,Reefer,Tier 3
+SH1093,Port of Newark,Port of Hamburg,Atlas Freight,Ocean,2026-06-18T08:00:00,2026-06-24T15:00:00,7992,5665829,Standard,Tier 3
+SH1094,Port of Shanghai,Port of Hamburg,Atlas Freight,Air,2026-06-18T08:00:00,2026-06-18T16:00:00,13240,9114507,Dry Van,Tier 1
+SH1095,Port of Hamburg,Port of Shanghai,Apex Cargo,Air,2026-06-17T08:00:00,2026-06-17T17:00:00,13890,9643264,Standard,Tier 3
+SH1096,Port of Tokyo,Port of Mumbai,Swift Logistics,Ocean,2026-06-19T08:00:00,2026-06-21T06:00:00,2733,2338013,Flat Rack,Tier 2
+SH1097,Port of Hamburg,Port of Shanghai,Apex Cargo,Air,2026-06-29T08:00:00,2026-06-29T10:00:00,8330,3251824,Reefer,Tier 3
+SH1098,Port of Mumbai,Port of Hamburg,Swift Logistics,Road,2026-06-25T08:00:00,2026-06-30T19:00:00,13113,4286258,Flat Rack,Tier 3
+SH1099,Port of Los Angeles,Port of Hamburg,Global Trans,Rail,2026-06-29T08:00:00,2026-06-30T11:00:00,6472,3473754,Dry Van,Tier 3
+SH1100,Port of Hamburg,Port of Singapore,Oceanic Link,Rail,2026-06-12T08:00:00,2026-06-13T01:00:00,1530,9970226,Reefer,Tier 2
+SH1101,Port of Rotterdam,Port of Mumbai,Apex Cargo,Air,2026-06-06T08:00:00,2026-06-06T10:00:00,8606,3350335,Standard,Tier 1
+SH1102,Port of Newark,Port of Dubai,Atlas Freight,Ocean,2026-06-03T08:00:00,2026-06-11T03:00:00,9781,9777579,Flat Rack,Tier 1
+SH1103,Port of Los Angeles,Port of New York,Oceanic Link,Road,2026-06-15T08:00:00,2026-06-18T04:00:00,5364,8013845,Flat Rack,Tier 3
+SH1104,Port of Hamburg,Port of Dubai,Oceanic Link,Air,2026-06-27T08:00:00,2026-06-27T04:00:00,3753,4202109,Reefer,Tier 2
+SH1105,Port of Tokyo,Port of London,Global Trans,Rail,2026-06-27T08:00:00,2026-06-30T11:00:00,12183,2917695,Flat Rack,Tier 3
+SH1106,Port of Shanghai,Port of Dubai,Atlas Freight,Air,2026-06-28T08:00:00,2026-06-28T05:00:00,4449,957153,Flat Rack,Tier 3
+SH1107,Port of Rotterdam,Port of Shanghai,Atlas Freight,Air,2026-06-28T08:00:00,2026-06-28T08:00:00,6493,3160997,Dry Van,Tier 2
+SH1108,Port of Rotterdam,Port of Dubai,Swift Logistics,Road,2026-06-19T08:00:00,2026-06-26T20:00:00,13220,6779199,Open Top,Tier 3
+SH1109,Port of Los Angeles,Port of Singapore,Swift Logistics,Ocean,2026-06-12T08:00:00,2026-06-21T12:00:00,11416,5412204,Reefer,Tier 1
+SH1110,Port of Singapore,Port of Sydney,Atlas Freight,Rail,2026-06-11T08:00:00,2026-06-17T04:00:00,8905,2986598,Dry Van,Tier 3
+SH1111,Port of Los Angeles,Port of Shanghai,Global Trans,Road,2026-06-23T08:00:00,2026-06-30T09:00:00,12411,4057324,Dry Van,Tier 3
+SH1112,Port of Mumbai,Port of Dubai,Global Trans,Road,2026-06-12T08:00:00,2026-06-17T17:00:00,9596,3805490,Dry Van,Tier 3
+SH1113,Port of Rotterdam,Port of London,Atlas Freight,Road,2026-06-19T08:00:00,2026-06-19T11:00:00,794,5055332,Reefer,Tier 3
+SH1114,Port of Newark,Port of New York,Apex Cargo,Rail,2026-06-05T08:00:00,2026-06-11T07:00:00,9063,1743675,Reefer,Tier 3
+SH1115,Port of Los Angeles,Port of Sydney,Oceanic Link,Ocean,2026-06-18T08:00:00,2026-06-22T03:00:00,4966,530674,Flat Rack,Tier 3
+SH1116,Port of Shanghai,Port of Dubai,Oceanic Link,Rail,2026-06-14T08:00:00,2026-06-22T01:00:00,11588,2207098,Reefer,Tier 3
+SH1117,Port of Rotterdam,Port of Sydney,Atlas Freight,Rail,2026-06-07T08:00:00,2026-06-11T01:00:00,5856,1771742,Flat Rack,Tier 2
+SH1118,Port of Mumbai,Port of London,Atlas Freight,Air,2026-06-27T08:00:00,2026-06-27T06:00:00,5572,354543,Dry Van,Tier 1
+SH1119,Port of Singapore,Port of London,Global Trans,Rail,2026-06-24T08:00:00,2026-06-25T02:00:00,1570,9430814,Dry Van,Tier 3
+SH1120,Port of Shanghai,Port of Hamburg,Atlas Freight,Rail,2026-06-07T08:00:00,2026-06-11T02:00:00,5932,8374458,Open Top,Tier 3
+SH1121,Port of Tokyo,Port of London,Global Trans,Road,2026-06-10T08:00:00,2026-06-14T20:00:00,8137,4134457,Dry Van,Tier 3
+SH1122,Port of Los Angeles,Port of Dubai,Global Trans,Air,2026-06-21T08:00:00,2026-06-21T03:00:00,3013,1952871,Reefer,Tier 3
+SH1123,Port of Newark,Port of Sydney,Swift Logistics,Rail,2026-06-02T08:00:00,2026-06-06T19:00:00,6904,4641901,Reefer,Tier 1
+SH1124,Port of Tokyo,Port of Singapore,Atlas Freight,Road,2026-06-04T08:00:00,2026-06-12T17:00:00,14682,1494315,Flat Rack,Tier 1
+SH1125,Port of Singapore,Port of Hamburg,Atlas Freight,Rail,2026-06-12T08:00:00,2026-06-16T21:00:00,7052,1935190,Open Top,Tier 1
+SH1126,Port of Tokyo,Port of Singapore,Global Trans,Air,2026-06-23T08:00:00,2026-06-23T08:00:00,6535,9872090,Dry Van,Tier 2
+SH1127,Port of Hamburg,Port of Shanghai,Global Trans,Air,2026-06-18T08:00:00,2026-06-18T06:00:00,4998,9620361,Standard,Tier 3
+SH1128,Port of Shanghai,Port of London,Global Trans,Ocean,2026-06-07T08:00:00,2026-06-19T05:00:00,14695,6846877,Open Top,Tier 3
+SH1129,Port of Tokyo,Port of Singapore,Swift Logistics,Rail,2026-06-28T08:00:00,2026-06-30T22:00:00,5693,8177678,Open Top,Tier 3
+SH1130,Port of Hamburg,Port of Sydney,Oceanic Link,Rail,2026-06-18T08:00:00,2026-06-25T00:00:00,10109,1485986,Dry Van,Tier 1
+SH1131,Port of Rotterdam,Port of Shanghai,Global Trans,Rail,2026-06-12T08:00:00,2026-06-20T17:00:00,12585,1233493,Dry Van,Tier 2
+SH1132,Port of Hamburg,Port of Sydney,Global Trans,Ocean,2026-06-05T08:00:00,2026-06-15T02:00:00,12130,4441649,Open Top,Tier 3
+SH1133,Port of Mumbai,Port of London,Oceanic Link,Road,2026-06-27T08:00:00,2026-06-30T13:00:00,7673,9246670,Flat Rack,Tier 3
+SH1134,Port of Shanghai,Port of Dubai,Atlas Freight,Ocean,2026-06-08T08:00:00,2026-06-15T16:00:00,9201,4311663,Flat Rack,Tier 1
+SH1135,Port of Shanghai,Port of Hamburg,Global Trans,Ocean,2026-06-03T08:00:00,2026-06-08T20:00:00,7019,1931397,Open Top,Tier 3
+SH1136,Port of Los Angeles,Port of New York,Global Trans,Air,2026-06-14T08:00:00,2026-06-14T12:00:00,9993,7238106,Dry Van,Tier 3
+SH1137,Port of Mumbai,Port of Singapore,Apex Cargo,Road,2026-06-12T08:00:00,2026-06-17T09:00:00,9039,707191,Reefer,Tier 3
+SH1138,Port of Tokyo,Port of Mumbai,Oceanic Link,Road,2026-06-28T08:00:00,2026-06-30T20:00:00,6497,8038597,Flat Rack,Tier 2
+SH1139,Port of Shanghai,Port of London,Apex Cargo,Ocean,2026-06-01T08:00:00,2026-06-02T20:00:00,2221,8449625,Dry Van,Tier 3
+SH1140,Port of Los Angeles,Port of Mumbai,Global Trans,Ocean,2026-06-17T08:00:00,2026-06-17T17:00:00,868,7950171,Reefer,Tier 1
+SH1141,Port of Shanghai,Port of Dubai,Atlas Freight,Road,2026-06-04T08:00:00,2026-06-10T10:00:00,10792,4074537,Standard,Tier 1
+SH1142,Port of Hamburg,Port of Singapore,Atlas Freight,Rail,2026-06-11T08:00:00,2026-06-19T00:00:00,11542,3083932,Open Top,Tier 3
+SH1143,Port of Tokyo,Port of Sydney,Atlas Freight,Rail,2026-06-01T08:00:00,2026-06-03T22:00:00,4218,1033061,Flat Rack,Tier 3
+SH1144,Port of Singapore,Port of London,Swift Logistics,Road,2026-06-10T08:00:00,2026-06-15T09:00:00,9087,9936726,Dry Van,Tier 3
+SH1145,Port of Mumbai,Port of Dubai,Oceanic Link,Ocean,2026-06-12T08:00:00,2026-06-22T22:00:00,13141,7501062,Open Top,Tier 3
+SH1146,Port of Shanghai,Port of Hamburg,Apex Cargo,Road,2026-06-08T08:00:00,2026-06-13T20:00:00,9808,537707,Open Top,Tier 2
+SH1147,Port of Tokyo,Port of Mumbai,Atlas Freight,Air,2026-06-16T08:00:00,2026-06-16T17:00:00,13951,9370804,Standard,Tier 1
+SH1148,Port of Mumbai,Port of Sydney,Oceanic Link,Ocean,2026-06-11T08:00:00,2026-06-12T06:00:00,1514,3387013,Flat Rack,Tier 1
+SH1149,Port of Shanghai,Port of Dubai,Swift Logistics,Road,2026-06-07T08:00:00,2026-06-09T17:00:00,4570,2382127,Dry Van,Tier 3
+SH1150,Port of Hamburg,Port of Shanghai,Global Trans,Air,2026-06-17T08:00:00,2026-06-17T01:00:00,891,3082115,Dry Van,Tier 3
+SH1151,Port of Singapore,Port of Sydney,Swift Logistics,Rail,2026-06-27T08:00:00,2026-06-28T03:00:00,1659,3393867,Reefer,Tier 2
+SH1152,Port of Mumbai,Port of New York,Global Trans,Rail,2026-06-08T08:00:00,2026-06-12T23:00:00,7171,5068768,Dry Van,Tier 3
+SH1153,Port of Mumbai,Port of Singapore,Apex Cargo,Ocean,2026-06-28T08:00:00,2026-06-30T08:00:00,5212,8691123,Reefer,Tier 2
+SH1154,Port of Los Angeles,Port of Singapore,Oceanic Link,Road,2026-06-15T08:00:00,2026-06-22T23:00:00,13372,6453679,Standard,Tier 3
+SH1155,Port of Newark,Port of New York,Global Trans,Rail,2026-06-24T08:00:00,2026-06-30T11:00:00,12190,2560963,Dry Van,Tier 2
+SH1156,Port of Mumbai,Port of Hamburg,Apex Cargo,Air,2026-06-26T08:00:00,2026-06-26T05:00:00,4227,5306583,Standard,Tier 2
+SH1157,Port of Los Angeles,Port of New York,Swift Logistics,Air,2026-06-20T08:00:00,2026-06-20T09:00:00,7339,5695812,Open Top,Tier 3
+SH1158,Port of Hamburg,Port of Shanghai,Oceanic Link,Air,2026-06-14T08:00:00,2026-06-14T05:00:00,4270,9455391,Dry Van,Tier 3
+SH1159,Port of Tokyo,Port of London,Global Trans,Air,2026-06-02T08:00:00,2026-06-02T03:00:00,2409,5635056,Dry Van,Tier 3
+SH1160,Port of Singapore,Port of Shanghai,Global Trans,Ocean,2026-06-27T08:00:00,2026-06-29T23:00:00,3561,1782141,Standard,Tier 3
+SH1161,Port of Mumbai,Port of London,Global Trans,Ocean,2026-06-03T08:00:00,2026-06-04T07:00:00,1567,1684461,Standard,Tier 3
+SH1162,Port of Los Angeles,Port of Shanghai,Global Trans,Ocean,2026-06-17T08:00:00,2026-06-20T01:00:00,3679,4946986,Dry Van,Tier 2
+SH1163,Port of Los Angeles,Port of Singapore,Global Trans,Road,2026-06-02T08:00:00,2026-06-06T11:00:00,7513,884938,Standard,Tier 3
+SH1164,Port of Los Angeles,Port of London,Oceanic Link,Rail,2026-06-19T08:00:00,2026-06-25T15:00:00,9563,3631877,Open Top,Tier 1
+SH1165,Port of Rotterdam,Port of Hamburg,Apex Cargo,Road,2026-06-11T08:00:00,2026-06-13T07:00:00,3891,9647010,Reefer,Tier 2
+SH1166,Port of Tokyo,Port of Shanghai,Oceanic Link,Ocean,2026-06-21T08:00:00,2026-06-30T06:00:00,11135,8859609,Standard,Tier 2
+SH1167,Port of Hamburg,Port of London,Oceanic Link,Road,2026-06-07T08:00:00,2026-06-08T21:00:00,3186,3818553,Standard,Tier 3
+SH1168,Port of Shanghai,Port of Singapore,Global Trans,Rail,2026-06-04T08:00:00,2026-06-08T14:00:00,6654,3526808,Open Top,Tier 3
+SH1169,Port of Los Angeles,Port of Sydney,Oceanic Link,Ocean,2026-06-24T08:00:00,2026-06-25T17:00:00,2058,5264802,Reefer,Tier 3
+SH1170,Port of Newark,Port of Mumbai,Atlas Freight,Air,2026-06-13T08:00:00,2026-06-13T12:00:00,10170,4485786,Flat Rack,Tier 2
+SH1171,Port of Tokyo,Port of Hamburg,Oceanic Link,Road,2026-06-29T08:00:00,2026-06-30T02:00:00,10261,9989139,Dry Van,Tier 2
+SH1172,Port of Newark,Port of Singapore,Apex Cargo,Ocean,2026-06-06T08:00:00,2026-06-16T07:00:00,12356,5975803,Open Top,Tier 3
+SH1173,Port of Newark,Port of London,Apex Cargo,Air,2026-06-25T08:00:00,2026-06-25T15:00:00,12060,9604634,Flat Rack,Tier 2
+SH1174,Port of Tokyo,Port of Dubai,Swift Logistics,Ocean,2026-06-17T08:00:00,2026-06-17T17:00:00,858,6511202,Open Top,Tier 1
+SH1175,Port of Shanghai,Port of London,Apex Cargo,Rail,2026-06-19T08:00:00,2026-06-24T04:00:00,7441,817128,Standard,Tier 3
+SH1176,Port of Mumbai,Port of Dubai,Global Trans,Rail,2026-06-20T08:00:00,2026-06-23T06:00:00,4734,8955184,Standard,Tier 3
+SH1177,Port of Shanghai,Port of Sydney,Swift Logistics,Air,2026-06-14T08:00:00,2026-06-14T10:00:00,8668,8969757,Dry Van,Tier 3
+SH1178,Port of Hamburg,Port of London,Apex Cargo,Air,2026-06-05T08:00:00,2026-06-05T06:00:00,5416,991208,Reefer,Tier 3
+SH1179,Port of Los Angeles,Port of Sydney,Atlas Freight,Ocean,2026-06-07T08:00:00,2026-06-08T00:00:00,1216,5657414,Standard,Tier 3
+SH1180,Port of Los Angeles,Port of Mumbai,Atlas Freight,Ocean,2026-06-08T08:00:00,2026-06-15T08:00:00,8840,9127805,Open Top,Tier 2
+SH1181,Port of Newark,Port of Dubai,Oceanic Link,Road,2026-06-22T08:00:00,2026-06-26T14:00:00,7733,5556126,Open Top,Tier 3
+SH1182,Port of Mumbai,Port of Hamburg,Swift Logistics,Ocean,2026-06-24T08:00:00,2026-06-30T06:00:00,14712,6282474,Standard,Tier 2
+SH1183,Port of Rotterdam,Port of Singapore,Swift Logistics,Road,2026-06-29T08:00:00,2026-06-30T05:00:00,12132,1400093,Open Top,Tier 2
+SH1184,Port of Rotterdam,Port of Mumbai,Oceanic Link,Ocean,2026-06-02T08:00:00,2026-06-02T11:00:00,556,5805327,Dry Van,Tier 3
+SH1185,Port of Singapore,Port of Hamburg,Swift Logistics,Rail,2026-06-23T08:00:00,2026-06-27T22:00:00,7097,5045427,Open Top,Tier 2
+SH1186,Port of Rotterdam,Port of Hamburg,Oceanic Link,Ocean,2026-06-22T08:00:00,2026-06-23T02:00:00,1304,5137365,Standard,Tier 1
+SH1187,Port of Shanghai,Port of Mumbai,Apex Cargo,Road,2026-06-06T08:00:00,2026-06-10T11:00:00,7501,7172887,Dry Van,Tier 2
+SH1188,Port of Hamburg,Port of Singapore,Swift Logistics,Air,2026-06-06T08:00:00,2026-06-06T04:00:00,3764,8444043,Open Top,Tier 2
+SH1189,Port of Rotterdam,Port of Sydney,Global Trans,Air,2026-06-01T08:00:00,2026-06-01T01:00:00,1050,2677014,Dry Van,Tier 3
+SH1190,Port of Hamburg,Port of Dubai,Oceanic Link,Air,2026-06-23T08:00:00,2026-06-23T16:00:00,12971,8903143,Standard,Tier 3
+SH1191,Port of Hamburg,Port of Mumbai,Global Trans,Rail,2026-06-06T08:00:00,2026-06-08T00:00:00,2933,787550,Dry Van,Tier 3
+SH1192,Port of Rotterdam,Port of Shanghai,Swift Logistics,Road,2026-06-15T08:00:00,2026-06-23T14:00:00,14432,734659,Open Top,Tier 3
+SH1193,Port of Shanghai,Port of Hamburg,Global Trans,Road,2026-06-24T08:00:00,2026-06-27T06:00:00,5506,7410401,Reefer,Tier 2
+SH1194,Port of Singapore,Port of Sydney,Global Trans,Road,2026-06-01T08:00:00,2026-06-05T23:00:00,8333,5803670,Reefer,Tier 3
+SH1195,Port of Singapore,Port of Mumbai,Swift Logistics,Air,2026-06-24T08:00:00,2026-06-24T04:00:00,3784,1589219,Flat Rack,Tier 3
+SH1196,Port of Los Angeles,Port of Singapore,Atlas Freight,Air,2026-06-04T08:00:00,2026-06-04T04:00:00,3975,6113389,Standard,Tier 3
+SH1197,Port of Hamburg,Port of Sydney,Atlas Freight,Road,2026-06-26T08:00:00,2026-06-30T08:00:00,9002,8652831,Flat Rack,Tier 2
+SH1198,Port of Singapore,Port of New York,Oceanic Link,Ocean,2026-06-17T08:00:00,2026-06-18T04:00:00,1446,8726514,Dry Van,Tier 3
+SH1199,Port of Singapore,Port of New York,Global Trans,Rail,2026-06-27T08:00:00,2026-06-28T06:00:00,1808,2264826,Dry Van,Tier 1

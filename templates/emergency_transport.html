@@ -1,0 +1,487 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+/* ── Emergency Transport Page ─────────────────────────────────────── */
+.et-hero {
+  background: linear-gradient(135deg, #7c1d1d 0%, #dc2626 50%, #f97316 100%);
+  border-radius: 12px;
+  padding: 28px 32px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 40px rgba(220, 38, 38, 0.3);
+}
+.et-hero-icon  { font-size: 3.5rem; flex-shrink: 0; }
+.et-hero-title { font-size: 1.6rem; font-weight: 900; letter-spacing: -0.5px; }
+.et-hero-sub   { font-size: 0.88rem; color: rgba(255,255,255,0.8); margin-top: 4px; line-height: 1.5; }
+
+/* ── Form ────────────────────────────────────────────────────────── */
+.form-group { margin-bottom: 14px; }
+.form-label {
+  display: block;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 5px;
+}
+.form-input, .form-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: .85rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+  background: #fff;
+  transition: border-color .2s;
+  outline: none;
+}
+.form-input:focus, .form-select:focus { border-color: var(--accent); }
+
+.severity-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-top: 6px; }
+.sev-btn {
+  padding: 10px 6px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: #fff;
+  font-size: .75rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: .2s;
+}
+.sev-btn:hover { transform: translateY(-2px); }
+.sev-btn.critical { border-color: #ef4444; color: #ef4444; }
+.sev-btn.high     { border-color: #f59e0b; color: #f59e0b; }
+.sev-btn.medium   { border-color: #3b82f6; color: #3b82f6; }
+.sev-btn.low      { border-color: #10b981; color: #10b981; }
+.sev-btn.selected.critical { background: #ef4444; color: #fff; }
+.sev-btn.selected.high     { background: #f59e0b; color: #fff; }
+.sev-btn.selected.medium   { background: #3b82f6; color: #fff; }
+.sev-btn.selected.low      { background: #10b981; color: #fff; }
+
+.plan-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #991b1b, #dc2626);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.plan-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(220,38,38,0.4); }
+.plan-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+/* ── Action Banner ───────────────────────────────────────────────── */
+.action-banner {
+  border-radius: 12px;
+  padding: 20px 24px;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: var(--sh-lg);
+}
+.action-banner-icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
+
+/* ── Carrier Cards ───────────────────────────────────────────────── */
+.carrier-card {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  transition: .2s;
+  position: relative;
+}
+.carrier-card.top { border-color: #10b981; background: #f0fdf4; }
+.carrier-card:hover { transform: translateX(3px); box-shadow: var(--sh); }
+.carrier-name { font-weight: 700; font-size: .88rem; }
+.carrier-meta { display: flex; gap: 14px; margin-top: 6px; font-size: .75rem; color: var(--muted); }
+.carrier-meta span strong { color: var(--dark); }
+
+/* ── Route Cards ─────────────────────────────────────────────────── */
+.route-card {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.route-card.rec { border-color: #3b82f6; background: var(--sky); }
+.route-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+/* ── ETA Timeline ────────────────────────────────────────────────── */
+.eta-timeline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+.eta-box {
+  flex: 1;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+.eta-label { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+.eta-value { font-size: 1rem; font-weight: 800; }
+.eta-arrow { font-size: 1.4rem; color: var(--accent); flex-shrink: 0; }
+
+.big-metric {
+  text-align: center;
+  padding: 14px 8px;
+}
+.big-metric .value { font-size: 2rem; font-weight: 900; }
+.big-metric .label { font-size: .7rem; font-weight: 600; color: var(--muted); text-transform: uppercase; margin-top: 4px; letter-spacing: .5px; }
+
+#results-section { display: none; }
+
+.spinner {
+  width: 22px; height: 22px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+{% endblock %}
+
+{% block sidebar_extra %}
+<div class="s-label" style="margin-top:16px">Response Stats</div>
+<div class="kpi-card" id="sb-action">
+  <div class="kpi-label">Last Action</div>
+  <div class="kpi-val" style="font-size:.85rem;color:#f59e0b">—</div>
+</div>
+<div class="kpi-card">
+  <div class="kpi-label">Est. Savings</div>
+  <div class="kpi-val" style="color:#10b981" id="sb-sav">—</div>
+</div>
+<div class="kpi-card">
+  <div class="kpi-label">Risk After Action</div>
+  <div class="kpi-val" id="sb-risk">—</div>
+</div>
+<div class="kpi-card" style="border-color:rgba(239,68,68,.4)">
+  <div class="kpi-label">Top Carrier Reliability</div>
+  <div class="kpi-val" style="color:#ef4444" id="sb-rel">—</div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<div class="et-hero">
+  <div class="et-hero-icon">🚑</div>
+  <div>
+    <div class="et-hero-title">Emergency Transport Planner</div>
+    <div class="et-hero-sub">Real-time logistics disruption response dashboard.<br>
+    Generate emergency carrier suggestions, alternate routes, and ETA recovery plans instantly.</div>
+  </div>
+</div>
+
+<!-- Form + Quick Stats -->
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">⚠️ Disruption Parameters</div>
+
+    <div class="form-group">
+      <label class="form-label">Transport Type</label>
+      <select class="form-select" id="f-transport">
+        <option value="Ocean">🚢 Ocean Freight</option>
+        <option value="Air">✈️ Air Freight</option>
+        <option value="Road">🚛 Road Freight</option>
+        <option value="Rail">🚂 Rail Freight</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Delay Severity</label>
+      <div class="severity-grid">
+        <button class="sev-btn critical" data-val="critical" onclick="selectSev(this)">🔴 Critical</button>
+        <button class="sev-btn high selected" data-val="high" onclick="selectSev(this)">🟠 High</button>
+        <button class="sev-btn medium" data-val="medium" onclick="selectSev(this)">🔵 Medium</button>
+        <button class="sev-btn low" data-val="low" onclick="selectSev(this)">🟢 Low</button>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Origin</label>
+        <input class="form-input" id="f-origin" value="Mumbai" placeholder="Port / City">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Destination</label>
+        <input class="form-input" id="f-dest" value="Delhi" placeholder="Port / City">
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Cargo Value (INR)</label>
+        <input class="form-input" id="f-cargo" type="number" value="1000000" min="0">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Current Delay (hrs)</label>
+        <input class="form-input" id="f-delay" type="number" value="24" min="1" max="200">
+      </div>
+    </div>
+
+    <button class="plan-btn" id="plan-btn" onclick="runPlan()">
+      <span id="plan-btn-text">🚨 Generate Emergency Plan</span>
+      <div class="spinner" id="plan-spinner"></div>
+    </button>
+  </div>
+
+  <!-- Pre-plan info panel -->
+  <div class="card" id="intro-panel">
+    <div class="card-title">🔍 What this module provides</div>
+    <div class="mrow"><span class="mkey">Alternate Carriers</span><span class="badge b-blue">Top 3 Suggestions</span></div>
+    <div class="mrow"><span class="mkey">Emergency Routes</span><span class="badge b-green">Fastest Paths</span></div>
+    <div class="mrow"><span class="mkey">ETA Recovery</span><span class="badge b-amber">Revised Timeline</span></div>
+    <div class="mrow"><span class="mkey">Cost Impact</span><span class="badge b-purple">INR Breakdown</span></div>
+    <div class="mrow"><span class="mkey">Risk Classification</span><span class="badge b-red">Severity Level</span></div>
+    <div style="margin-top:16px;padding:14px;background:var(--sky);border-radius:8px;font-size:.82rem;color:var(--blue);line-height:1.6">
+      <strong>How it works:</strong> Configure your disruption parameters, then click Generate to produce a real-time emergency response plan with carrier alternatives and route optimizations.
+    </div>
+  </div>
+
+  <!-- Action Banner (result) -->
+  <div id="action-panel" style="display:none">
+    <div class="action-banner" id="action-banner">
+      <div class="action-banner-icon">⚡</div>
+      <div>
+        <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.8;margin-bottom:4px">Recommended Action</div>
+        <div style="font-size:1.1rem;font-weight:800;margin-bottom:6px" id="res-action">—</div>
+        <div style="font-size:.85rem;opacity:.9;line-height:1.5" id="res-desc">—</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Results Section -->
+<div id="results-section">
+
+  <!-- KPI Row -->
+  <div class="grid-4">
+    <div class="card" style="border-top:3px solid #ef4444">
+      <div class="card-title">Current Severity</div>
+      <div style="font-size:1.8rem;font-weight:900" id="res-severity">—</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:4px" id="res-delay-hrs">—</div>
+    </div>
+    <div class="card" style="border-top:3px solid #ef4444">
+      <div class="card-title">Estimated Loss</div>
+      <div style="font-size:1.6rem;font-weight:800;color:#ef4444" id="res-loss">—</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:4px">Without intervention</div>
+    </div>
+    <div class="card" style="border-top:3px solid #10b981">
+      <div class="card-title">Estimated Savings</div>
+      <div style="font-size:1.6rem;font-weight:800;color:#10b981" id="res-savings">—</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:4px" id="res-savings-pct">—</div>
+    </div>
+    <div class="card" style="border-top:3px solid #3b82f6">
+      <div class="card-title">Net Benefit</div>
+      <div style="font-size:1.6rem;font-weight:800;color:#3b82f6" id="res-net">—</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:4px">After implementation cost</div>
+    </div>
+  </div>
+
+  <!-- Carriers + Routes -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">🚢 Alternate Carrier Suggestions</div>
+      <div id="carrier-list">—</div>
+    </div>
+    <div class="card">
+      <div class="card-title">🗺️ Emergency Route Recommendations</div>
+      <div id="route-list">—</div>
+    </div>
+  </div>
+
+  <!-- ETA Impact + Cost Impact -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">⏱️ ETA Recovery Timeline</div>
+      <div class="eta-timeline" id="eta-timeline">—</div>
+      <div class="grid-2" style="margin-top:12px">
+        <div class="big-metric" style="background:#fef2f2;border-radius:8px">
+          <div class="value" style="color:#ef4444" id="eta-reduction">—</div>
+          <div class="label">Hrs Recovered</div>
+        </div>
+        <div class="big-metric" style="background:#f0fdf4;border-radius:8px">
+          <div class="value" style="color:#10b981" id="eta-pct">—</div>
+          <div class="label">Delay Reduced</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">💰 Cost Impact Analysis</div>
+      <div class="mrow"><span class="mkey">Estimated Loss (No action)</span><span class="mval" style="color:#ef4444" id="ci-loss">—</span></div>
+      <div class="mrow"><span class="mkey">Implementation Cost</span><span class="mval" style="color:#f59e0b" id="ci-impl">—</span></div>
+      <div class="mrow"><span class="mkey">Expected Savings</span><span class="mval" style="color:#10b981" id="ci-sav">—</span></div>
+      <div class="mrow"><span class="mkey">Net Benefit</span><span class="mval" style="color:#3b82f6;font-size:1rem" id="ci-net">—</span></div>
+      <div class="mrow"><span class="mkey">Risk Level After Action</span><span class="mval" id="ci-risk-after">—</span></div>
+    </div>
+  </div>
+
+  <!-- AI Narrative -->
+  <div class="exec-banner">
+    <div class="exec-icon">🤖</div>
+    <div class="exec-text" id="ai-narrative">—</div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+const INR = n => 'Rs.\u00a0' + Math.round(n).toLocaleString('en-IN');
+let selectedSev = 'high';
+
+function selectSev(btn) {
+  document.querySelectorAll('.sev-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedSev = btn.dataset.val;
+}
+
+function runPlan() {
+  const btn     = document.getElementById('plan-btn');
+  const btnText = document.getElementById('plan-btn-text');
+  const spinner = document.getElementById('plan-spinner');
+  btn.disabled = true;
+  btnText.textContent = 'Planning…';
+  spinner.style.display = 'block';
+
+  const payload = {
+    transport_type:    document.getElementById('f-transport').value,
+    severity:          selectedSev,
+    origin:            document.getElementById('f-origin').value || 'Mumbai',
+    destination:       document.getElementById('f-dest').value   || 'Delhi',
+    cargo_value:       parseFloat(document.getElementById('f-cargo').value) || 1000000,
+    current_delay_hrs: parseFloat(document.getElementById('f-delay').value) || 24,
+  };
+
+  fetch('/api/emergency-plan', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+  .then(r => r.json())
+  .then(data => render(data))
+  .catch(err => alert('Request failed: ' + err))
+  .finally(() => {
+    btn.disabled = false;
+    btnText.textContent = '🚨 Generate Emergency Plan';
+    spinner.style.display = 'none';
+  });
+}
+
+function render(d) {
+  document.getElementById('intro-panel').style.display  = 'none';
+  document.getElementById('action-panel').style.display = 'block';
+  document.getElementById('results-section').style.display = 'block';
+
+  // Action banner
+  const banner = document.getElementById('action-banner');
+  const sevColors = { critical:'linear-gradient(135deg,#7c1d1d,#dc2626)', high:'linear-gradient(135deg,#78350f,#d97706)', medium:'linear-gradient(135deg,#1e3a8a,#3b82f6)', low:'linear-gradient(135deg,#064e3b,#10b981)' };
+  banner.style.background = sevColors[d.severity] || sevColors.high;
+  document.getElementById('res-action').textContent = d.recommended_action;
+  document.getElementById('res-desc').textContent   = d.action_description;
+
+  // KPIs
+  const sevColors2 = { critical:'#ef4444', high:'#f59e0b', medium:'#3b82f6', low:'#10b981' };
+  document.getElementById('res-severity').textContent = d.severity_label;
+  document.getElementById('res-severity').style.color = sevColors2[d.severity] || '#f59e0b';
+  document.getElementById('res-delay-hrs').textContent = d.current_delay_hrs + ' hrs current delay';
+  document.getElementById('res-loss').textContent    = INR(d.estimated_loss);
+  document.getElementById('res-savings').textContent = INR(d.estimated_savings);
+  document.getElementById('res-net').textContent     = INR(d.net_benefit);
+
+  // Sidebar
+  const sbAction = document.getElementById('sb-action');
+  sbAction.querySelector('.kpi-val').textContent = d.recommended_action;
+  document.getElementById('sb-sav').textContent  = INR(d.estimated_savings);
+  document.getElementById('sb-risk').textContent = d.risk_level_after;
+  if (d.carrier_suggestions && d.carrier_suggestions.length) {
+    document.getElementById('sb-rel').textContent = d.carrier_suggestions[0].reliability + '%';
+  }
+
+  // Carriers
+  const cl = document.getElementById('carrier-list'); cl.innerHTML = '';
+  (d.carrier_suggestions || []).forEach(c => {
+    cl.innerHTML += `
+      <div class="carrier-card ${c.recommended ? 'top' : ''}">
+        ${c.recommended ? '<span class="badge b-green" style="float:right">BEST</span>' : ''}
+        <div class="carrier-name">${c.name}</div>
+        <div class="carrier-meta">
+          <span>Reliability: <strong>${c.reliability}%</strong></span>
+          <span>ETA: <strong>${c.eta_hours}h</strong></span>
+          <span>Cost: <strong>${INR(c.estimated_cost)}</strong></span>
+          <span>Saves: <strong style="color:#10b981">${c.delay_reduction_hrs}h</strong></span>
+        </div>
+      </div>`;
+  });
+
+  // Routes
+  const rl = document.getElementById('route-list'); rl.innerHTML = '';
+  const routeIcons = ['🛣️', '✈️', '🏭'];
+  (d.emergency_routes || []).forEach((r, i) => {
+    rl.innerHTML += `
+      <div class="route-card ${r.is_recommended ? 'rec' : ''}">
+        <div class="route-icon">${routeIcons[i] || '📍'}</div>
+        <div style="flex:1">
+          <div style="font-weight:700;font-size:.87rem">${r.name}
+            ${r.is_recommended ? '<span class="badge b-blue" style="margin-left:6px">REC</span>' : ''}
+          </div>
+          <div style="font-size:.75rem;color:var(--muted);margin-top:4px">
+            Risk: <strong>${r.risk_pct}%</strong> &nbsp;|&nbsp;
+            ETA Impact: <strong>${r.eta_impact_hrs}h</strong> &nbsp;|&nbsp;
+            Cost: <strong>${INR(r.cost_impact)}</strong>
+          </div>
+        </div>
+      </div>`;
+  });
+
+  // ETA
+  const eta = d.eta_impact || {};
+  document.getElementById('eta-timeline').innerHTML = `
+    <div class="eta-box" style="background:#fef2f2">
+      <div class="eta-label" style="color:#ef4444">Original ETA</div>
+      <div class="eta-value" style="color:#ef4444">${eta.original_eta || '—'}</div>
+    </div>
+    <div class="eta-arrow">➔</div>
+    <div class="eta-box" style="background:#f0fdf4">
+      <div class="eta-label" style="color:#10b981">Revised ETA</div>
+      <div class="eta-value" style="color:#10b981">${eta.revised_eta || '—'}</div>
+    </div>`;
+  document.getElementById('eta-reduction').textContent = (eta.delay_reduction_hrs || 0) + 'h';
+  document.getElementById('eta-pct').textContent       = (eta.delay_reduction_pct || 0) + '%';
+
+  // Cost panel
+  document.getElementById('ci-loss').textContent      = INR(d.estimated_loss);
+  document.getElementById('ci-impl').textContent      = INR(d.implementation_cost);
+  document.getElementById('ci-sav').textContent       = INR(d.estimated_savings);
+  document.getElementById('ci-net').textContent       = INR(d.net_benefit);
+  document.getElementById('ci-risk-after').innerHTML  = `<span class="badge b-green">${d.risk_level_after}</span>`;
+
+  // AI Narrative
+  document.getElementById('ai-narrative').innerHTML = (d.ai_narrative || '').replace(
+    /(₹[\d,]+|P1|CRITICAL|HIGH|MEDIUM|LOW|Emergency|\d+%)/g, '<strong>$1</strong>'
+  );
+}
+
+// Auto-run default on load for demo
+document.addEventListener('DOMContentLoaded', () => runPlan());
+{% endblock %}

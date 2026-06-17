@@ -1,0 +1,338 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+/* ── Dashboard enhancements ──────────────────────────────────────── */
+.platform-header { margin-bottom: 4px; }
+.platform-title  { font-size: 1.5rem; font-weight: 900; color: var(--navy); }
+.platform-subtitle { font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
+
+/* ── Stat Cards ─────────────────────────────────────────────────── */
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: var(--sh);
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.stat-card:hover { transform: translateY(-3px); box-shadow: var(--sh-lg); }
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent-color, var(--accent));
+}
+.stat-icon  { font-size: 1.8rem; margin-bottom: 8px; }
+.stat-label { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .7px; color: var(--muted); margin-bottom: 4px; }
+.stat-value { font-size: 1.9rem; font-weight: 900; }
+.stat-sub   { font-size: .73rem; color: var(--muted); margin-top: 5px; }
+.stat-delta { display: inline-flex; align-items: center; gap: 3px; font-size: .7rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-top: 6px; }
+.delta-up   { background: #d1fae5; color: #059669; }
+
+/* ── Module Cards ────────────────────────────────────────────────── */
+.module-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--sh);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  color: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+.module-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+.module-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 5px;
+  background: var(--card-accent, var(--border));
+  transition: height .3s;
+}
+.module-card:hover::before { height: 6px; }
+
+.module-card.flagship { --card-accent: linear-gradient(90deg, #1d4ed8, #3b82f6); }
+.module-card.flagship::before { background: linear-gradient(90deg, #1d4ed8, #3b82f6); }
+
+.module-card.et     { --card-accent: linear-gradient(90deg, #dc2626, #f97316); }
+.module-card.et::before { background: linear-gradient(90deg, #dc2626, #f97316); }
+
+.module-card.hs     { --card-accent: linear-gradient(90deg, #0891b2, #3b82f6); }
+.module-card.hs::before { background: linear-gradient(90deg, #0891b2, #3b82f6); }
+
+.module-card.ra     { --card-accent: linear-gradient(90deg, #7c3aed, #a855f7); }
+.module-card.ra::before { background: linear-gradient(90deg, #7c3aed, #a855f7); }
+
+.module-icon  { font-size: 2.8rem; margin-bottom: 14px; transition: transform .3s; }
+.module-card:hover .module-icon { transform: scale(1.15) rotate(-3deg); }
+.module-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; color: var(--navy); }
+.module-desc  { font-size: 0.83rem; color: var(--muted); line-height: 1.55; flex: 1; }
+.module-footer {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.module-status {
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.status-live { background: #d1fae5; color: #059669; }
+.module-launch { font-size: .8rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 4px; }
+.module-launch::after { content: '→'; transition: transform .2s; }
+.module-card:hover .module-launch::after { transform: translateX(4px); }
+
+/* ── Activity Feed ───────────────────────────────────────────────── */
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: .82rem;
+}
+.activity-item:last-child { border: none; }
+.activity-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 4px;
+}
+.activity-time { font-size: .7rem; color: var(--muted); margin-top: 2px; }
+
+/* ── AI Status Banner ────────────────────────────────────────────── */
+.ai-status-bar {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  border-radius: 10px;
+  padding: 14px 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ai-status-item { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.ai-status-dot  { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 1.4s infinite; }
+@keyframes pulse { 0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.2)} }
+
+/* ── Section heading ─────────────────────────────────────────────── */
+.section-heading {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 8px; margin-bottom: 4px;
+}
+.section-heading h3 { font-size: 1rem; font-weight: 800; color: var(--navy); }
+.section-heading .view-all { font-size: .75rem; color: var(--accent); font-weight: 600; text-decoration: none; }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Platform Header -->
+<div class="platform-header">
+  <div class="platform-title">🚀 LogiSPARK Control Tower</div>
+  <div class="platform-subtitle">Enterprise AI Logistics Platform — All Systems Operational</div>
+</div>
+
+<!-- AI Status Bar -->
+<div class="ai-status-bar">
+  <div class="ai-status-item">
+    <div class="ai-status-dot"></div>
+    <span style="font-weight:700;color:#10b981">PLATFORM ONLINE</span>
+  </div>
+  <div class="ai-status-item">⚙️ <span>4 Modules Active</span></div>
+  <div class="ai-status-item">🤖 <span>AI Engine: <strong id="ai-mode">Loading…</strong></span></div>
+  <div class="ai-status-item">⏱️ <span>Uptime: <strong>99.97%</strong></span></div>
+  <div class="ai-status-item">🛡️ <span>Security: <strong>Enterprise Grade</strong></span></div>
+  <div class="ai-status-item">📅 <span id="live-clock" style="font-weight:600">—</span></div>
+</div>
+
+<!-- Top KPI Stats -->
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px">
+  <div class="stat-card" style="--accent-color:#8b5cf6">
+    <div class="stat-icon">📦</div>
+    <div class="stat-label">Total Modules</div>
+    <div class="stat-value" style="color:#8b5cf6">4</div>
+    <div class="stat-sub">All operational</div>
+  </div>
+  <div class="stat-card" style="--accent-color:#3b82f6">
+    <div class="stat-icon">⚡</div>
+    <div class="stat-label">Active AI Services</div>
+    <div class="stat-value" style="color:#3b82f6">12</div>
+    <div class="stat-sub">Models serving predictions</div>
+  </div>
+  <div class="stat-card" style="--accent-color:#10b981">
+    <div class="stat-icon">💚</div>
+    <div class="stat-label">Platform Health</div>
+    <div class="stat-value" style="color:#10b981;font-size:1.4rem">Healthy</div>
+    <div class="stat-delta delta-up">↑ 99.97% Uptime</div>
+  </div>
+  <div class="stat-card" style="--accent-color:#f59e0b">
+    <div class="stat-icon">🚢</div>
+    <div class="stat-label">Shipments Analyzed</div>
+    <div class="stat-value" style="color:#f59e0b" id="kpi-shipments">—</div>
+    <div class="stat-sub">Across all routes</div>
+  </div>
+  <div class="stat-card" style="--accent-color:#10b981">
+    <div class="stat-icon">💰</div>
+    <div class="stat-label">Cost Savings</div>
+    <div class="stat-value" style="color:#10b981;font-size:1.4rem" id="kpi-savings">—</div>
+    <div class="stat-sub">Predicted by AI</div>
+  </div>
+  <div class="stat-card" style="--accent-color:#ef4444">
+    <div class="stat-icon">🚨</div>
+    <div class="stat-label">Critical Alerts</div>
+    <div class="stat-value" style="color:#ef4444" id="kpi-alerts">—</div>
+    <div class="stat-sub">Requiring action</div>
+  </div>
+</div>
+
+<!-- Module Cards -->
+<div class="section-heading">
+  <h3>🧩 Available Modules</h3>
+  <span style="font-size:.75rem;color:var(--muted)">4 of 4 Live</span>
+</div>
+<div class="grid-4">
+
+  <!-- Shipment Delay Predictor -->
+  <a href="/shipment-delay" class="module-card flagship">
+    <div class="module-icon">⏱️</div>
+    <div class="module-title">Shipment Delay Predictor</div>
+    <div class="module-desc">Flagship AI module. Predicts shipment delays, root causes, financial impacts, and generates prescriptive savings recommendations with what-if analysis.</div>
+    <div class="module-footer">
+      <span class="module-status status-live">✅ Live</span>
+      <span class="module-launch">Launch</span>
+    </div>
+  </a>
+
+  <!-- Emergency Transport Planner -->
+  <a href="/emergency-transport" class="module-card et">
+    <div class="module-icon">🚑</div>
+    <div class="module-title">Emergency Transport Planner</div>
+    <div class="module-desc">Real-time logistics disruption response. Generate emergency carrier suggestions, alternate route plans, and ETA recovery timelines for P1 logistics failures.</div>
+    <div class="module-footer">
+      <span class="module-status status-live">✅ Live</span>
+      <span class="module-launch">Launch</span>
+    </div>
+  </a>
+
+  <!-- HS Code Classifier -->
+  <a href="/hs-classifier" class="module-card hs">
+    <div class="module-icon">📦</div>
+    <div class="module-title">HS Code Classifier</div>
+    <div class="module-desc">AI-powered Harmonized System code classification. Describe your product and get instant HS code recommendations with confidence scores and classification paths.</div>
+    <div class="module-footer">
+      <span class="module-status status-live">✅ Live</span>
+      <span class="module-launch">Launch</span>
+    </div>
+  </a>
+
+  <!-- Risk Assessment Engine -->
+  <a href="/risk-assessment" class="module-card ra">
+    <div class="module-icon">🛡️</div>
+    <div class="module-title">Risk Assessment Engine</div>
+    <div class="module-desc">Multi-factor supply chain risk analysis. Assess operational, customs, weather, port, and carrier risks. Get overall scores, AI recommendations, and mitigation actions.</div>
+    <div class="module-footer">
+      <span class="module-status status-live">✅ Live</span>
+      <span class="module-launch">Launch</span>
+    </div>
+  </a>
+
+</div>
+
+<!-- Activity + High Risk -->
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">📡 Recent Platform Activity</div>
+    <div id="activity-feed">
+      <div class="activity-item">
+        <div class="activity-dot" style="background:#10b981"></div>
+        <div>
+          <div style="font-weight:600">Platform initialized — all modules online</div>
+          <div class="activity-time">Just now</div>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-dot" style="background:#f59e0b"></div>
+        <div>
+          <div style="font-weight:600">HS Classifier index pre-warmed</div>
+          <div class="activity-time">On startup</div>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-dot" style="background:#3b82f6"></div>
+        <div>
+          <div style="font-weight:600">Shipment data loaded — <span id="act-count">—</span> records</div>
+          <div class="activity-time">On startup</div>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-dot" style="background:#8b5cf6"></div>
+        <div>
+          <div style="font-weight:600">Risk Assessment engine ready</div>
+          <div class="activity-time">On startup</div>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-dot" style="background:#ef4444"></div>
+        <div>
+          <div style="font-weight:600">Critical alert: <span id="act-alerts">—</span> P1 shipments detected</div>
+          <div class="activity-time">Real-time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📊 Platform Performance KPIs</div>
+    <div class="mrow"><span class="mkey">Total Shipments Monitored</span><span class="mval" id="perf-total">—</span></div>
+    <div class="mrow"><span class="mkey">High-Risk Shipments</span><span class="mval" style="color:#f59e0b" id="perf-highrisk">—</span></div>
+    <div class="mrow"><span class="mkey">Critical P1 Alerts</span><span class="mval" style="color:#ef4444" id="perf-critical">—</span></div>
+    <div class="mrow"><span class="mkey">Potential Loss Prevented</span><span class="mval" style="color:#10b981" id="perf-loss">—</span></div>
+    <div class="mrow"><span class="mkey">Total Savings Generated</span><span class="mval" style="color:#3b82f6" id="perf-savings">—</span></div>
+    <div class="mrow"><span class="mkey">AI Platform ROI</span><span class="mval" style="color:#8b5cf6">345%</span></div>
+    <div class="mrow"><span class="mkey">HS Classifier Mode</span><span class="mval" id="perf-hs">—</span></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+const INR = n => 'Rs.\u00a0' + Math.round(n).toLocaleString('en-IN');
+
+// Live clock
+function tick() {
+  const now = new Date();
+  document.getElementById('live-clock').textContent =
+    now.toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' });
+}
+tick();
+setInterval(tick, 1000);
+
+// Load platform stats
+fetch('/api/platform-stats').then(r => r.json()).then(d => {
+  document.getElementById('kpi-shipments').textContent = d.total_shipments_analyzed || '—';
+  document.getElementById('kpi-savings').textContent   = d.predicted_cost_savings ? INR(d.predicted_cost_savings) : '—';
+  document.getElementById('kpi-alerts').textContent    = d.critical_alerts ?? '—';
+  document.getElementById('ai-mode').textContent       = d.hs_classifier_mode || 'TF-IDF';
+  document.getElementById('perf-total').textContent    = d.total_shipments_analyzed || '—';
+  document.getElementById('perf-highrisk').textContent = d.high_risk_shipments ?? '—';
+  document.getElementById('perf-critical').textContent = d.critical_alerts ?? '—';
+  document.getElementById('perf-loss').textContent     = d.potential_loss_prevented ? INR(d.potential_loss_prevented) : '—';
+  document.getElementById('perf-savings').textContent  = d.predicted_cost_savings   ? INR(d.predicted_cost_savings) : '—';
+  document.getElementById('perf-hs').textContent       = d.hs_classifier_mode || 'TF-IDF';
+  document.getElementById('act-count').textContent     = d.total_shipments_analyzed || '—';
+  document.getElementById('act-alerts').textContent    = d.critical_alerts ?? '—';
+}).catch(() => {});
+{% endblock %}

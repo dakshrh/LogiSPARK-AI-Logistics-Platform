@@ -1,0 +1,477 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+/* ── Risk Assessment Page ─────────────────────────────────────────── */
+.ra-hero {
+  background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #7c3aed 100%);
+  border-radius: 12px;
+  padding: 28px 32px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 40px rgba(76, 29, 149, 0.35);
+}
+.ra-hero-icon  { font-size: 3.5rem; flex-shrink: 0; }
+.ra-hero-title { font-size: 1.6rem; font-weight: 900; letter-spacing: -0.5px; }
+.ra-hero-sub   { font-size: 0.88rem; color: rgba(255,255,255,0.8); margin-top: 4px; line-height: 1.5; }
+
+/* ── Form ────────────────────────────────────────────────────────── */
+.form-group { margin-bottom: 14px; }
+.form-label {
+  display: block;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 5px;
+}
+.form-input, .form-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: .85rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+  background: #fff;
+  transition: border-color .2s;
+  outline: none;
+}
+.form-input:focus, .form-select:focus { border-color: var(--accent); }
+
+.assess-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #4c1d95, #7c3aed);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.assess-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(124,58,237,0.4); }
+.assess-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+/* ── Overall Score ───────────────────────────────────────────────── */
+.score-ring-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.score-ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 8px solid;
+  margin-bottom: 14px;
+  position: relative;
+  transition: border-color .4s;
+}
+.score-ring .score-num {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.score-ring .score-sub {
+  font-size: .65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.category-pill {
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: .85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Risk Gauge Cards ────────────────────────────────────────────── */
+.risk-gauge-card {
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s;
+}
+.risk-gauge-card:hover { transform: translateY(-3px); box-shadow: var(--sh-lg); }
+.risk-gauge-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; width: 100%; height: 4px;
+  background: var(--gauge-color, var(--border));
+  border-radius: 0 0 10px 10px;
+}
+.risk-factor-name { font-size: .7rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+.risk-factor-score { font-size: 2rem; font-weight: 900; }
+.risk-gauge-bar { height: 6px; background: #f1f5f9; border-radius: 99px; margin-top: 10px; overflow: hidden; }
+.risk-gauge-fill { height: 100%; border-radius: 99px; transition: width .8s cubic-bezier(.4,0,.2,1); }
+
+/* ── Recommendations ─────────────────────────────────────────────── */
+.rec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: .83rem;
+  line-height: 1.5;
+}
+.rec-item:last-child { border: none; }
+.rec-bullet { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+/* ── Mitigations ─────────────────────────────────────────────────── */
+.mit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--sky);
+  margin-bottom: 6px;
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--blue);
+  transition: .15s;
+}
+.mit-item:hover { background: var(--accent); color: #fff; }
+.mit-checkbox { font-size: 1rem; }
+
+#results-section { display: none; }
+
+.spinner {
+  width: 22px; height: 22px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Heatmap table ───────────────────────────────────────────────── */
+.heatmap-cell {
+  padding: 10px 8px;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: .9rem;
+}
+</style>
+{% endblock %}
+
+{% block sidebar_extra %}
+<div class="s-label" style="margin-top:16px">Risk Summary</div>
+<div class="kpi-card">
+  <div class="kpi-label">Overall Score</div>
+  <div class="kpi-val" id="sb-score">—</div>
+</div>
+<div class="kpi-card">
+  <div class="kpi-label">Risk Category</div>
+  <div class="kpi-val" id="sb-cat">—</div>
+</div>
+<div class="kpi-card" style="border-color:rgba(239,68,68,.4)">
+  <div class="kpi-label">Financial Exposure</div>
+  <div class="kpi-val" style="color:#ef4444" id="sb-exp">—</div>
+</div>
+<div class="kpi-card">
+  <div class="kpi-label">Top Risk Factor</div>
+  <div class="kpi-val" style="color:#f59e0b;font-size:.9rem" id="sb-top">—</div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<div class="ra-hero">
+  <div class="ra-hero-icon">🛡️</div>
+  <div>
+    <div class="ra-hero-title">Risk Assessment Engine</div>
+    <div class="ra-hero-sub">Multi-factor supply chain risk analysis across 5 dimensions.<br>
+    Get overall risk scores, AI recommendations, and mitigation actions for any route and cargo.</div>
+  </div>
+</div>
+
+<!-- Form -->
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">🔧 Assessment Parameters</div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Origin</label>
+        <input class="form-input" id="f-origin" value="Mumbai" placeholder="City / Port">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Destination</label>
+        <input class="form-input" id="f-dest" value="London" placeholder="City / Port">
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Transport Mode</label>
+        <select class="form-select" id="f-mode">
+          <option value="Ocean">🚢 Ocean</option>
+          <option value="Air">✈️ Air</option>
+          <option value="Road">🚛 Road</option>
+          <option value="Rail">🚂 Rail</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Cargo Type</label>
+        <select class="form-select" id="f-cargo">
+          <option value="Electronics">Electronics</option>
+          <option value="Perishable">Perishable</option>
+          <option value="Pharmaceuticals">Pharmaceuticals</option>
+          <option value="Hazardous">Hazardous Materials</option>
+          <option value="Textiles">Textiles</option>
+          <option value="Machinery">Machinery</option>
+          <option value="Automotive">Automotive</option>
+          <option value="FMCG">FMCG</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Cargo Value (INR)</label>
+      <input class="form-input" id="f-value" type="number" value="5000000" min="0">
+    </div>
+    <button class="assess-btn" id="assess-btn" onclick="runAssess()">
+      <span id="assess-btn-text">🛡️ Run Risk Assessment</span>
+      <div class="spinner" id="assess-spinner"></div>
+    </button>
+  </div>
+
+  <!-- Overall Score Ring -->
+  <div class="card" id="score-card">
+    <div class="card-title">🎯 Overall Risk Score</div>
+    <div class="score-ring-wrap">
+      <div class="score-ring" id="score-ring">
+        <div class="score-num" id="score-num">—</div>
+        <div class="score-sub">/ 100</div>
+      </div>
+      <div style="font-size:.75rem;color:var(--muted);margin-bottom:8px">Risk Category</div>
+      <div class="category-pill" id="cat-pill">Run Assessment</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:14px;text-align:center;max-width:200px;line-height:1.5" id="score-desc">
+        Configure parameters and run assessment to see your risk score.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Results Section -->
+<div id="results-section">
+
+  <!-- 5 Risk Factor Gauge Cards -->
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+    <div class="risk-gauge-card" id="g-Operational" style="--gauge-color:#3b82f6">
+      <div class="risk-factor-name">⚙️ Operational</div>
+      <div class="risk-factor-score" id="s-Operational">—</div>
+      <div class="risk-gauge-bar"><div class="risk-gauge-fill" id="b-Operational" style="width:0%;background:#3b82f6"></div></div>
+    </div>
+    <div class="risk-gauge-card" id="g-Port" style="--gauge-color:#f59e0b">
+      <div class="risk-factor-name">⚓ Port</div>
+      <div class="risk-factor-score" id="s-Port">—</div>
+      <div class="risk-gauge-bar"><div class="risk-gauge-fill" id="b-Port" style="width:0%;background:#f59e0b"></div></div>
+    </div>
+    <div class="risk-gauge-card" id="g-Customs" style="--gauge-color:#8b5cf6">
+      <div class="risk-factor-name">🛂 Customs</div>
+      <div class="risk-factor-score" id="s-Customs">—</div>
+      <div class="risk-gauge-bar"><div class="risk-gauge-fill" id="b-Customs" style="width:0%;background:#8b5cf6"></div></div>
+    </div>
+    <div class="risk-gauge-card" id="g-Weather" style="--gauge-color:#ef4444">
+      <div class="risk-factor-name">🌩️ Weather</div>
+      <div class="risk-factor-score" id="s-Weather">—</div>
+      <div class="risk-gauge-bar"><div class="risk-gauge-fill" id="b-Weather" style="width:0%;background:#ef4444"></div></div>
+    </div>
+    <div class="risk-gauge-card" id="g-Carrier" style="--gauge-color:#10b981">
+      <div class="risk-factor-name">🚚 Carrier</div>
+      <div class="risk-factor-score" id="s-Carrier">—</div>
+      <div class="risk-gauge-bar"><div class="risk-gauge-fill" id="b-Carrier" style="width:0%;background:#10b981"></div></div>
+    </div>
+  </div>
+
+  <!-- Radar Heatmap + Recommendations + Mitigations -->
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-title">📡 Risk Heatmap (Radar)</div>
+      <div class="chart-box"><canvas id="riskRadar"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🤖 AI Recommendations</div>
+      <div id="rec-list">—</div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔧 Mitigation Actions</div>
+      <div id="mit-list">—</div>
+    </div>
+  </div>
+
+  <!-- Financial Exposure + AI Narrative -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">💰 Financial Risk Exposure</div>
+      <div class="mrow"><span class="mkey">Cargo Value</span><span class="mval" id="fi-cargo">—</span></div>
+      <div class="mrow"><span class="mkey">Overall Risk Score</span><span class="mval" id="fi-score">—</span></div>
+      <div class="mrow"><span class="mkey">Financial Exposure</span><span class="mval" style="color:#ef4444;font-size:1rem" id="fi-exp">—</span></div>
+      <div class="mrow"><span class="mkey">Mitigation Potential</span><span class="mval" style="color:#10b981;font-size:1rem" id="fi-mit">—</span></div>
+      <div class="mrow"><span class="mkey">Top Risk Factor</span><span class="mval" id="fi-top">—</span></div>
+      <div class="mrow"><span class="mkey">Route</span><span class="mval" id="fi-route">—</span></div>
+    </div>
+    <div class="exec-banner" style="margin:0">
+      <div class="exec-icon">🤖</div>
+      <div class="exec-text" id="ai-narrative">—</div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+const INR = n => 'Rs.\u00a0' + Math.round(n).toLocaleString('en-IN');
+let radarInst = null;
+
+function runAssess() {
+  const btn     = document.getElementById('assess-btn');
+  const btnText = document.getElementById('assess-btn-text');
+  const spinner = document.getElementById('assess-spinner');
+  btn.disabled = true;
+  btnText.textContent = 'Assessing…';
+  spinner.style.display = 'block';
+
+  const payload = {
+    origin:      document.getElementById('f-origin').value || 'Mumbai',
+    destination: document.getElementById('f-dest').value   || 'London',
+    mode:        document.getElementById('f-mode').value,
+    cargo_type:  document.getElementById('f-cargo').value,
+    cargo_value: parseFloat(document.getElementById('f-value').value) || 1000000,
+  };
+
+  fetch('/api/risk-assess', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+  .then(r => r.json())
+  .then(data => render(data))
+  .catch(err => alert('Request failed: ' + err))
+  .finally(() => {
+    btn.disabled = false;
+    btnText.textContent = '🛡️ Run Risk Assessment';
+    spinner.style.display = 'none';
+  });
+}
+
+function render(d) {
+  document.getElementById('results-section').style.display = 'block';
+
+  // Color palette per category
+  const catColor = { Critical:'#ef4444', High:'#f59e0b', Medium:'#3b82f6', Low:'#10b981' };
+  const catBg    = { Critical:'#fee2e2', High:'#fef3c7', Medium:'#dbeafe', Low:'#d1fae5' };
+  const c = catColor[d.category] || '#3b82f6';
+  const bg = catBg[d.category] || '#dbeafe';
+
+  // Score ring
+  const ring = document.getElementById('score-ring');
+  ring.style.borderColor = c;
+  document.getElementById('score-num').textContent  = d.overall_score;
+  document.getElementById('score-num').style.color  = c;
+  const pill = document.getElementById('cat-pill');
+  pill.textContent       = d.category + ' Risk';
+  pill.style.background  = bg;
+  pill.style.color       = c;
+  document.getElementById('score-desc').textContent = d.ai_narrative.split('.')[0] + '.';
+
+  // Sidebar
+  document.getElementById('sb-score').textContent = d.overall_score + ' / 100';
+  document.getElementById('sb-score').style.color = c;
+  document.getElementById('sb-cat').textContent   = d.category;
+  document.getElementById('sb-cat').style.color   = c;
+  document.getElementById('sb-exp').textContent   = INR(d.financial_exposure);
+  document.getElementById('sb-top').textContent   = d.top_risk.factor + ' (' + d.top_risk.score + ')';
+
+  // Gauge cards
+  const factorColors = { Operational:'#3b82f6', Port:'#f59e0b', Customs:'#8b5cf6', Weather:'#ef4444', Carrier:'#10b981' };
+  Object.entries(d.risk_scores).forEach(([factor, score]) => {
+    const fc = factorColors[factor] || '#3b82f6';
+    const scoreEl = document.getElementById('s-' + factor);
+    const barEl   = document.getElementById('b-' + factor);
+    const cardEl  = document.getElementById('g-' + factor);
+    if (!scoreEl) return;
+    scoreEl.textContent = score;
+    scoreEl.style.color = score >= 70 ? '#ef4444' : score >= 50 ? '#f59e0b' : score >= 30 ? '#3b82f6' : '#10b981';
+    barEl.style.width   = score + '%';
+    barEl.style.background = score >= 70 ? '#ef4444' : score >= 50 ? '#f59e0b' : fc;
+    cardEl.style.setProperty('--gauge-color', score >= 70 ? '#ef4444' : score >= 50 ? '#f59e0b' : fc);
+  });
+
+  // Radar chart
+  if (radarInst) { radarInst.destroy(); radarInst = null; }
+  const labels = Object.keys(d.risk_scores);
+  const vals   = Object.values(d.risk_scores);
+  const rColors = vals.map(v => v >= 70 ? 'rgba(239,68,68,0.15)' : v >= 50 ? 'rgba(245,158,11,0.15)' : 'rgba(59,130,246,0.15)');
+  const ctx = document.getElementById('riskRadar').getContext('2d');
+  radarInst = new Chart(ctx, {
+    type: 'radar',
+    data: { labels, datasets: [{
+      label: 'Risk Score', data: vals,
+      backgroundColor: 'rgba(124,58,237,0.15)',
+      borderColor: '#7c3aed', borderWidth: 2,
+      pointBackgroundColor: vals.map(v => v >= 70 ? '#ef4444' : v >= 50 ? '#f59e0b' : '#7c3aed'),
+      pointRadius: 5,
+    }]},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: { r: { min: 0, max: 100, ticks: { stepSize: 25, font: { size: 9 } }, pointLabels: { font: { size: 10, weight: '700' } } } },
+      plugins: { legend: { display: false } },
+    }
+  });
+
+  // Recommendations
+  const icons = ['⚡','🎯','🔍','🛡️','📊'];
+  const recList = document.getElementById('rec-list'); recList.innerHTML = '';
+  (d.recommendations || []).forEach((r, i) => {
+    recList.innerHTML += `<div class="rec-item"><span class="rec-bullet">${icons[i % icons.length]}</span><span>${r}</span></div>`;
+  });
+
+  // Mitigations
+  const mitList = document.getElementById('mit-list'); mitList.innerHTML = '';
+  (d.mitigations || []).forEach(m => {
+    mitList.innerHTML += `<div class="mit-item"><span class="mit-checkbox">☑</span><span>${m}</span></div>`;
+  });
+
+  // Financial
+  document.getElementById('fi-cargo').textContent  = INR(d.cargo_value);
+  document.getElementById('fi-score').innerHTML    = `<span style="font-weight:800;color:${c}">${d.overall_score}/100</span>`;
+  document.getElementById('fi-exp').textContent    = INR(d.financial_exposure);
+  document.getElementById('fi-mit').textContent    = INR(d.mitigation_potential);
+  document.getElementById('fi-top').innerHTML      = `<span class="badge" style="background:${bg};color:${c}">${d.top_risk.factor}</span>`;
+  document.getElementById('fi-route').textContent  = `${d.origin} → ${d.destination} (${d.mode})`;
+
+  // AI Narrative
+  document.getElementById('ai-narrative').innerHTML = (d.ai_narrative || '').replace(
+    /(₹[\d,]+|\d+\/100|Critical|High|Medium|Low|\d+%)/g, '<strong>$1</strong>'
+  );
+}
+
+// Auto-run on load
+document.addEventListener('DOMContentLoaded', () => runAssess());
+{% endblock %}
