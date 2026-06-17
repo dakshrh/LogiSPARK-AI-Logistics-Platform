@@ -1,0 +1,10 @@
+{
+  "shipment_id": "SH101",
+  "delay_probability": 85,
+  "risk_level": "HIGH",
+  "predicted_delay_hours": 12,
+  "root_cause": "Port Congestion",
+  "estimated_loss": 40000,
+  "recommended_action": "Switch to alternate port",
+  "potential_savings": 32000
+}
