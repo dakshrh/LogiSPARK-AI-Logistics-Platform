@@ -1,107 +1,76 @@
 # 🚚 LogiSPARK AI Logistics Platform
 
-An AI-powered logistics intelligence platform developed for the Softlink Global LogiSPARK Assessment.
-
-LogiSPARK brings together multiple logistics solutions under a single platform, enabling supply chain teams to predict disruptions, assess risks, optimize operations, and make data-driven decisions.
-
----
-
-## 🌟 Overview
-
-The platform is designed as a centralized logistics control tower containing multiple modules:
-
-* Shipment Delay Predictor
-* Emergency Transport Planner
-* HS Code Classifier
-* Risk Assessment Engine
-* Future Logistics AI Modules
-
-The goal is to create a scalable logistics ecosystem where new AI-powered solutions can be added without affecting existing modules.
+> **An Enterprise AI-Powered Logistics Control Tower**
+>
+> Developed for the **Softlink Global LogiSPARK Assessment**, this platform combines multiple logistics intelligence modules into a single unified ecosystem to help freight forwarders, supply chain teams, and logistics operators make proactive, data-driven decisions.
 
 ---
 
-## 🏗️ Current Project Structure
+## 📖 Overview
 
-```text
-LogiSPARK-AI-Logistics-Platform
+LogiSPARK AI Logistics Platform is designed as a modular logistics intelligence system where multiple AI-powered logistics solutions operate under one platform.
 
-├── core/
-├── data/
-├── models/
-│
-├── modules/
-│   ├── shipment_delay/
-│   ├── emergency_transport/
-│   ├── hs_classifier/
-│   ├── risk_assessment/
-│   └── future_modules/
-│
-├── reports/
-├── static/
-├── templates/
-│
-├── app.py
-├── predictor.py
-├── cost_engine.py
-├── recommendation_engine.py
-├── report_generator.py
-├── generate_data.py
-├── sample_response.json
-├── requirements.txt
-└── README.md
-```
+Instead of building isolated applications, the platform provides a centralized dashboard that allows users to access various logistics tools from a single interface.
+
+The architecture is scalable, allowing future modules to be integrated seamlessly.
 
 ---
 
-# 📦 Shipment Delay Predictor
+## 🎯 Problem Statement
 
-The flagship AI module of the platform.
+Modern logistics operations face several challenges:
 
-### Problem Statement
+* Shipment delays identified too late
+* Rising warehousing and demurrage costs
+* Customs clearance bottlenecks
+* Route inefficiencies
+* Poor visibility into supply chain risks
+* Slow operational decision-making
 
-Freight forwarders often discover shipment delays after they occur.
-
-This results in:
-
-* SLA penalties
-* Warehousing costs
-* Demurrage charges
-* Customer dissatisfaction
-* Reduced profitability
-
-The Shipment Delay Predictor proactively identifies delays before they happen and recommends mitigation actions.
+The LogiSPARK AI Logistics Platform addresses these challenges by providing predictive intelligence, risk assessment, optimization recommendations, and operational insights.
 
 ---
 
-## ✨ Features
+# 🌟 Platform Modules
 
-### AI Delay Prediction
+## 📦 1. AI Shipment Delay Predictor
 
-Predict shipment delays using:
+### Overview
 
+The flagship module of the platform.
+
+Predicts shipment delays before they occur and recommends corrective actions to reduce operational losses.
+
+### Key Features
+
+#### Delay Prediction Engine
+
+Predicts shipment delays using:
+
+* Historical Shipment Data
 * Weather Conditions
 * Traffic Conditions
 * Port Congestion
 * Customs Delays
-* Documentation Issues
-
----
-
-### Root Cause Analysis
-
-Identify the primary reason behind delays:
-
-* Weather Disruption
-* Port Congestion
-* Customs Hold
-* Traffic Issues
 * Documentation Errors
 
 ---
 
-### Financial Impact Analysis
+#### Root Cause Analysis
 
-Estimate:
+Identifies the primary cause of delay:
+
+* Weather Disruption
+* Port Congestion
+* Customs Hold
+* Documentation Errors
+* Traffic Issues
+
+---
+
+#### Financial Impact Analysis
+
+Calculates:
 
 * Warehousing Costs
 * SLA Penalties
@@ -111,172 +80,289 @@ Estimate:
 
 ---
 
-### AI Recommendation Engine
+#### AI Recommendation Engine
 
-Generate actionable recommendations:
+Provides corrective actions such as:
 
 * Route Diversion
 * Alternate Port Selection
-* Alternate Carrier Selection
+* Carrier Optimization
 * Priority Customs Clearance
 
 ---
 
-### Route Optimization
+#### What-If Simulator
 
-Compare alternative logistics routes and identify the most cost-effective option.
+Allows logistics teams to compare different intervention strategies:
 
----
-
-### What-If Scenario Analysis
-
-Evaluate multiple intervention strategies and compare:
-
-* Delay Reduction
-* Cost Savings
-* Risk Reduction
-* Business Impact
+| Strategy           | Delay Reduction | Cost Impact | Savings |
+| ------------------ | --------------- | ----------- | ------- |
+| Route Diversion    | High            | Medium      | High    |
+| Alternate Carrier  | Medium          | Low         | Medium  |
+| Priority Clearance | Medium          | Low         | Medium  |
+| Alternate Port     | High            | Medium      | High    |
 
 ---
 
-### Shipment Health Score
+#### Route Optimization
 
-Assess operational health using:
-
-* Weather Score
-* Port Score
-* Traffic Score
-* Customs Score
-* Documentation Score
+Compares multiple transportation routes and recommends the most efficient option.
 
 ---
 
-### PDF Report Generator
+#### Shipment Health Score
 
-Generate downloadable logistics intelligence reports containing:
+Evaluates:
+
+* Weather Risk
+* Port Health
+* Traffic Conditions
+* Customs Status
+* Documentation Quality
+
+---
+
+#### Priority Alert Matrix
+
+Categorizes shipments:
+
+* P1 Critical
+* P2 High
+* P3 Medium
+* P4 Low
+
+---
+
+#### PDF Report Generation
+
+Generate downloadable reports containing:
 
 * Executive Summary
-* Delay Analysis
 * Root Cause Analysis
-* Cost Breakdown
+* Financial Impact Analysis
 * Route Optimization
-* Recommendations
+* AI Recommendations
+* Management Summary
 
-Example:
+---
+
+## 🚨 2. Emergency Transport Planner
+
+### Overview
+
+Provides contingency planning during disruptions.
+
+### Features
+
+* Emergency Route Planning
+* Alternative Transport Suggestions
+* Capacity Recovery Planning
+* Operational Escalation Support
+
+### Status
+
+🚧 Under Development
+
+---
+
+## 📑 3. HS Code Classifier
+
+### Overview
+
+AI-assisted product classification engine.
+
+### Features
+
+* Product Classification
+* HS Code Suggestions
+* Compliance Assistance
+* Confidence Scoring
+
+### Status
+
+🚧 Under Development
+
+---
+
+## ⚠️ 4. Risk Assessment Engine
+
+### Overview
+
+Predictive logistics risk management system.
+
+### Features
+
+* Shipment Risk Analysis
+* Operational Risk Scoring
+* Compliance Risk Monitoring
+* Predictive Intelligence
+
+### Status
+
+🚧 Under Development
+
+---
+
+# 🏗️ System Architecture
 
 ```text
-Delay_Report_SH110.pdf
+Historical Shipment Data
+        +
+Weather Data
+        +
+Traffic Data
+        +
+Port Congestion Data
+        +
+Customs Data
+                │
+                ▼
+      AI Prediction Engine
+                │
+                ▼
+      Delay Probability
+                │
+                ▼
+      Root Cause Analysis
+                │
+                ▼
+      Cost Impact Analysis
+                │
+                ▼
+      Recommendation Engine
+                │
+                ▼
+      Route Optimization
+                │
+                ▼
+      What-If Simulator
+                │
+                ▼
+      PDF Report Generator
 ```
 
 ---
 
-# 🚨 Emergency Transport Planner
+# 📂 Project Structure
 
-Provides logistics recovery planning during disruptions.
+```text
+LogiSPARK-AI-Logistics-Platform
 
-Features include:
-
-* Alternate Transport Planning
-* Emergency Routing
-* Rapid Shipment Recovery
-* Contingency Recommendations
+├── core/
+│
+├── data/
+│
+├── models/
+│
+├── modules/
+│   ├── shipment_delay/
+│   │   ├── predictor.py
+│   │   ├── cost_engine.py
+│   │   ├── recommendation_engine.py
+│   │   ├── report_generator.py
+│   │   ├── generate_data.py
+│   │   ├── data/
+│   │   └── models/
+│   │
+│   ├── emergency_transport/
+│   ├── hs_classifier/
+│   ├── risk_assessment/
+│   └── future_modules/
+│
+├── reports/
+│
+├── static/
+│
+├── templates/
+│
+├── app.py
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-# 📑 HS Code Classifier
+# 🖥️ Platform Workflow
 
-AI-powered trade classification assistant.
+```text
+User Opens Platform
+         │
+         ▼
+Main Dashboard
+         │
+         ├── Shipment Delay Predictor
+         ├── Emergency Transport Planner
+         ├── HS Code Classifier
+         └── Risk Assessment Engine
+```
 
-Capabilities:
-
-* Product Classification
-* HS Code Suggestions
-* Classification Confidence Scores
-* Compliance Support
-
----
-
-# ⚠️ Risk Assessment Engine
-
-Analyzes operational and logistics risks.
-
-Includes:
-
-* Shipment Risk Scoring
-* Compliance Risk Evaluation
-* Operational Risk Analysis
-* Predictive Risk Intelligence
-
----
-
-# 📊 Platform Dashboard
-
-The centralized dashboard provides:
-
-* Logistics Module Navigation
-* Shipment Analytics
-* Risk Monitoring
-* Operational Intelligence
-* Future Module Expansion Support
+Selecting a module loads its dedicated analytics dashboard.
 
 ---
 
 # 🛠️ Technology Stack
 
-### Backend
+## Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap
+
+## Backend
 
 * Python
 * Flask
 
-### Data Processing
+## Machine Learning
+
+* Scikit-Learn
+* Random Forest
+* Predictive Analytics
+
+## Data Processing
 
 * Pandas
 * NumPy
 
-### Machine Learning
-
-* Scikit-Learn
-* Random Forest
-
-### Reporting
+## Reporting
 
 * ReportLab
 
-### Frontend
+## Visualization
 
-* HTML
-* CSS
-* JavaScript
+* Plotly
+* Chart.js
 
 ---
 
 # 🚀 Installation
 
-Clone repository:
+Clone Repository
 
 ```bash
 git clone https://github.com/dakshrh/LogiSPARK-AI-Logistics-Platform.git
 ```
 
-Navigate into project:
+Move Into Project Directory
 
 ```bash
 cd LogiSPARK-AI-Logistics-Platform
 ```
 
-Install dependencies:
+Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run application:
+Run Application
 
 ```bash
 python app.py
 ```
 
-Open browser:
+Open Browser
 
 ```text
 http://127.0.0.1:5000
@@ -284,26 +370,45 @@ http://127.0.0.1:5000
 
 ---
 
-# 🎯 Business Benefits
+# 📊 Business Benefits
 
-* Reduced Shipment Delays
-* Lower Operational Costs
-* Improved Customer Satisfaction
-* Better Decision Making
-* Increased Logistics Visibility
-* Faster Risk Mitigation
+### Reduced Delays
+
+Predict disruptions before they impact customers.
+
+### Lower Costs
+
+Minimize:
+
+* Warehousing Charges
+* Demurrage Costs
+* SLA Penalties
+
+### Better Visibility
+
+Provide end-to-end shipment intelligence.
+
+### Faster Decision Making
+
+Enable operations teams to respond proactively.
+
+### Increased Customer Satisfaction
+
+Reduce delivery uncertainty and improve service reliability.
 
 ---
 
-# 👥 Modular Team Development
+# 👥 Team Collaboration
 
-The platform is designed for collaborative development.
+The platform follows a modular architecture allowing multiple developers to contribute independently.
 
-New modules can be added under:
+Each team member can develop features inside:
 
 ```text
 modules/
 ```
+
+without affecting other modules.
 
 Example:
 
@@ -316,25 +421,43 @@ modules/
 └── future_modules/
 ```
 
-This architecture allows multiple team members to contribute independently while maintaining a unified platform experience.
+This enables scalable and collaborative development.
 
 ---
 
-# 🔮 Future Enhancements
+# 🔮 Future Roadmap
+
+### Phase 2
 
 * Live Weather APIs
-* Real-Time Port Congestion Data
-* Customs Intelligence Engine
-* GPS Shipment Tracking
+* Real-Time Port Congestion Tracking
+* GPS Shipment Monitoring
+* ETA Prediction Engine
+* Customs Intelligence System
+
+### Phase 3
+
 * LLM-Powered Logistics Assistant
-* Predictive ETA Forecasting
-* Multi-Carrier Optimization
-* Real-Time Supply Chain Monitoring
+* Autonomous Route Optimization
+* Real-Time Supply Chain Copilot
+* Multi-Carrier AI Optimization
+* Logistics Command Center
 
 ---
 
-# 🏆 LogiSPARK Assessment Project
+# 🏆 Softlink Global LogiSPARK Assessment
 
-Developed as part of the Softlink Global LogiSPARK Assessment to demonstrate practical AI applications in logistics, supply chain optimization, and operational decision support.
+This project demonstrates how Artificial Intelligence can transform logistics operations through predictive analytics, operational intelligence, cost optimization, and proactive decision support.
 
-### Transforming Logistics Through Predictive Intelligence 🚀
+---
+
+## Contributors
+
+* Daksh Rathi – AI Shipment Delay Predictor & Platform Integration
+* Team Members – Emergency Transport, HS Classification, Risk Assessment Modules
+
+---
+
+### 🚀 Transforming Logistics Through Predictive Intelligence
+
+### 📦 Predict • Analyze • Optimize • Deliver
