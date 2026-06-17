@@ -19,7 +19,7 @@ def _py(val):
 
 
 class ShipmentPredictor:
-    def __init__(self, data_dir="data", model_path="models/delay_model.pkl"):
+    def __init__(self, data_dir="modules/shipment_delay/data", model_path="modules/shipment_delay/models/delay_model.pkl"):
         self.data_dir = data_dir
         self.model_path = model_path
         self.model = None
