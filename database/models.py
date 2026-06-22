@@ -48,6 +48,11 @@ class DelayPrediction(Base):
     delay_probability = Column(Float)
     primary_cause = Column(String)
     secondary_cause = Column(String, nullable=True)
+    confidence = Column(Float, nullable=True)
+    risk_level = Column(String, nullable=True)
+    estimated_loss = Column(Float, nullable=True)
+    recommended_action = Column(String, nullable=True)
+    predicted_eta = Column(String, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     full_prediction = Column(JSON, nullable=True)
 

@@ -42,6 +42,77 @@ class ShipmentStatsResponse(BaseModel):
     roi_generated_pct: int = Field(..., description="ROI generated percentage")
     cause_distribution: Dict[str, int] = Field(..., description="Distribution of delay causes")
 
+class ShipmentInformation(BaseModel):
+    shipment_id: str
+    origin: str
+    destination: str
+    carrier: str
+    transport_mode: str
+    weight_kg: float
+    cargo_value: float
+
+class PredictionDetails(BaseModel):
+    delay_probability: float
+    predicted_delay_days: float
+    confidence: float
+    risk_level: str
+    status: str
+
+class ETAAnalysis(BaseModel):
+    original_eta_date: str
+    original_eta_day: str
+    predicted_eta_date: str
+    predicted_eta_day: str
+    additional_days: float
+    on_time_probability: float
+
+class ContributingFactor(BaseModel):
+    factor: str
+    impact_percentage: float
+
+class RootCauseAnalysis(BaseModel):
+    primary_cause: str
+    secondary_cause: str
+    contributing_factors: List[ContributingFactor]
+
+class RouteAnalysis(BaseModel):
+    current_route: str
+    distance_km: float
+    route_risk_score: float
+    congestion_level: str
+    customs_risk: str
+
+class CarrierAnalysis(BaseModel):
+    current_carrier: str
+    carrier_reliability: float
+    historical_average_delay: float
+    carrier_score: float
+
+class CostImpactAnalysis(BaseModel):
+    estimated_delay_cost: float
+    storage_cost: float
+    sla_penalty: float
+    operational_loss: float
+    total_estimated_loss: float
+
+class AIRecommendation(BaseModel):
+    recommended_action: str
+    expected_days_saved: float
+    additional_cost: float
+    potential_savings: float
+
+class AlternativeRoute(BaseModel):
+    route_name: str
+    eta_days: float
+    risk_score: float
+    cost: float
+    advantage: str
+
+class TimelineEvent(BaseModel):
+    event: str
+    date: str
+    status: str
+
 class ShipmentPredictionResponse(BaseModel):
     shipment_id: str = Field(..., description="Shipment ID", examples=["LS1001"])
     origin: str = Field(..., description="Origin", examples=["Mumbai"])
@@ -67,6 +138,19 @@ class ShipmentPredictionResponse(BaseModel):
     recommendation_v2: Dict[str, Any] = Field(..., description="AI recommendations for mitigating the delay")
     health_scores: Dict[str, int] = Field(..., description="Health scores for various factors")
     priority_matrix: Dict[str, Any] = Field(..., description="Priority metrics and action deadlines")
+
+    # New nested models for Enterprise Engine
+    shipment_information: ShipmentInformation
+    prediction_details: PredictionDetails
+    eta_analysis: ETAAnalysis
+    root_cause_analysis: RootCauseAnalysis
+    route_analysis: RouteAnalysis
+    carrier_analysis: CarrierAnalysis
+    cost_impact_analysis: CostImpactAnalysis
+    ai_recommendation_engine: AIRecommendation
+    alternative_routes: List[AlternativeRoute]
+    timeline_engine: List[TimelineEvent]
+    ai_insights: str
 
 # ──────────────────────────────────────────────────────────────────────────────
 # ENDPOINTS
@@ -97,13 +181,18 @@ def get_global_stats(db: Session = Depends(get_db)):
 @router.get("/predict/{shipment_id}", response_model=ShipmentPredictionResponse, tags=["Delay Prediction"], summary="Predict Shipment Delay", description="Get AI-powered delay predictions and recommendations for a specific shipment.")
 def predict_shipment(shipment_id: str = Path(..., description="The ID of the shipment to predict", examples=["LS1001"]), db: Session = Depends(get_db)):
     try:
-        res = predictor.predict(shipment_id)
+        res = predictor.predict(shipment_id, db)
         # Store in DB
         crud.save_prediction(db, {
             "shipment_id": shipment_id,
             "predicted_delay_days": res.get("predicted_delay_hours", 0) / 24.0,
             "delay_probability": res.get("delay_probability", 0),
             "primary_cause": res.get("root_cause", ""),
+            "confidence": res.get("prediction_details", {}).get("confidence"),
+            "risk_level": res.get("prediction_details", {}).get("risk_level"),
+            "estimated_loss": res.get("cost_impact_analysis", {}).get("total_estimated_loss"),
+            "recommended_action": res.get("ai_recommendation_engine", {}).get("recommended_action"),
+            "predicted_eta": res.get("eta_analysis", {}).get("predicted_eta_date"),
             "full_prediction": res
         })
         return res
@@ -122,7 +211,7 @@ def export_json(shipment_id: str = Path(..., description="The ID of the shipment
 @router.get("/predict/{shipment_id}/excel", tags=["Delay Prediction"], summary="Export Prediction to Excel", description="Generate and download an Excel report containing the delay prediction details.")
 def export_excel(shipment_id: str = Path(..., description="The ID of the shipment to predict", examples=["LS1001"]), db: Session = Depends(get_db)):
     try:
-        res = predictor.predict(shipment_id)
+        res = predictor.predict(shipment_id, db)
     except KeyError as e:
         raise HTTPException(status_code=404, detail=str(e))
     except Exception as e:
@@ -159,7 +248,7 @@ def export_excel(shipment_id: str = Path(..., description="The ID of the shipmen
 @router.get("/predict/{shipment_id}/pdf", tags=["Delay Prediction"], summary="Export Prediction to PDF", description="Generate and download a PDF report containing the delay prediction details.")
 def export_pdf(shipment_id: str = Path(..., description="The ID of the shipment to predict", examples=["LS1001"]), db: Session = Depends(get_db)):
     try:
-        res = predictor.predict(shipment_id)
+        res = predictor.predict(shipment_id, db)
     except KeyError as e:
         raise HTTPException(status_code=404, detail=str(e))
     except Exception as e:

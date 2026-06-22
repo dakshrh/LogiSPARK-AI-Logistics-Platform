@@ -37,6 +37,10 @@
 
 {% block content %}
 <!-- 1. Executive Summary Banner -->
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 15px;">
+  <h2 style="margin:0; font-weight:800; color:var(--text); letter-spacing:-0.5px;">Enterprise Intelligence Dashboard</h2>
+  <div class="badge b-blue" style="font-size:0.8rem;">LogiSPARK AI Core v2.0</div>
+</div>
 <div class="exec-banner" id="exec-banner">
   <div class="exec-icon">🤖</div>
   <div class="exec-text" id="exec-text">Loading AI narrative…</div>
@@ -192,7 +196,31 @@
   </div>
 </div>
 
-<!-- 9. Action Center -->
+<!-- 9. Enterprise Timeline & Carrier Analysis -->
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">🕒 Enterprise Shipment Timeline</div>
+    <div id="ent-timeline" style="margin-top:10px; padding-left:10px; border-left: 2px solid rgba(255,255,255,0.1);">
+      <!-- Timeline items go here -->
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🚚 Carrier & ETA Analysis</div>
+    <div style="font-size:1.1rem; font-weight:700; margin-bottom: 8px; color: var(--blue);">ETA Analysis</div>
+    <div class="mrow"><span class="mkey">Original ETA</span><span class="mval" id="eta-orig">—</span></div>
+    <div class="mrow"><span class="mkey">Predicted ETA</span><span class="mval" id="eta-pred" style="color:#ef4444; font-weight:bold;">—</span></div>
+    <div class="mrow"><span class="mkey">Additional Days</span><span class="mval" id="eta-add">—</span></div>
+    <div class="mrow"><span class="mkey">On-Time Probability</span><span class="badge b-amber" id="eta-prob">—</span></div>
+    
+    <div style="font-size:1.1rem; font-weight:700; margin-top: 16px; margin-bottom: 8px; color: var(--blue);">Carrier Performance</div>
+    <div class="mrow"><span class="mkey">Carrier Name</span><span class="mval" id="car-name">—</span></div>
+    <div class="mrow"><span class="mkey">Reliability Score</span><span class="mval" id="car-rel">—</span></div>
+    <div class="mrow"><span class="mkey">Avg Historical Delay</span><span class="mval" id="car-hist">—</span></div>
+    <div class="mrow"><span class="mkey">Carrier Rating</span><span class="mval" id="car-rate" style="color:var(--green); font-weight:bold;">—</span></div>
+  </div>
+</div>
+
+<!-- 10. Action Center -->
 <div class="card">
   <div class="card-title">🚀 Enterprise Action Center</div>
   <div class="action-grid" id="action-btns">
@@ -254,8 +282,9 @@ function render(d){
   const fin = d.financial_breakdown;
 
   /* Exec banner */
-  document.getElementById('exec-text').innerHTML = d.ai_summary.replace(
-    /(Rs\.[^\\.]+|Route Diversion|Urgency HIGH|77%|22\.7|39,104|23,462)/g,
+  const bannerText = d.ai_insights || d.ai_summary || '';
+  document.getElementById('exec-text').innerHTML = bannerText.replace(
+    /(Rs\.[^\\.]+|Route Diversion|Urgency HIGH|77%|22\.7|39,104|23,462|Optimizing routing|\d+\.\d+-day delay)/g,
     '<strong>$1</strong>'
   );
 
@@ -377,6 +406,40 @@ function render(d){
   document.getElementById('info-dist').textContent = (d.distance_km||'—') + ' km';
   document.getElementById('info-dep').textContent  = (d.scheduled_departure||'—').replace('T',' ');
   document.getElementById('info-arr').textContent  = (d.scheduled_arrival||'—').replace('T',' ');
+
+  /* Enterprise Intelligence fields */
+  if (d.eta_analysis) {
+    document.getElementById('eta-orig').textContent = d.eta_analysis.original_eta_date;
+    document.getElementById('eta-pred').textContent = d.eta_analysis.predicted_eta_date;
+    document.getElementById('eta-add').textContent = '+' + d.eta_analysis.additional_days + ' days';
+    document.getElementById('eta-prob').textContent = d.eta_analysis.on_time_probability + '%';
+  }
+  
+  if (d.carrier_analysis) {
+    document.getElementById('car-name').textContent = d.carrier_analysis.current_carrier;
+    document.getElementById('car-rel').textContent = d.carrier_analysis.carrier_reliability + '%';
+    document.getElementById('car-hist').textContent = d.carrier_analysis.historical_average_delay + ' days';
+    document.getElementById('car-rate').textContent = d.carrier_analysis.carrier_score + ' / 10';
+  }
+
+  if (d.timeline_engine) {
+    const tl = document.getElementById('ent-timeline');
+    tl.innerHTML = '';
+    d.timeline_engine.forEach(item => {
+      let color = '#94a3b8'; 
+      let icon = '⚪';
+      if (item.status === 'Completed') { color = '#10b981'; icon = '✅'; }
+      else if (item.status === 'In Progress') { color = '#3b82f6'; icon = '🔄'; }
+      else if (item.status === 'Predicted') { color = '#ef4444'; icon = '⚠️'; }
+      else if (item.status === 'Pending') { color = '#f59e0b'; icon = '⏳'; }
+      
+      tl.innerHTML += `<div style="position:relative; padding-bottom:15px; margin-left: 10px;">
+        <span style="position:absolute; left:-23px; font-size:12px;">${icon}</span>
+        <div style="font-weight:600; font-size:.9rem; color:${color}">${item.event}</div>
+        <div style="font-size:.75rem; color:var(--muted)">${item.date} • ${item.status}</div>
+      </div>`;
+    });
+  }
 
   /* Export links */
   document.getElementById('btn-pdf').href  = `/predict/${d.shipment_id}/pdf`;

@@ -82,6 +82,31 @@ def generate_pdf_report(shipment_data: dict, output_path: str):
     story.append(Paragraph(f"<b>Implementation Cost:</b> Rs. {rec.get('implementation_cost', 0):,}", normal_style))
     story.append(Paragraph(f"<b>Net Benefit:</b> Rs. {rec.get('net_benefit', 0):,}", normal_style))
     story.append(Paragraph(f"<b>Risk Reduction:</b> {rec.get('risk_reduction', '-')}", normal_style))
-    
+    story.append(Spacer(1, 15))
+
+    # Enterprise ETA Analysis
+    if 'eta_analysis' in shipment_data:
+        story.append(Paragraph("5. Advanced ETA Analysis", h2_style))
+        eta = shipment_data['eta_analysis']
+        eta_data = [
+            ["Metric", "Value"],
+            ["Original ETA", f"{eta.get('original_eta_date')} ({eta.get('original_eta_day')})"],
+            ["Predicted ETA", f"{eta.get('predicted_eta_date')} ({eta.get('predicted_eta_day')})"],
+            ["Additional Days", str(eta.get('additional_days'))],
+            ["On-Time Probability", f"{eta.get('on_time_probability')}%"]
+        ]
+        eta_table = Table(eta_data, colWidths=[200, 200])
+        eta_table.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (1,0), colors.HexColor('#1e3a8a')),
+            ('TEXTCOLOR', (0,0), (1,0), colors.whitesmoke),
+            ('ALIGN', (0,0), (-1,-1), 'LEFT'),
+            ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+            ('BOTTOMPADDING', (0,0), (-1,0), 8),
+            ('BACKGROUND', (0,1), (-1,-1), colors.HexColor('#f8fafc')),
+            ('GRID', (0,0), (-1,-1), 1, colors.HexColor('#e2e8f0')),
+        ]))
+        story.append(eta_table)
+        story.append(Spacer(1, 15))
+
     doc.build(story)
     return output_path

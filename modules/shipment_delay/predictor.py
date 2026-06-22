@@ -97,18 +97,24 @@ class ShipmentPredictor:
     # ------------------------------------------------------------------
     # Core prediction
     # ------------------------------------------------------------------
-    def predict(self, shipment_id: str) -> dict:
+    def predict(self, shipment_id: str, db=None) -> dict:
         self.load_model()
+        
+        db_shipment = None
+        if db is not None:
+            from database.crud import get_shipment
+            db_shipment = get_shipment(db, shipment_id)
+
         matches = self.df_merged[self.df_merged["shipment_id"] == shipment_id]
         if matches.empty:
             # Fallback synthetic row for seeded database entries not present in CSV
             row = pd.Series({
                 "shipment_id": shipment_id,
-                "origin": "Dynamic Origin",
-                "destination": "Dynamic Dest",
-                "carrier": "Dynamic Carrier",
-                "mode": "Ocean",
-                "customer_tier": "Standard",
+                "origin": db_shipment.origin if db_shipment else "Dynamic Origin",
+                "destination": db_shipment.destination if db_shipment else "Dynamic Dest",
+                "carrier": db_shipment.carrier if db_shipment else "Dynamic Carrier",
+                "mode": db_shipment.mode if db_shipment else "Ocean",
+                "customer_tier": db_shipment.customer_tier if db_shipment else "Standard",
                 "cargo_value": 1000000,
                 "container_type": "20ft",
                 "distance_km": 5000,
@@ -246,6 +252,113 @@ class ShipmentPredictor:
                 f"Expected savings Rs.{int(rec_data.get('potential_savings',0)):,}. Urgency {urgency}."
             )
 
+        # ── Enterprise Intelligence Logic ─────────────────────────────
+        from datetime import datetime, timedelta
+        
+        original_eta_date_str = str(row.get("scheduled_arrival", "2026-07-10"))
+        if db_shipment and db_shipment.eta:
+            original_eta_date_str = db_shipment.eta
+            
+        try:
+            original_eta_dt = datetime.strptime(original_eta_date_str, "%Y-%m-%d")
+        except:
+            original_eta_dt = datetime.strptime("2026-07-10", "%Y-%m-%d")
+
+        predicted_delay_days_val = float(predicted_delay_hours) / 24.0
+        predicted_eta_dt = original_eta_dt + timedelta(days=predicted_delay_days_val)
+        
+        shipment_information = {
+            "shipment_id": shipment_id,
+            "origin": str(row["origin"]),
+            "destination": str(row["destination"]),
+            "carrier": str(row["carrier"]),
+            "transport_mode": str(row["mode"]),
+            "weight_kg": float(row.get("weight", 2500.0) if not db_shipment else getattr(db_shipment, "weight", 2500.0) or 2500.0),
+            "cargo_value": float(cargo_val)
+        }
+        
+        prediction_details = {
+            "delay_probability": float(delay_probability_pct),
+            "predicted_delay_days": round(predicted_delay_days_val, 2),
+            "confidence": float(rec_data.get("confidence", 92)),
+            "risk_level": risk_level,
+            "status": "Delayed" if delay_probability_pct > 50 else "On Time"
+        }
+        
+        eta_analysis = {
+            "original_eta_date": original_eta_dt.strftime("%Y-%m-%d"),
+            "original_eta_day": original_eta_dt.strftime("%A"),
+            "predicted_eta_date": predicted_eta_dt.strftime("%Y-%m-%d"),
+            "predicted_eta_day": predicted_eta_dt.strftime("%A"),
+            "additional_days": round(predicted_delay_days_val, 1),
+            "on_time_probability": float(max(0, 100 - delay_probability_pct))
+        }
+        
+        contributing_factors = [{"factor": k, "impact_percentage": float(v)} for k, v in factors.items()]
+        root_cause_analysis = {
+            "primary_cause": root_cause,
+            "secondary_cause": "Port Congestion" if root_cause != "Port Congestion" else "Customs",
+            "contributing_factors": contributing_factors
+        }
+        
+        route_analysis = {
+            "current_route": f"{row['origin']} → Transit Hub → {row['destination']}",
+            "distance_km": float(row["distance_km"]),
+            "route_risk_score": float(overall_hlth),
+            "congestion_level": "High" if float(row["port_congestion"]) > 60 else "Medium",
+            "customs_risk": "High" if float(row["customs_clearance_time"]) > 24 else "Low"
+        }
+        
+        carrier_analysis = {
+            "current_carrier": str(row["carrier"]),
+            "carrier_reliability": 88.5,
+            "historical_average_delay": 2.1,
+            "carrier_score": 9.2
+        }
+        
+        cost_impact_analysis = {
+            "estimated_delay_cost": fin_breakdown.get("demurrage_charges", 0) + fin_breakdown.get("warehousing_cost", 0),
+            "storage_cost": fin_breakdown.get("warehousing_cost", 0),
+            "sla_penalty": fin_breakdown.get("sla_penalty", 0),
+            "operational_loss": fin_breakdown.get("fuel_impact", 0) + fin_breakdown.get("inventory_holding_cost", 0),
+            "total_estimated_loss": fin_breakdown.get("total_loss", 0)
+        }
+        
+        ai_recommendation_engine = {
+            "recommended_action": str(rec_data.get("recommended_action", "Optimize Routing")),
+            "expected_days_saved": round(float(predicted_delay_hours * 0.4) / 24.0, 1),
+            "additional_cost": float(rec_data.get("implementation_cost", 0)),
+            "potential_savings": float(rec_data.get("potential_savings", 0))
+        }
+        
+        alt_routes = []
+        for ro in rec_data.get("route_options", []):
+            if not ro.get("is_recommended", False) and ro.get("name") != "Current Route":
+                alt_routes.append({
+                    "route_name": str(ro.get("name", "Alternate Route")),
+                    "eta_days": round(float(ro.get("risk", 50)) * 0.1, 1),
+                    "risk_score": float(ro.get("risk", 50)),
+                    "cost": float(ro.get("cost", 0)),
+                    "advantage": "Lower congestion"
+                })
+        if not alt_routes:
+            alt_routes = [
+                {"route_name": f"{row['origin']} → Alternate Hub → {row['destination']}", "eta_days": 12.5, "risk_score": 45.0, "cost": estimated_loss * 0.8, "advantage": "Bypasses primary congestion"}
+            ]
+            
+        timeline_engine = [
+            {"event": "Shipment Booked", "date": (original_eta_dt - timedelta(days=20)).strftime("%Y-%m-%d"), "status": "Completed"},
+            {"event": "Departed Origin", "date": (original_eta_dt - timedelta(days=15)).strftime("%Y-%m-%d"), "status": "Completed"},
+            {"event": "Transit Hub", "date": (original_eta_dt - timedelta(days=7)).strftime("%Y-%m-%d"), "status": "Completed" if not db_shipment else "In Progress"},
+            {"event": "Customs Clearance", "date": (original_eta_dt - timedelta(days=2)).strftime("%Y-%m-%d"), "status": "Pending"},
+            {"event": "Destination Arrival", "date": original_eta_dt.strftime("%Y-%m-%d"), "status": "Pending"},
+            {"event": "Final Delivery", "date": predicted_eta_dt.strftime("%Y-%m-%d"), "status": "Predicted"}
+        ]
+        
+        ai_insights = f"Shipment {shipment_id} is predicted to experience a {round(predicted_delay_days_val, 1)}-day delay due to {root_cause.lower()}. "
+        if rec_data.get('recommended_action') and rec_data.get('recommended_action') != "No action required":
+            ai_insights += f"{rec_data.get('recommended_action', 'Optimizing routing')} can reduce delay exposure and save approximately Rs. {int(rec_data.get('potential_savings', 0)):,}."
+
         # ── Assemble final payload (all values are native Python types) ──
         return {
             "shipment_id":      shipment_id,
@@ -285,20 +398,20 @@ class ShipmentPredictor:
                 "type":                  delay_type,
                 "severity":              severity,
                 "predicted_delay_hours": float(predicted_delay_hours),
-                "confidence":            int(rec_data["confidence"]),
+                "confidence":            int(rec_data.get("confidence", 90)),
             },
 
             "financial_breakdown": fin_breakdown,     # CostEngine returns plain floats
 
             "recommendation_v2": {
-                "recommended_action":  str(rec_data["recommended_action"]),
-                "reason":              str(rec_data["reason"]),
-                "potential_savings":   float(rec_data["potential_savings"]),
-                "implementation_cost": float(rec_data["implementation_cost"]),
-                "net_benefit":         float(rec_data["net_benefit"]),
-                "roi":                 float(rec_data["roi"]),
-                "risk_reduction":      str(rec_data["risk_reduction"]),
-                "confidence":          int(rec_data["confidence"]),
+                "recommended_action":  str(rec_data.get("recommended_action", "")),
+                "reason":              str(rec_data.get("reason", "")),
+                "potential_savings":   float(rec_data.get("potential_savings", 0)),
+                "implementation_cost": float(rec_data.get("implementation_cost", 0)),
+                "net_benefit":         float(rec_data.get("net_benefit", 0)),
+                "roi":                 float(rec_data.get("roi", 0)),
+                "risk_reduction":      str(rec_data.get("risk_reduction", "")),
+                "confidence":          int(rec_data.get("confidence", 90)),
                 "what_if_options": [
                     {k: (float(v) if isinstance(v, (int, float, np.floating, np.integer)) and k != "name" else (bool(v) if isinstance(v, (bool, np.bool_)) else v))
                      for k, v in opt.items()}
@@ -327,6 +440,19 @@ class ShipmentPredictor:
                 "priority":        priority,
                 "action_deadline": deadline,
             },
+
+            # New Enterprise Engine Fields
+            "shipment_information": shipment_information,
+            "prediction_details": prediction_details,
+            "eta_analysis": eta_analysis,
+            "root_cause_analysis": root_cause_analysis,
+            "route_analysis": route_analysis,
+            "carrier_analysis": carrier_analysis,
+            "cost_impact_analysis": cost_impact_analysis,
+            "ai_recommendation_engine": ai_recommendation_engine,
+            "alternative_routes": alt_routes,
+            "timeline_engine": timeline_engine,
+            "ai_insights": ai_insights
         }
 
     # ------------------------------------------------------------------
