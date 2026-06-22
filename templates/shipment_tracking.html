@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+/* ── Shipment Tracking UI ─────────────────────────────────────── */
+.st-hero {
+  background: linear-gradient(135deg, #1e3a8a, #8b5cf6);
+  border-radius: 12px;
+  padding: 28px 32px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(30,58,138,0.25);
+  margin-bottom: 20px;
+}
+.st-hero-icon { font-size: 3.4rem; flex-shrink: 0; }
+.st-hero-title { font-size: 1.6rem; font-weight: 900; letter-spacing: -0.4px; }
+.st-hero-sub   { font-size: .88rem; color: rgba(255,255,255,0.85); margin-top: 6px; line-height: 1.5; }
+
+/* Input Section */
+.search-bar { display:flex; gap:10px; margin-bottom:20px; }
+.search-input { flex:1; padding:14px; border-radius:8px; border:2px solid var(--border); font-size:1rem; }
+.search-btn { padding:14px 24px; border-radius:8px; border:none; background:var(--blue); color:#fff; font-weight:700; cursor:pointer; }
+
+/* Timeline */
+.timeline { display:flex; justify-content:space-between; align-items:center; position:relative; margin:30px 0; padding:0 20px; }
+.timeline::before { content:''; position:absolute; top:12px; left:40px; right:40px; height:4px; background:var(--border); z-index:1; }
+.tl-step { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:8px; flex:1; }
+.tl-dot { width:28px; height:28px; border-radius:50%; background:var(--card); border:4px solid var(--border); transition:0.3s; }
+.tl-label { font-size:0.75rem; font-weight:700; color:var(--muted); text-align:center; }
+.tl-step.active .tl-dot { border-color:var(--blue); background:var(--blue); }
+.tl-step.active .tl-label { color:var(--blue); }
+.tl-step.done .tl-dot { border-color:var(--green); background:var(--green); }
+.tl-step.done .tl-label { color:var(--green); }
+
+/* Progress Bar Line behind active dots */
+.timeline-progress { position:absolute; top:12px; left:40px; height:4px; background:var(--green); z-index:1; transition:width 0.4s; }
+
+</style>
+{% endblock %}
+
+{% block sidebar_extra %}
+<div class="s-label" style="margin-top:16px">Test Shipments</div>
+<div style="font-size:0.75rem; color:var(--muted); margin-bottom:10px;">Use these IDs for demo:</div>
+<div class="nav-menu">
+  <a href="#" class="nav-link" onclick="setTrack('LS1001')"><span>🚢</span> LS1001 (In Transit)</a>
+  <a href="#" class="nav-link" onclick="setTrack('LS1002')"><span>⚓</span> LS1002 (At Customs)</a>
+  <a href="#" class="nav-link" onclick="setTrack('LS1004')"><span>📝</span> LS1004 (Booked)</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="st-hero">
+  <div class="st-hero-icon">🛰️</div>
+  <div>
+    <div class="st-hero-title">Shipment Tracking</div>
+    <div class="st-hero-sub">Real-time visibility into your cargo with AI-powered delay insights and recommendations.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="search-bar">
+    <input type="text" id="track-id" class="search-input" placeholder="Enter Shipment ID (e.g., LS1001)">
+    <button class="search-btn" onclick="track()">Track Shipment</button>
+  </div>
+</div>
+
+<div id="result-section" style="display:none;">
+  <div class="card" style="margin-bottom:20px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+      <h3>Tracking ID: <span id="res-id" style="color:var(--blue);"></span></h3>
+      <div id="res-status-badge" class="badge b-blue">Status</div>
+    </div>
+    
+    <div class="timeline" id="timeline-container">
+      <div class="timeline-progress" id="tl-progress" style="width:0%;"></div>
+      <!-- Steps injected by JS -->
+    </div>
+    
+    <div class="grid-4" style="margin-top:20px;">
+      <div class="kpi-card" style="background:var(--bg); color:var(--dark);">
+        <div class="kpi-label">Current Location</div>
+        <div class="kpi-val" id="res-loc" style="font-size:1rem;">—</div>
+      </div>
+      <div class="kpi-card" style="background:var(--bg); color:var(--dark);">
+        <div class="kpi-label">ETA</div>
+        <div class="kpi-val" id="res-eta" style="font-size:1rem;">—</div>
+      </div>
+      <div class="kpi-card" style="background:var(--bg); color:var(--dark);">
+        <div class="kpi-label">Carrier</div>
+        <div class="kpi-val" id="res-car" style="font-size:1rem;">—</div>
+      </div>
+      <div class="kpi-card" style="background:var(--bg); color:var(--dark);">
+        <div class="kpi-label">Route</div>
+        <div class="kpi-val" id="res-route" style="font-size:1rem;">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🤖 AI Tracking Insights</div>
+    <div class="grid-2">
+      <div>
+        <div class="mrow"><span class="mkey">Delay Probability</span><span class="mval" id="ai-prob" style="color:var(--red);">—</span></div>
+        <div class="mrow"><span class="mkey">Carrier Performance</span><span class="mval" id="ai-perf" style="color:var(--green);">—</span></div>
+        <div class="mrow"><span class="mkey">Risk Factors</span><span class="mval" id="ai-risk">—</span></div>
+      </div>
+      <div style="padding-left:16px; border-left:1px dashed var(--border);">
+        <div class="mrow" style="flex-direction:column; align-items:flex-start; gap:4px;">
+          <span class="mkey">Recommended Actions</span>
+          <span class="mval" id="ai-act" style="color:var(--blue); font-weight:600;">—</span>
+        </div>
+        <div class="mrow" style="flex-direction:column; align-items:flex-start; gap:4px; margin-top:10px;">
+          <span class="mkey">Alternative Plan</span>
+          <span class="mval" id="ai-plan" style="color:var(--amber); font-weight:600;">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+function setTrack(id) {
+    document.getElementById('track-id').value = id;
+    track();
+}
+
+const steps = ['Booked', 'In Transit', 'At Customs', 'Cleared', 'Out for Delivery', 'Delivered'];
+
+function track() {
+    const sid = document.getElementById('track-id').value.trim();
+    if(!sid) return;
+    
+    fetch('/api/track-shipment?shipment_id=' + sid)
+      .then(r => {
+          if(!r.ok) throw new Error('Shipment not found');
+          return r.json();
+      })
+      .then(data => {
+          document.getElementById('result-section').style.display = 'block';
+          document.getElementById('res-id').textContent = data.shipment_id;
+          
+          document.getElementById('res-status-badge').textContent = data.status;
+          document.getElementById('res-loc').textContent = data.current_location;
+          document.getElementById('res-eta').textContent = data.eta;
+          document.getElementById('res-car').textContent = data.carrier;
+          document.getElementById('res-route').textContent = data.route;
+          
+          // Render Timeline
+          const tlContainer = document.getElementById('timeline-container');
+          const currentStep = data.timeline_step; // 1-6
+          
+          let tlHtml = `<div class="timeline-progress" id="tl-progress" style="width:${(currentStep-1)*20}%;"></div>`;
+          
+          steps.forEach((step, idx) => {
+              const stepNum = idx + 1;
+              let cls = '';
+              if (stepNum < currentStep) cls = 'done';
+              else if (stepNum === currentStep) cls = 'active';
+              
+              tlHtml += `
+                <div class="tl-step ${cls}">
+                  <div class="tl-dot"></div>
+                  <div class="tl-label">${step}</div>
+                </div>
+              `;
+          });
+          tlContainer.innerHTML = tlHtml;
+          
+          // Render Insights
+          const ins = data.insights;
+          document.getElementById('ai-prob').textContent = ins.delay_probability;
+          document.getElementById('ai-perf').textContent = ins.carrier_performance;
+          document.getElementById('ai-risk').innerHTML = ins.risk_factors.map(r => `<div style="text-align:right;">⚠️ ${r}</div>`).join('');
+          document.getElementById('ai-act').innerHTML = ins.recommended_actions.map(r => `<div>✅ ${r}</div>`).join('');
+          document.getElementById('ai-plan').textContent = ins.alternative_plan;
+      })
+      .catch(err => {
+          alert(err.message);
+      });
+}
+{% endblock %}

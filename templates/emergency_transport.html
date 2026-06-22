@@ -240,10 +240,15 @@
       </div>
     </div>
 
-    <button class="plan-btn" id="plan-btn" onclick="runPlan()">
-      <span id="plan-btn-text">🚨 Generate Emergency Plan</span>
-      <div class="spinner" id="plan-spinner"></div>
-    </button>
+    <div style="display:flex; gap:12px; margin-top:8px;">
+      <button class="plan-btn" id="plan-btn" onclick="runPlan()" style="flex:1;">
+        <span id="plan-btn-text">🚨 Generate Emergency Plan</span>
+        <div class="spinner" id="plan-spinner"></div>
+      </button>
+      <button class="plan-btn" id="pdf-btn" onclick="downloadPDF()" style="flex:0; padding:14px; background:linear-gradient(135deg, #1e3a8a, #3b82f6); white-space:nowrap; display:none;">
+        <span>📄 Download PDF</span>
+      </button>
+    </div>
   </div>
 
   <!-- Pre-plan info panel -->
@@ -378,9 +383,14 @@ function runPlan() {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
   })
-  .then(r => r.json())
+  .then(r => {
+    if (!r.ok) {
+      return r.json().catch(() => ({ detail: 'Server error ' + r.status })).then(e => { throw new Error(e.detail || 'Failed'); });
+    }
+    return r.json();
+  })
   .then(data => render(data))
-  .catch(err => alert('Request failed: ' + err))
+  .catch(err => alert('Emergency Plan Error: ' + err.message))
   .finally(() => {
     btn.disabled = false;
     btnText.textContent = '🚨 Generate Emergency Plan';
@@ -399,6 +409,9 @@ function render(d) {
   banner.style.background = sevColors[d.severity] || sevColors.high;
   document.getElementById('res-action').textContent = d.recommended_action;
   document.getElementById('res-desc').textContent   = d.action_description;
+  
+  // Show PDF Button
+  document.getElementById('pdf-btn').style.display = 'flex';
 
   // KPIs
   const sevColors2 = { critical:'#ef4444', high:'#f59e0b', medium:'#3b82f6', low:'#10b981' };
@@ -407,6 +420,7 @@ function render(d) {
   document.getElementById('res-delay-hrs').textContent = d.current_delay_hrs + ' hrs current delay';
   document.getElementById('res-loss').textContent    = INR(d.estimated_loss);
   document.getElementById('res-savings').textContent = INR(d.estimated_savings);
+  document.getElementById('res-savings-pct').textContent = 'Delay reduced by ' + Math.round((d.eta_impact||{}).delay_reduction_pct||0) + '%';
   document.getElementById('res-net').textContent     = INR(d.net_benefit);
 
   // Sidebar
@@ -429,24 +443,33 @@ function render(d) {
           <span>Reliability: <strong>${c.reliability}%</strong></span>
           <span>ETA: <strong>${c.eta_hours}h</strong></span>
           <span>Cost: <strong>${INR(c.estimated_cost)}</strong></span>
-          <span>Saves: <strong style="color:#10b981">${c.delay_reduction_hrs}h</strong></span>
+          <span>Risk: <strong style="color:#ef4444">${c.disruption_risk}</strong></span>
+        </div>
+        <div class="carrier-meta" style="margin-top:4px;">
+          <span>History: <strong>${c.historical_performance}</strong></span>
+          <span>Weather: <strong>${c.weather_risk}</strong></span>
+          <span>Port/Customs: <strong>${c.port_congestion} / ${c.customs_delays}</strong></span>
         </div>
       </div>`;
   });
 
   // Routes
   const rl = document.getElementById('route-list'); rl.innerHTML = '';
-  const routeIcons = ['🛣️', '✈️', '🏭'];
+  const routeIcons = ['🛣️', '✈️', '🏭', '🚑'];
   (d.emergency_routes || []).forEach((r, i) => {
     rl.innerHTML += `
       <div class="route-card ${r.is_recommended ? 'rec' : ''}">
         <div class="route-icon">${routeIcons[i] || '📍'}</div>
         <div style="flex:1">
-          <div style="font-weight:700;font-size:.87rem">${r.name}
+          <div style="font-weight:700;font-size:.87rem">${r.type}: ${r.path}
             ${r.is_recommended ? '<span class="badge b-blue" style="margin-left:6px">REC</span>' : ''}
           </div>
           <div style="font-size:.75rem;color:var(--muted);margin-top:4px">
             Risk: <strong>${r.risk_pct}%</strong> &nbsp;|&nbsp;
+            Congestion: <strong>${r.congestion_score}/100</strong> &nbsp;|&nbsp;
+            Dist: <strong>${r.distance_km}km</strong>
+          </div>
+          <div style="font-size:.75rem;color:var(--muted);margin-top:2px">
             ETA Impact: <strong>${r.eta_impact_hrs}h</strong> &nbsp;|&nbsp;
             Cost: <strong>${INR(r.cost_impact)}</strong>
           </div>
@@ -484,4 +507,33 @@ function render(d) {
 
 // Auto-run default on load for demo
 document.addEventListener('DOMContentLoaded', () => runPlan());
+
+function downloadPDF() {
+  const payload = {
+    transport_type:    document.getElementById('f-transport').value,
+    severity:          selectedSev,
+    origin:            document.getElementById('f-origin').value || 'Mumbai',
+    destination:       document.getElementById('f-dest').value   || 'Delhi',
+    cargo_value:       parseFloat(document.getElementById('f-cargo').value) || 1000000,
+    current_delay_hrs: parseFloat(document.getElementById('f-delay').value) || 24,
+  };
+  
+  fetch('/api/emergency-plan/pdf', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+  .then(res => res.blob())
+  .then(blob => {
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Emergency_Recovery_Plan.pdf';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    window.URL.revokeObjectURL(url);
+  })
+  .catch(err => alert('Failed to download PDF: ' + err));
+}
 {% endblock %}

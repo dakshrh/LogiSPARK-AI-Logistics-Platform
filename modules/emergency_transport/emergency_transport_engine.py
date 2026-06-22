@@ -116,12 +116,12 @@ def plan_emergency(
 
     # ── Carrier suggestions ──────────────────────────────────────────────
     carrier_pool = _CARRIERS.get(transport_type, _CARRIERS["Ocean"])
-    # Suggest top 3 carriers, sorted by reliability × (1/cost)
+    # Suggest top 5 carriers, sorted by reliability × (1/cost)
     sorted_carriers = sorted(
         carrier_pool,
         key=lambda c: c["reliability"] / c["cost_multiplier"],
         reverse=True,
-    )[:3]
+    )[:5]
 
     base_cost_per_day = cargo_value * 0.002
     carrier_suggestions = []
@@ -129,6 +129,14 @@ def plan_emergency(
         cost = round(base_cost_per_day * c["cost_multiplier"] * c["eta_days"], 0)
         eta_hrs = c["eta_days"] * 24 - rng.randint(2, 8)
         delay_reduction = round(max(0, current_delay_hrs - (c["eta_days"] * 24 * 0.3)), 1)
+        
+        # New ranking factors
+        hist_perf = rng.randint(85, 99)
+        dis_risk = rng.choice(["Low", "Medium", "High"])
+        w_risk = rng.choice(["Clear", "Minor Warning", "Storm Alert"])
+        p_cong = rng.choice(["Normal", "Elevated", "Severe"])
+        c_delays = rng.choice(["None", "12-24h", "24-48h"])
+        
         carrier_suggestions.append({
             "rank": i + 1,
             "name": c["name"],
@@ -137,19 +145,37 @@ def plan_emergency(
             "eta_hours": eta_hrs,
             "delay_reduction_hrs": delay_reduction,
             "recommended": i == 0,
+            "historical_performance": f"{hist_perf}%",
+            "disruption_risk": dis_risk,
+            "weather_risk": w_risk,
+            "port_congestion": p_cong,
+            "customs_delays": c_delays
         })
 
     # ── Emergency routes ─────────────────────────────────────────────────
     origin_key = next((k for k in _EMERGENCY_ROUTES if k.lower() in origin.lower()), "default")
     routes_raw = _EMERGENCY_ROUTES[origin_key]
+    
+    # Generate Advanced Routes
+    route_types = ["Primary Route", "Alternative Route A", "Alternative Route B", "Emergency Route"]
     emergency_routes = []
-    for i, route_name in enumerate(routes_raw[:3]):
-        risk_pct = rng.randint(15, 45) if i == 0 else rng.randint(35, 65)
+    
+    for i in range(4):
+        route_name = route_types[i]
+        path_name = routes_raw[i % len(routes_raw)]
+        
+        distance = rng.randint(300, 1500) + (i * 150)
+        risk_pct = rng.randint(15, 45) if i == 0 else rng.randint(35, 80)
+        congestion = rng.randint(10, 30) if i == 0 else rng.randint(40, 90)
         cost_impact = round(base_cost_per_day * (0.8 + i * 0.3), 0)
         eta_impact = round(current_delay_hrs * (0.4 + i * 0.2), 1)
+        
         emergency_routes.append({
-            "name": route_name,
+            "type": route_name,
+            "path": path_name,
+            "distance_km": distance,
             "risk_pct": risk_pct,
+            "congestion_score": congestion,
             "cost_impact": int(cost_impact),
             "eta_impact_hrs": eta_impact,
             "is_recommended": i == 0,

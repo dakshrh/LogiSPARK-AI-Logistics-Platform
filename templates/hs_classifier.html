@@ -4,19 +4,20 @@
 <style>
 /* ── HS Classifier UI ─────────────────────────────────────── */
 .hs-hero {
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #3b82f6 100%);
   border-radius: 12px;
   padding: 28px 32px;
   color: #fff;
   display: flex;
   align-items: center;
   gap: 20px;
-  box-shadow: 0 10px 30px rgba(30,58,138,0.25);
-  margin-bottom: 4px;
+  box-shadow: 0 10px 30px rgba(30,58,138,0.3);
 }
 .hs-hero-icon { font-size: 3.4rem; flex-shrink: 0; }
 .hs-hero-title { font-size: 1.6rem; font-weight: 900; letter-spacing: -0.4px; }
 .hs-hero-sub   { font-size: .88rem; color: rgba(255,255,255,0.85); margin-top: 6px; line-height: 1.5; }
+.hs-hero-badge { margin-top: 10px; display: flex; gap: 8px; }
+.hs-hero-badge span { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 4px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; }
 
 /* Input Card */
 .input-card {
@@ -45,7 +46,7 @@
 .classify-btn {
   width: 100%;
   margin-top: 12px;
-  padding: 12px;
+  padding: 13px;
   background: linear-gradient(135deg, #1e3a8a, #3b82f6);
   color: #fff;
   border: none;
@@ -63,7 +64,7 @@
 .classify-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
 
 .spinner {
-  width: 22px; height: 22px;
+  width: 20px; height: 20px;
   border: 3px solid rgba(255,255,255,0.3);
   border-top-color: #fff;
   border-radius: 50%;
@@ -80,58 +81,108 @@
   padding: 20px 24px;
   box-shadow: var(--sh);
 }
-.result-card h3 { font-size: .95rem; font-weight: 800; margin-bottom: 8px; color: var(--navy); }
-.hs-code { font-size: 2.4rem; font-weight: 900; color: #0f766e; letter-spacing: 1px; }
+.hs-code-display {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #0f766e;
+  letter-spacing: 2px;
+  font-feature-settings: 'tnum';
+  margin: 4px 0 4px;
+}
 .conf-bar {
-  height: 8px;
+  height: 10px;
   background: #f1f5f9;
   border-radius: 99px;
   overflow: hidden;
-  margin-top: 6px;
+  margin: 6px 0;
 }
-.conf-fill { height: 100%; background: linear-gradient(90deg, #0f766e, #14b8a6); width: 0%; transition: width .8s; }
-.path-list { margin-top: 10px; font-size: .78rem; color: var(--muted); }
-.path-list span { background: var(--sky); color: var(--blue); padding: 3px 8px; border-radius: 6px; margin-right: 4px; display: inline-block; }
+.conf-fill { height: 100%; border-radius: 99px; width: 0%; transition: width .8s cubic-bezier(.4,0,.2,1); }
+.conf-fill.strong { background: linear-gradient(90deg, #059669, #10b981); }
+.conf-fill.good   { background: linear-gradient(90deg, #d97706, #f59e0b); }
+.conf-fill.weak   { background: linear-gradient(90deg, #dc2626, #ef4444); }
+
+.path-list { margin-top: 10px; font-size: .78rem; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.path-list .path-step { background: var(--sky); color: var(--blue); padding: 3px 10px; border-radius: 20px; font-weight: 700; }
+.path-list .path-arrow { color: var(--muted); font-size: 0.9rem; }
+
+/* XAI Box */
+.xai-box {
+  margin-top: 14px;
+  padding: 14px;
+  background: linear-gradient(135deg, #f0f9ff, #eff6ff);
+  border-radius: 10px;
+  border: 1px solid #bfdbfe;
+}
+.xai-title { font-size: 0.75rem; font-weight: 800; color: #1d4ed8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+.xai-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 7px; font-size: 0.8rem; }
+.xai-label { font-weight: 700; color: var(--muted); min-width: 130px; flex-shrink: 0; }
+.xai-val { color: var(--dark); }
+.kw-chip { display: inline-block; background: #dbeafe; color: #1d4ed8; border-radius: 12px; padding: 2px 8px; font-size: 0.72rem; font-weight: 700; margin: 2px 2px 0 0; }
+
+/* Scores Row */
+.scores-row { display: flex; gap: 10px; margin-top: 12px; }
+.score-card { flex: 1; background: var(--bg); border-radius: 8px; padding: 10px 12px; border: 1px solid var(--border); text-align: center; }
+.score-card .sv { font-size: 1.1rem; font-weight: 800; }
+.score-card .sl { font-size: 0.65rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
 
 /* Top‑5 Table */
 .table-card { overflow-x:auto; }
-.hs-table { width:100%; border-collapse:collapse; font-size:.78rem; }
-.hs-table th { background:#1e3a8a; color:#fff; padding:10px 12px; text-align:left; font-size:.68rem; text-transform:uppercase; letter-spacing:.5px; }
-.hs-table td { padding:9px 12px; border-bottom:1px solid var(--border); }
+.hs-table { width:100%; border-collapse:collapse; font-size:.8rem; }
+.hs-table th { background:var(--navy); color:#fff; padding:10px 14px; text-align:left; font-size:.68rem; text-transform:uppercase; letter-spacing:.5px; }
+.hs-table td { padding:10px 14px; border-bottom:1px solid var(--border); vertical-align: middle; }
+.hs-table tr:last-child td { border: none; }
 .hs-table tr:hover td { background:var(--sky); }
-.rank-badge { width:22px; height:22px; border-radius:50%; background:#1e3a8a; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:.68rem; font-weight:800; margin-right:6px; }
-.rank-badge.gold { background:#f59e0b; }
+.rank-badge { width:24px; height:24px; border-radius:50%; background:var(--navy); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:.68rem; font-weight:800; }
+.rank-badge.gold { background:linear-gradient(135deg, #d97706, #f59e0b); }
+.conf-pill { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; }
 
-/* Example chips */
+/* Chips */
 .chip-row { margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; }
-.chip { padding:4px 10px; border-radius:16px; background:var(--sky); color:var(--blue); font-size:.75rem; cursor:pointer; transition:.15s; }
-.chip:hover { background:var(--accent); color:#fff; }
+.chip { padding:5px 12px; border-radius:20px; background:var(--sky); color:var(--blue); font-size:.74rem; font-weight: 600; cursor:pointer; transition:.15s; border: 1px solid #bfdbfe; }
+.chip:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+/* Error box */
+.error-box { padding: 14px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626; font-size: 0.85rem; }
 </style>
 {% endblock %}
 
 {% block sidebar_extra %}
-<div class="s-label" style="margin-top:16px">Engine Mode</div>
+<div class="s-label" style="margin-top:16px">AI Engine</div>
 <div class="kpi-card">
-  <div class="kpi-label">Current Mode</div>
-  <div class="kpi-val" id="sb-mode">Loading…</div>
+  <div class="kpi-label">Mode</div>
+  <div class="kpi-val" id="sb-mode" style="font-size:0.75rem; color:#10b981;">Loading…</div>
+</div>
+<div class="kpi-card" style="margin-top:8px;">
+  <div class="kpi-label">Embedding Model</div>
+  <div class="kpi-val" style="font-size:0.72rem;">all-MiniLM-L6-v2</div>
 </div>
 <div class="s-label" style="margin-top:16px">Session Stats</div>
 <div class="kpi-card">
   <div class="kpi-label">Queries Run</div>
   <div class="kpi-val" id="sb-count">0</div>
 </div>
-<div class="kpi-card">
+<div class="kpi-card" style="margin-top:8px;">
   <div class="kpi-label">Avg Confidence</div>
-  <div class="kpi-val" id="sb-conf">—</div>
+  <div class="kpi-val" id="sb-conf" style="color:#10b981;">—</div>
+</div>
+<div class="kpi-card" style="margin-top:8px; border-color:rgba(59,130,246,0.4);">
+  <div class="kpi-label">Last Category</div>
+  <div class="kpi-val" id="sb-cat" style="font-size:0.72rem; color:#3b82f6;">—</div>
 </div>
 {% endblock %}
 
 {% block content %}
+<!-- Hero -->
 <div class="hs-hero">
   <div class="hs-hero-icon">📦</div>
   <div>
-    <div class="hs-hero-title">HS Code Classifier</div>
-    <div class="hs-hero-sub">Describe your product and instantly receive Harmonized System (HS) code recommendations with confidence scores.</div>
+    <div class="hs-hero-title">HS Code Intelligence Engine</div>
+    <div class="hs-hero-sub">Enterprise-grade Harmonized System code classification powered by Hybrid AI — semantic embeddings + domain rules + keyword intelligence.</div>
+    <div class="hs-hero-badge">
+      <span>SEMANTIC AI</span>
+      <span>DOMAIN RULES</span>
+      <span>EXPLAINABLE</span>
+    </div>
   </div>
 </div>
 
@@ -139,44 +190,98 @@
   <!-- Input Card -->
   <div class="input-card">
     <h3>🔎 Product Description</h3>
-    <textarea class="query-input" id="query-input" placeholder="e.g., Cotton men's T‑shirt, round‑neck, 180 gsm, 100% organic…"></textarea>
+    <textarea class="query-input" id="query-input" placeholder="e.g., Leather Handbag, Cotton Men's T-Shirt, Lithium-Ion Battery Pack…"></textarea>
     <button class="classify-btn" id="classify-btn" onclick="runClassify()">
       <span id="btn-text">🔎 Classify HS Code</span>
       <div class="spinner" id="btn-spinner"></div>
     </button>
     <div class="chip-row">
-      <div class="chip" onclick="setQuery(this)">Cotton Men's T‑Shirt</div>
-      <div class="chip" onclick="setQuery(this)">Lithium‑Ion Battery Pack</div>
+      <div class="chip" onclick="setQuery(this)">Leather Handbag</div>
+      <div class="chip" onclick="setQuery(this)">Cotton Men's T-Shirt</div>
+      <div class="chip" onclick="setQuery(this)">Lithium-Ion Battery Pack</div>
       <div class="chip" onclick="setQuery(this)">Industrial CNC Machine</div>
       <div class="chip" onclick="setQuery(this)">Fresh Mango Fruit</div>
       <div class="chip" onclick="setQuery(this)">Pharmaceutical Tablets</div>
-      <div class="chip" onclick="setQuery(this)">Leather Handbag</div>
       <div class="chip" onclick="setQuery(this)">Solar Panel Module</div>
       <div class="chip" onclick="setQuery(this)">Crude Palm Oil</div>
     </div>
   </div>
 
   <!-- Result Card -->
-  <div class="result-card" id="result-section" style="display:none">
-    <h3>✅ Top Classification</h3>
-    <div class="hs-code" id="res-hscode">—</div>
-    <div style="margin-top:6px;color:var(--muted)" id="res-desc">—</div>
-    <div class="conf-bar"><div class="conf-fill" id="res-conf"></div></div>
-    <div class="path-list" id="res-path"></div>
+  <div id="result-section" style="display:none;">
+    <div class="result-card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+        <div style="font-size:0.72rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px;">Top Classification</div>
+        <div id="conf-badge" class="badge b-green">98.0% Match</div>
+      </div>
+      <div class="hs-code-display" id="res-hscode">—</div>
+      <div style="color:var(--muted); font-weight:500; font-size:0.9rem;" id="res-desc">—</div>
+
+      <div style="margin-top:12px;">
+        <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:700; margin-bottom:4px;">
+          <span style="color:var(--muted)">AI CONFIDENCE</span>
+          <span id="conf-pct-label" style="color:var(--dark);">—</span>
+        </div>
+        <div class="conf-bar"><div class="conf-fill" id="res-conf"></div></div>
+      </div>
+
+      <div class="path-list" id="res-path"></div>
+
+      <div class="scores-row">
+        <div class="score-card">
+          <div class="sv" id="sc-sem" style="color:#3b82f6;">—</div>
+          <div class="sl">Semantic</div>
+        </div>
+        <div class="score-card">
+          <div class="sv" id="sc-kw" style="color:#8b5cf6;">—</div>
+          <div class="sl">Keyword</div>
+        </div>
+        <div class="score-card">
+          <div class="sv" id="sc-boost" style="color:#10b981;">—</div>
+          <div class="sl">Domain Boost</div>
+        </div>
+      </div>
+
+      <!-- XAI Section -->
+      <div class="xai-box">
+        <div class="xai-title">🧠 Why this classification?</div>
+        <div class="xai-row">
+          <span class="xai-label">Detected Category</span>
+          <span class="xai-val" id="xai-cat">—</span>
+        </div>
+        <div class="xai-row">
+          <span class="xai-label">Expanded Query</span>
+          <span class="xai-val" style="font-style:italic; color:var(--muted);" id="xai-exp">—</span>
+        </div>
+        <div class="xai-row">
+          <span class="xai-label">Matched Keywords</span>
+          <span class="xai-val" id="xai-kw">—</span>
+        </div>
+        <div class="xai-row">
+          <span class="xai-label">Domain Rules</span>
+          <span class="xai-val" id="xai-rules">—</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Top‑5 Table -->
+<!-- Error -->
+<div id="error-section" style="display:none;" class="error-box">
+  <strong>⚠️ Classification Error:</strong> <span id="error-msg"></span>
+</div>
+
+<!-- Top 5 Table -->
 <div class="card table-card" id="table-section" style="display:none">
-  <div class="card-title">📊 Top 5 HS Code Matches</div>
+  <div class="card-title">📊 Alternative Matches – Top 5 HS Predictions</div>
   <table class="hs-table">
     <thead>
       <tr>
         <th>Rank</th>
         <th>HS Code</th>
         <th>Description</th>
-        <th>Level</th>
-        <th>Confidence</th>
+        <th>Chapter</th>
+        <th>AI Confidence</th>
       </tr>
     </thead>
     <tbody id="table-body"></tbody>
@@ -185,64 +290,153 @@
 {% endblock %}
 
 {% block scripts %}
-const INR = n => 'Rs.\u00a0' + Math.round(n).toLocaleString('en-IN');
 let queryCount = 0;
 let confSum = 0;
 
 fetch('/api/platform-stats').then(r=>r.json()).then(d=>{
-  document.getElementById('sb-mode').textContent = d.hs_classifier_mode || 'TF‑IDF';
-}).catch(()=>{document.getElementById('sb-mode').textContent='TF‑IDF';});
+  document.getElementById('sb-mode').textContent = d.hs_classifier_mode || 'Hybrid AI';
+}).catch(()=>{ document.getElementById('sb-mode').textContent = 'Hybrid AI'; });
 
-function setQuery(btn){
-  document.getElementById('query-input').value = btn.textContent;
+function setQuery(el) {
+  document.getElementById('query-input').value = el.textContent.trim();
   document.getElementById('query-input').focus();
 }
 
-function runClassify(){
+function runClassify() {
   const q = document.getElementById('query-input').value.trim();
-  if(!q){alert('Please enter a product description.');return;}
-  const btn=document.getElementById('classify-btn');
-  const btnText=document.getElementById('btn-text');
-  const spinner=document.getElementById('btn-spinner');
-  btn.disabled=true; btnText.textContent='Classifying…'; spinner.style.display='block';
-  fetch('/api/hs-classify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:q})})
-    .then(r=>r.json())
-    .then(data=>render(data,q))
-    .catch(err=>alert('Error: '+err))
-    .finally(()=>{btn.disabled=false; btnText.textContent='🔎 Classify HS Code'; spinner.style.display='none';});
+  if (!q) { alert('Please enter a product description.'); return; }
+
+  const btn = document.getElementById('classify-btn');
+  const btnText = document.getElementById('btn-text');
+  const spinner = document.getElementById('btn-spinner');
+
+  btn.disabled = true;
+  btnText.textContent = 'Classifying…';
+  spinner.style.display = 'block';
+  document.getElementById('error-section').style.display = 'none';
+  document.getElementById('result-section').style.display = 'none';
+  document.getElementById('table-section').style.display = 'none';
+
+  fetch('/api/hs-classify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query: q })
+  })
+  .then(r => {
+    if (!r.ok) {
+      return r.json().catch(() => ({ detail: 'Server error ' + r.status })).then(e => {
+        throw new Error(e.detail || 'Classification failed');
+      });
+    }
+    return r.json();
+  })
+  .then(data => render(data))
+  .catch(err => {
+    document.getElementById('error-section').style.display = 'block';
+    document.getElementById('error-msg').textContent = err.message || String(err);
+  })
+  .finally(() => {
+    btn.disabled = false;
+    btnText.textContent = '🔎 Classify HS Code';
+    spinner.style.display = 'none';
+  });
 }
 
-function render(d, query){
-  // Top match
+function confClass(pct) {
+  if (pct > 90) return 'strong';
+  if (pct > 75) return 'good';
+  return 'weak';
+}
+
+function render(d) {
   const top = d.top_match;
+  const exp = d.explainable_ai || {};
+  if (!top) {
+    document.getElementById('error-section').style.display = 'block';
+    document.getElementById('error-msg').textContent = 'No classification found.';
+    return;
+  }
+
   document.getElementById('res-hscode').textContent = top.hscode;
   document.getElementById('res-desc').textContent = top.description;
-  document.getElementById('res-conf').style.width = Math.min(top.confidence,100)+'%';
+
+  const confPct = Math.min(parseFloat(top.confidence) || 0, 100);
+  document.getElementById('conf-pct-label').textContent = confPct.toFixed(1) + '%';
+
+  const fill = document.getElementById('res-conf');
+  fill.style.width = confPct + '%';
+  fill.className = 'conf-fill ' + confClass(confPct);
+
+  const badge = document.getElementById('conf-badge');
+  badge.textContent = confPct.toFixed(1) + '% Match';
+  badge.className = confPct > 90 ? 'badge b-green' : confPct > 75 ? 'badge b-amber' : 'badge b-red';
+
+  // Classification path
   const pathEl = document.getElementById('res-path');
-  pathEl.innerHTML = d.classification_path.split(' → ').map(p=>`<span>${p}</span>`).join('');
-  document.getElementById('result-section').style.display='block';
+  const parts = (d.classification_path || '').split(' → ');
+  pathEl.innerHTML = parts.map((p, i) =>
+    `${i > 0 ? '<span class="path-arrow">→</span>' : ''}<span class="path-step">${p}</span>`
+  ).join('');
+
+  // Sub-scores
+  document.getElementById('sc-sem').textContent = ((top.sem_similarity||0)*100).toFixed(0) + '%';
+  document.getElementById('sc-kw').textContent = ((top.keyword_score||0)*100).toFixed(0) + '%';
+  document.getElementById('sc-boost').textContent = top.domain_boost_applied ? '✓ Yes' : '— No';
+  if (top.domain_boost_applied) {
+    document.getElementById('sc-boost').style.color = '#10b981';
+  } else {
+    document.getElementById('sc-boost').style.color = '#64748b';
+  }
+
+  // XAI
+  document.getElementById('xai-cat').textContent = exp.detected_category || '—';
+  document.getElementById('xai-exp').textContent = exp.expanded_query || '—';
+
+  const kwEl = document.getElementById('xai-kw');
+  const kws = exp.matched_keywords || [];
+  if (kws.length > 0) {
+    kwEl.innerHTML = kws.map(k => `<span class="kw-chip">✔ ${k}</span>`).join('');
+  } else {
+    kwEl.textContent = '— None matched';
+  }
+
+  const rulesEl = document.getElementById('xai-rules');
+  const rules = exp.rules_applied || [];
+  if (exp.domain_boost_applied || rules.length > 0) {
+    rulesEl.innerHTML = `<span style="color:#10b981; font-weight:700;">✓ Active</span>` +
+      (rules.length > 0 ? ` — ${rules.join('; ')}` : '');
+  } else {
+    rulesEl.innerHTML = `<span style="color:var(--muted);">— Not applied</span>`;
+  }
+
+  document.getElementById('result-section').style.display = 'block';
 
   // Table
-  const tbody=document.getElementById('table-body');
-  tbody.innerHTML='';
-  d.results.forEach(r=>{
-    const badge = r.rank===1?'<span class="rank-badge gold">'+r.rank+'</span>':'<span class="rank-badge">'+r.rank+'</span>';
-    const confColor = r.confidence>70?'#0f766e':r.confidence>40?'#f59e0b':'#64748b';
-    tbody.innerHTML+=`<tr>
-      <td>${badge}</td>
-      <td><code style="font-weight:700;color:#1e3a8a;">${r.hscode}</code></td>
-      <td>${r.description}</td>
-      <td>Level ${r.level}</td>
-      <td style="color:${confColor}">${r.confidence.toFixed(1)}%</td>
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = '';
+  (d.results || []).forEach(r => {
+    const pct = parseFloat(r.confidence) || 0;
+    const bgC = pct > 90 ? '#d1fae5' : pct > 75 ? '#fef3c7' : '#fee2e2';
+    const txC = pct > 90 ? '#059669' : pct > 75 ? '#b45309' : '#dc2626';
+    const badgeHtml = r.rank === 1
+      ? `<span class="rank-badge gold">${r.rank}</span>`
+      : `<span class="rank-badge">${r.rank}</span>`;
+    const chapter = r.hscode ? r.hscode.slice(0, 2) : '—';
+    tbody.innerHTML += `<tr>
+      <td>${badgeHtml}</td>
+      <td><code style="font-weight:800; color:#1e3a8a; font-size:0.9rem;">${r.hscode}</code></td>
+      <td style="max-width:280px;">${r.description}</td>
+      <td><span class="badge b-blue">Ch. ${chapter}</span></td>
+      <td><span class="conf-pill" style="background:${bgC}; color:${txC};">${pct.toFixed(1)}%</span></td>
     </tr>`;
   });
-  document.getElementById('table-section').style.display='block';
+  document.getElementById('table-section').style.display = 'block';
 
-  // Session stats
+  // Sidebar stats
   queryCount++;
-  confSum+=top.confidence;
-  document.getElementById('sb-count').textContent=queryCount;
-  document.getElementById('sb-conf').textContent=(confSum/queryCount).toFixed(1)+'%';
+  confSum += confPct;
+  document.getElementById('sb-count').textContent = queryCount;
+  document.getElementById('sb-conf').textContent = (confSum / queryCount).toFixed(1) + '%';
+  document.getElementById('sb-cat').textContent = exp.detected_category || '—';
 }
-</script>
 {% endblock %}

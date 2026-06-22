@@ -1,8 +1,14 @@
 import io
 import os
 import pandas as pd
-from fastapi import APIRouter, HTTPException
+from typing import List, Dict, Any
+from fastapi import APIRouter, HTTPException, Path, Depends
 from fastapi.responses import StreamingResponse, FileResponse
+from pydantic import BaseModel, Field
+from sqlalchemy.orm import Session
+
+from database.database import get_db
+from database import crud
 from .predictor import ShipmentPredictor
 from .report_generator import generate_pdf_report
 
@@ -13,30 +19,115 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 REPORTS_DIR = os.path.join(BASE_DIR, "reports")
 os.makedirs(REPORTS_DIR, exist_ok=True)
 
-@router.get("/api/shipments")
-def get_shipments():
-    return predictor.get_all_shipments()
+# ──────────────────────────────────────────────────────────────────────────────
+# PYDANTIC MODELS
+# ──────────────────────────────────────────────────────────────────────────────
 
-@router.get("/api/stats")
-def get_global_stats():
-    return predictor.get_summary_stats()
+class ShipmentItem(BaseModel):
+    shipment_id: str = Field(..., description="Unique identifier for the shipment", examples=["LS1001"])
+    origin: str = Field(..., description="Origin port or city", examples=["Mumbai"])
+    destination: str = Field(..., description="Destination port or city", examples=["Rotterdam"])
+    mode: str = Field(..., description="Mode of transport", examples=["Ocean"])
+    customer_tier: str = Field(..., description="Tier of the customer", examples=["Platinum"])
+    # Using extra allows for other fields
+    class Config:
+        extra = "allow"
 
-@router.get("/predict/{shipment_id}")
-def predict_shipment(shipment_id: str):
+class ShipmentStatsResponse(BaseModel):
+    total_savings_generated: float = Field(..., description="Total cost savings generated in INR", examples=[1250000.0])
+    potential_loss_prevented: float = Field(..., description="Total potential loss prevented in INR", examples=[5000000.0])
+    avg_delay_reduction_hrs: float = Field(..., description="Average delay reduction in hours")
+    critical_alerts: int = Field(..., description="Number of critical alerts currently active", examples=[15])
+    high_risk_shipments: int = Field(..., description="Number of high risk shipments", examples=[42])
+    roi_generated_pct: int = Field(..., description="ROI generated percentage")
+    cause_distribution: Dict[str, int] = Field(..., description="Distribution of delay causes")
+
+class ShipmentPredictionResponse(BaseModel):
+    shipment_id: str = Field(..., description="Shipment ID", examples=["LS1001"])
+    origin: str = Field(..., description="Origin", examples=["Mumbai"])
+    destination: str = Field(..., description="Destination", examples=["Rotterdam"])
+    carrier: str = Field(..., description="Carrier name")
+    mode: str = Field(..., description="Transport mode", examples=["Ocean"])
+    cargo_value: int = Field(..., description="Cargo value")
+    container_type: str = Field(..., description="Container type")
+    customer_tier: str = Field(..., description="Customer Tier", examples=["Platinum"])
+    distance_km: int = Field(..., description="Distance in km")
+    scheduled_departure: str = Field(..., description="Scheduled departure date")
+    scheduled_arrival: str = Field(..., description="Scheduled arrival date")
+    delay_probability: float = Field(..., description="Probability of delay as a percentage", examples=[78.5])
+    risk_level: str = Field(..., description="Risk level")
+    urgency: str = Field(..., description="Urgency level", examples=["High"])
+    predicted_delay_hours: float = Field(..., description="Predicted delay in hours", examples=[48.5])
+    root_cause: str = Field(..., description="Predicted root cause of delay", examples=["Port Congestion"])
+    ai_summary: str = Field(..., description="AI narrative summary")
+    advanced_root_cause: Dict[str, Any] = Field(..., description="Advanced root cause metrics")
+    factor_contributions: Dict[str, int] = Field(..., description="Contributions of factors to delay")
+    delay_classification: Dict[str, Any] = Field(..., description="Classification of the delay")
+    financial_breakdown: Dict[str, Any] = Field(..., description="Financial impact of the delay")
+    recommendation_v2: Dict[str, Any] = Field(..., description="AI recommendations for mitigating the delay")
+    health_scores: Dict[str, int] = Field(..., description="Health scores for various factors")
+    priority_matrix: Dict[str, Any] = Field(..., description="Priority metrics and action deadlines")
+
+# ──────────────────────────────────────────────────────────────────────────────
+# ENDPOINTS
+# ──────────────────────────────────────────────────────────────────────────────
+
+@router.get("/api/shipments", response_model=List[ShipmentItem], tags=["Analytics"], summary="List All Shipments", description="Retrieve a list of all active shipments being monitored by the platform.")
+def get_shipments(db: Session = Depends(get_db)):
+    db_shipments = crud.get_all_shipments(db)
+    result = []
+    for s in db_shipments:
+        result.append({
+            "shipment_id": s.shipment_id,
+            "origin": s.origin,
+            "destination": s.destination,
+            "mode": s.mode or "Ocean",
+            "customer_tier": s.customer_tier or "Standard"
+        })
+    # Also blend predictor shipments for demo
+    pred_shipments = predictor.get_all_shipments()
+    return result + pred_shipments
+
+@router.get("/api/stats", response_model=ShipmentStatsResponse, tags=["Analytics"], summary="Get Global Analytics Stats", description="Retrieve global predictive analytics and financial savings statistics.")
+def get_global_stats(db: Session = Depends(get_db)):
+    # Keep predictor stats for logic
+    base = predictor.get_summary_stats()
+    return base
+
+@router.get("/predict/{shipment_id}", response_model=ShipmentPredictionResponse, tags=["Delay Prediction"], summary="Predict Shipment Delay", description="Get AI-powered delay predictions and recommendations for a specific shipment.")
+def predict_shipment(shipment_id: str = Path(..., description="The ID of the shipment to predict", examples=["LS1001"]), db: Session = Depends(get_db)):
     try:
-        return predictor.predict(shipment_id)
+        res = predictor.predict(shipment_id)
+        # Store in DB
+        crud.save_prediction(db, {
+            "shipment_id": shipment_id,
+            "predicted_delay_days": res.get("predicted_delay_hours", 0) / 24.0,
+            "delay_probability": res.get("delay_probability", 0),
+            "primary_cause": res.get("root_cause", ""),
+            "full_prediction": res
+        })
+        return res
     except KeyError as e:
         raise HTTPException(status_code=404, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/predict/{shipment_id}/json")
-def export_json(shipment_id: str):
-    return predictor.predict(shipment_id)
+@router.get("/predict/{shipment_id}/json", response_model=ShipmentPredictionResponse, tags=["Delay Prediction"], summary="Predict Shipment Delay (JSON Export)", description="Export the shipment delay prediction as a JSON object.")
+def export_json(shipment_id: str = Path(..., description="The ID of the shipment to predict", examples=["LS1001"]), db: Session = Depends(get_db)):
+    try:
+        return predict_shipment(shipment_id=shipment_id, db=db)
+    except HTTPException:
+        raise
 
-@router.get("/predict/{shipment_id}/excel")
-def export_excel(shipment_id: str):
-    res = predictor.predict(shipment_id)
+@router.get("/predict/{shipment_id}/excel", tags=["Delay Prediction"], summary="Export Prediction to Excel", description="Generate and download an Excel report containing the delay prediction details.")
+def export_excel(shipment_id: str = Path(..., description="The ID of the shipment to predict", examples=["LS1001"]), db: Session = Depends(get_db)):
+    try:
+        res = predictor.predict(shipment_id)
+    except KeyError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
     flat = {
         "Shipment ID": res["shipment_id"],
         "Origin": res["origin"],
@@ -65,9 +156,15 @@ def export_excel(shipment_id: str):
         media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     )
 
-@router.get("/predict/{shipment_id}/pdf")
-def export_pdf(shipment_id: str):
-    res = predictor.predict(shipment_id)
+@router.get("/predict/{shipment_id}/pdf", tags=["Delay Prediction"], summary="Export Prediction to PDF", description="Generate and download a PDF report containing the delay prediction details.")
+def export_pdf(shipment_id: str = Path(..., description="The ID of the shipment to predict", examples=["LS1001"]), db: Session = Depends(get_db)):
+    try:
+        res = predictor.predict(shipment_id)
+    except KeyError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
     out_path = os.path.join(REPORTS_DIR, f"Delay_Report_{shipment_id}.pdf")
     generate_pdf_report(res, out_path)
     return FileResponse(out_path, filename=f"Delay_Report_{shipment_id}.pdf", media_type="application/pdf")
