@@ -63,6 +63,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 templates = Jinja2Templates(directory=TEMPLATES_DIR)
 
 # Mount module routers
+from fastapi.staticfiles import StaticFiles
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(shipment_delay_router)
 app.include_router(shipment_tracking_router)
 app.include_router(copilot_router)
@@ -415,9 +418,18 @@ def risk_assess_get(
 # HTML PAGE ROUTES
 # ──────────────────────────────────────────────────────────────────────────────
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
+def get_landing(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="landing.html"
+    )
+
+
+@app.get("/dashboard", response_class=HTMLResponse, include_in_schema=False)
 def get_main_dashboard(request: Request):
     return templates.TemplateResponse(
-        request=request, name="dashboard.html",
+        request=request,
+        name="dashboard.html",
         context={"active_page": "dashboard"},
     )
 

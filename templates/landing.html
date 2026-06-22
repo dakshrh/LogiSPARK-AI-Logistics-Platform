@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LogiSPARK AI Platform</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#081223;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    width:100%;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(5,8,15,.15) 0%,
+        rgba(5,8,15,.25) 25%,
+        rgba(5,8,15,.45) 55%,
+        rgba(5,8,15,.75) 80%,
+        rgba(8,18,35,1) 100%
+    ),
+    url("/static/images/logistics.jpg");
+
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(79,156,255,.12),
+        transparent 70%
+    );
+
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    pointer-events:none;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    width:100%;
+    padding:28px 80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:relative;
+    z-index:10;
+}
+
+.logo{
+    font-size:1.9rem;
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.logo span{
+    color:#58a7ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    opacity:.85;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#58a7ff;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content{
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+    position:relative;
+    z-index:2;
+}
+
+.content-wrapper{
+
+    width:100%;
+    max-width:1050px;
+
+    padding:35px 45px;
+
+    border-radius:32px;
+
+    background:
+    rgba(5,10,20,.08);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid
+    rgba(255,255,255,.08);
+
+    box-shadow:
+    0 30px 80px
+    rgba(0,0,0,.45);
+
+    animation:fadeUp 1s ease;
+}
+
+.tag{
+    display:inline-block;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:1px solid
+    rgba(255,255,255,.12);
+
+    margin-bottom:25px;
+
+    font-size:.95rem;
+}
+
+.hero h1{
+    font-size:4.5rem;
+    line-height:.95;
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:#58a7ff;
+}
+
+.hero p{
+
+    max-width:850px;
+
+    margin:20px auto 0;
+
+    font-size:1.18rem;
+
+    line-height:1.9;
+
+    color:
+    rgba(255,255,255,.92);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.cta{
+    margin-top:40px;
+
+    display:flex;
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+}
+
+.launch-btn{
+
+    text-decoration:none;
+
+    padding:18px 34px;
+
+    border-radius:14px;
+
+    background:#4f9cff;
+
+    color:white;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.launch-btn:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 20px 40px
+    rgba(79,156,255,.35);
+}
+
+.secondary-btn{
+
+    text-decoration:none;
+
+    padding:18px 34px;
+
+    border-radius:14px;
+
+    border:1px solid
+    rgba(255,255,255,.15);
+
+    background:
+    rgba(255,255,255,.06);
+
+    color:white;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:15px;
+}
+
+.stat-card{
+
+    min-width:220px;
+
+    padding:26px;
+
+    border-radius:22px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid
+    rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+}
+
+.stat-number{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:#58a7ff;
+}
+
+.stat-text{
+
+    margin-top:8px;
+
+    opacity:.8;
+}
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    text-align:center;
+
+    z-index:2;
+
+    animation:bounce 2s infinite;
+}
+
+.scroll-indicator span{
+
+    display:block;
+
+    margin-top:6px;
+
+    font-size:.9rem;
+
+    opacity:.75;
+}
+
+/* =========================
+   MODULES
+========================= */
+
+.modules{
+
+    padding:100px 80px;
+
+    background:#081223;
+}
+
+.modules h2{
+
+    text-align:center;
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+}
+
+.modules-sub{
+
+    text-align:center;
+
+    color:#b8c7da;
+
+    margin-bottom:60px;
+}
+
+.module-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+}
+
+.module-card{
+
+    background:#0d1b33;
+
+    border:1px solid
+    rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    transition:.3s;
+}
+
+.module-card:hover{
+
+    transform:
+    translateY(-8px);
+}
+
+.module-icon{
+
+    font-size:2.5rem;
+
+    margin-bottom:20px;
+}
+
+.module-card h3{
+
+    margin-bottom:15px;
+}
+
+.module-card p{
+
+    color:#b9c7d8;
+
+    line-height:1.8;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:
+        translateX(-50%)
+        translateY(0);
+    }
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(10px);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.navbar{
+
+    padding:25px 30px;
+}
+
+.nav-links{
+
+    display:none;
+}
+
+.content-wrapper{
+
+    padding:35px 25px;
+}
+
+.hero h1{
+
+    font-size:3.8rem;
+}
+
+.hero p{
+
+    font-size:1rem;
+}
+
+.modules{
+
+    padding:80px 30px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<nav class="navbar">
+
+    <div class="logo">
+        Logi<span>SPARK</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#modules">Modules</a>
+        <a href="#modules">Technology</a>
+        <a href="#modules">Platform</a>
+    </div>
+
+</nav>
+
+<div class="hero-content">
+
+<div class="content-wrapper">
+
+<div class="tag">
+🚀 Enterprise AI Logistics Platform
+</div>
+
+<h1>
+Logi<span>SPARK</span><br>
+Control Tower
+</h1>
+
+<p>
+Predict shipment delays before they happen.
+Optimize transportation strategies, classify
+products instantly, and assess supply chain
+risks with enterprise-grade logistics
+intelligence powered by AI.
+</p>
+
+<div class="cta">
+
+<a href="/dashboard" class="launch-btn">
+Launch Control Tower →
+</a>
+
+<a href="#modules" class="secondary-btn">
+Explore Modules
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat-card">
+<div class="stat-number">1104+</div>
+<div class="stat-text">
+Shipments Analysed
+</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-number">₹104K+</div>
+<div class="stat-text">
+Cost Savings
+</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-number">99.97%</div>
+<div class="stat-text">
+Platform Uptime
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div class="scroll-indicator">
+⌄
+<span>Explore Platform</span>
+</div>
+
+</section>
+
+<section id="modules" class="modules">
+
+<h2>AI Logistics Modules</h2>
+
+<p class="modules-sub">
+Built to help logistics teams make faster,
+smarter decisions.
+</p>
+
+<div class="module-grid">
+
+<div class="module-card">
+<div class="module-icon">⏱️</div>
+<h3>Shipment Delay Predictor</h3>
+<p>
+Predict delays, identify root causes,
+estimate impacts and generate recovery
+recommendations.
+</p>
+</div>
+
+<div class="module-card">
+<div class="module-icon">🚑</div>
+<h3>Emergency Transport Planner</h3>
+<p>
+Generate alternate routes, carrier
+recommendations and disruption recovery
+plans.
+</p>
+</div>
+
+<div class="module-card">
+<div class="module-icon">📦</div>
+<h3>HS Code Classifier</h3>
+<p>
+AI-powered classification with confidence
+scoring and customs compliance assistance.
+</p>
+</div>
+
+<div class="module-card">
+<div class="module-icon">🛡️</div>
+<h3>Risk Assessment Engine</h3>
+<p>
+Analyze weather, customs, carrier and
+operational risks across supply chains.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+document.querySelectorAll(
+'a[href^="#"]'
+).forEach(anchor=>{
+
+anchor.addEventListener(
+'click',
+function(e){
+
+e.preventDefault();
+
+document.querySelector(
+this.getAttribute('href')
+).scrollIntoView({
+
+behavior:'smooth'
+
+});
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
